@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		76BD0CC21AD0D15F86C5ED7A /* Pods_HealthPad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7368E6167072F20E406B16A6 /* Pods_HealthPad.framework */; };
 		9FC094F2924E371CCD01E68B /* Pods_HealthPad_Companion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CDD8282C78D6EE0EA62B503 /* Pods_HealthPad_Companion.framework */; };
 		C53DB1901C99966A0054ED49 /* DotSpinningLikeSkype.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53DB1871C99966A0054ED49 /* DotSpinningLikeSkype.swift */; };
 		C53DB1911C99966A0054ED49 /* DotTrianglePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53DB1881C99966A0054ED49 /* DotTrianglePath.swift */; };
@@ -94,7 +93,6 @@
 			files = (
 				C5A88EBA1C98593E00A890EB /* HealthKit.framework in Frameworks */,
 				C5A88EBD1C985A1000A890EB /* CloudKit.framework in Frameworks */,
-				76BD0CC21AD0D15F86C5ED7A /* Pods_HealthPad.framework in Frameworks */,
 				9FC094F2924E371CCD01E68B /* Pods_HealthPad_Companion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

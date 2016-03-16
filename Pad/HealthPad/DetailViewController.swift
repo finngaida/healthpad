@@ -14,14 +14,20 @@ import Charts
 
 public class DetailViewController: UIViewController {
     
+    var data:Dictionary<String,Array<HealthObject>>?
+    
     public override func viewDidLoad() {
         
     }
     
     @IBAction func syncData(sender: AnyObject) {
     
+        let loader = Loader.showLoader(self)
+        loader.label?.text = "Loading..."
         
-    
+        Helper.sharedHelper.fetchData { (data) -> () in
+            self.data = data
+            Loader.hideLoader(self)
+        }
     }
-    
 }

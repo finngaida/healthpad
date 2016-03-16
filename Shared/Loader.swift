@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import SwitchLoader
 import Async
 import ActionKit
 
@@ -57,13 +56,12 @@ public class Loader: UIView {
         
         let anim = RPLoadingAnimationView(frame: CGRectMake(0, 0, loader.frame.width, loader.frame.height - 50), type: RPLoadingAnimationType.RotatingCircle, color: UIColor.blackColor(), size: CGSizeMake(loader.frame.width, loader.frame.height - 50))
         loader.blur.contentView.addSubview(anim)
-        anim.setupAnimation()
-        
         loader.center = CGPointMake(onVC.view.frame.width / 2, -250)
         
         Async.main { () -> Void in
             onVC.view.addSubview(bg)
             onVC.view.addSubview(loader)
+            anim.setupAnimation()
             
             UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0, options: [], animations: { () -> Void in
                 bg.alpha = 0.4
