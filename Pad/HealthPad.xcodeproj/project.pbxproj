@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8E055D63BEC8A3C4913A644B /* Pods_HealthPad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64BDD96B4C0163A30607D050 /* Pods_HealthPad.framework */; };
+		C511AB0F1C99FD6800A7D3C0 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C511AB0E1C99FD6800A7D3C0 /* LineView.swift */; };
 		C53DB14E1C998F250054ED49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53DB14D1C998F250054ED49 /* AppDelegate.swift */; };
 		C53DB1551C998F250054ED49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C53DB1531C998F250054ED49 /* Main.storyboard */; };
 		C53DB1571C998F250054ED49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C53DB1561C998F250054ED49 /* Assets.xcassets */; };
@@ -28,6 +29,9 @@
 		C53DB1B11C99A0C70054ED49 /* RPLoadingAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53DB1A81C99A0C70054ED49 /* RPLoadingAnimationView.swift */; };
 		C53DB1B21C99A0C70054ED49 /* SpininngDot.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53DB1A91C99A0C70054ED49 /* SpininngDot.swift */; };
 		C53DB1B31C99A0C70054ED49 /* TimingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53DB1AA1C99A0C70054ED49 /* TimingFunction.swift */; };
+		C53DB1BC1C99BD9E0054ED49 /* LineChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53DB1BB1C99BD9E0054ED49 /* LineChartViewController.swift */; };
+		C53DB1BE1C99C5B00054ED49 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53DB1BD1C99C5B00054ED49 /* SplitViewController.swift */; };
+		C5AA843D1C9A1337004CA908 /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AA843C1C9A1337004CA908 /* BarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,7 @@
 		17E9B21814EF772D8C3CCE8D /* Pods-HealthPad.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthPad.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HealthPad/Pods-HealthPad.debug.xcconfig"; sourceTree = "<group>"; };
 		64BDD96B4C0163A30607D050 /* Pods_HealthPad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealthPad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D22D27ED3FF22BB4E1C1D48 /* Pods-HealthPad.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthPad.release.xcconfig"; path = "Pods/Target Support Files/Pods-HealthPad/Pods-HealthPad.release.xcconfig"; sourceTree = "<group>"; };
+		C511AB0E1C99FD6800A7D3C0 /* LineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 		C53DB14A1C998F250054ED49 /* HealthPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C53DB14D1C998F250054ED49 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C53DB1541C998F250054ED49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -78,6 +83,9 @@
 		C53DB1A81C99A0C70054ED49 /* RPLoadingAnimationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RPLoadingAnimationView.swift; sourceTree = "<group>"; };
 		C53DB1A91C99A0C70054ED49 /* SpininngDot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpininngDot.swift; sourceTree = "<group>"; };
 		C53DB1AA1C99A0C70054ED49 /* TimingFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimingFunction.swift; sourceTree = "<group>"; };
+		C53DB1BB1C99BD9E0054ED49 /* LineChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChartViewController.swift; sourceTree = "<group>"; };
+		C53DB1BD1C99C5B00054ED49 /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
+		C5AA843C1C9A1337004CA908 /* BarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,9 +161,13 @@
 				C53DB17D1C9991390054ED49 /* HealthPad.entitlements */,
 				C53DB1A11C99A0C70054ED49 /* Animation */,
 				C53DB14D1C998F250054ED49 /* AppDelegate.swift */,
+				C53DB1BD1C99C5B00054ED49 /* SplitViewController.swift */,
 				C53DB1801C9992350054ED49 /* MasterViewController.swift */,
 				C53DB1821C9992410054ED49 /* DetailViewController.swift */,
+				C53DB1BB1C99BD9E0054ED49 /* LineChartViewController.swift */,
 				C53DB19D1C9996830054ED49 /* Helper.swift */,
+				C511AB0E1C99FD6800A7D3C0 /* LineView.swift */,
+				C5AA843C1C9A1337004CA908 /* BarView.swift */,
 				C53DB19E1C9996830054ED49 /* Loader.swift */,
 				C53DB1531C998F250054ED49 /* Main.storyboard */,
 				C53DB1561C998F250054ED49 /* Assets.xcassets */,
@@ -388,20 +400,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5AA843D1C9A1337004CA908 /* BarView.swift in Sources */,
 				C53DB1AC1C99A0C70054ED49 /* DotTrianglePath.swift in Sources */,
 				C53DB1AF1C99A0C70054ED49 /* RotatingCircle.swift in Sources */,
 				C53DB1831C9992410054ED49 /* DetailViewController.swift in Sources */,
 				C53DB1AB1C99A0C70054ED49 /* DotSpinningLikeSkype.swift in Sources */,
+				C53DB1BC1C99BD9E0054ED49 /* LineChartViewController.swift in Sources */,
 				C53DB1811C9992350054ED49 /* MasterViewController.swift in Sources */,
 				C53DB14E1C998F250054ED49 /* AppDelegate.swift in Sources */,
 				C53DB1B11C99A0C70054ED49 /* RPLoadingAnimationView.swift in Sources */,
 				C53DB1B31C99A0C70054ED49 /* TimingFunction.swift in Sources */,
+				C511AB0F1C99FD6800A7D3C0 /* LineView.swift in Sources */,
 				C53DB1AE1C99A0C70054ED49 /* LineScale.swift in Sources */,
 				C53DB19F1C9996830054ED49 /* Helper.swift in Sources */,
 				C53DB1B21C99A0C70054ED49 /* SpininngDot.swift in Sources */,
 				C53DB1B01C99A0C70054ED49 /* RPLoadingAnimationDelegate.swift in Sources */,
 				C53DB1AD1C99A0C70054ED49 /* FunnyDotsA.swift in Sources */,
 				C53DB1A01C9996830054ED49 /* Loader.swift in Sources */,
+				C53DB1BE1C99C5B00054ED49 /* SplitViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

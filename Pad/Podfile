@@ -7,4 +7,6 @@ target 'HealthPad' do
 pod "Charts"
 pod "AsyncSwift"
 pod "ActionKit"
+pod "GradientView"
+pod "dyci", :git => "https://github.com/DyCI/dyci-main.git"
 end

@@ -17,15 +17,15 @@ import CoreGraphics
 
 public class ChartAxisBase: ChartComponentBase
 {
-    public var labelFont = NSUIFont.systemFontOfSize(10.0)
-    public var labelTextColor = NSUIColor.blackColor()
+    public var labelFont = NSUIFont.systemFontOfSize(15.0)
+    public var labelTextColor = NSUIColor(white: 1.0, alpha: 0.8)
     
-    public var axisLineColor = NSUIColor.grayColor()
+    public var axisLineColor = NSUIColor.whiteColor()
     public var axisLineWidth = CGFloat(0.5)
     public var axisLineDashPhase = CGFloat(0.0)
     public var axisLineDashLengths: [CGFloat]!
     
-    public var gridColor = NSUIColor.grayColor().colorWithAlphaComponent(0.9)
+    public var gridColor = NSUIColor.clearColor()
     public var gridLineWidth = CGFloat(0.5)
     public var gridLineDashPhase = CGFloat(0.0)
     public var gridLineDashLengths: [CGFloat]!

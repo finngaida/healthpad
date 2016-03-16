@@ -23,17 +23,26 @@ public class MasterViewController: UITableViewController {
     }
     
     override public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        guard let data = Helper.sharedHelper.latestData else {return 1}
+        return data.count
     }
     
     override public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "Cell")
         
+        if indexPath.row == 0 && self.tableView(tableView, numberOfRowsInSection: 0) == 1 {cell.textLabel?.text = "Test Line Chart"}
+        
+        guard let data = Helper.sharedHelper.latestData else {return cell}
+        cell.textLabel?.text = Array(data.keys)[indexPath.row]
         return cell
     }
     
     override public func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        // do something
+        if let data = Helper.sharedHelper.latestData {
+            NSNotificationCenter.defaultCenter().postNotificationName(Helper.sharedHelper.typeSelectedNotification, object: Array(data.keys)[indexPath.row])
+        } else {
+            NSNotificationCenter.defaultCenter().postNotificationName(Helper.sharedHelper.typeSelectedNotification, object: nil)
+        }
     }
     
 }

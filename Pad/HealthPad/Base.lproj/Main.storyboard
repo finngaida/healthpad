@@ -45,6 +45,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="5ry-vv-8Qx"/>
+                    <connections>
+                        <segue destination="cxh-XF-w2b" kind="show" identifier="showLineChart" id="okw-a2-hEn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JUW-Ir-kqt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -59,7 +62,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="8wc-rB-tLz">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="8wc-rB-tLz">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8wc-rB-tLz" id="rGx-88-Jcp">
@@ -78,6 +81,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="apg-vm-8F7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="707" y="-495"/>
+        </scene>
+        <!--Line Chart View Controller-->
+        <scene sceneID="p1R-Hr-GUV">
+            <objects>
+                <viewController storyboardIdentifier="lineChart" id="cxh-XF-w2b" customClass="LineChartViewController" customModule="HealthPad" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SXe-7u-GH7"/>
+                        <viewControllerLayoutGuide type="bottom" id="4Tj-3t-Bdl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nh2-eN-Hrd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Joa-cW-vrK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1387" y="166"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bPE-RH-3Mt">
@@ -98,7 +119,7 @@
         <!--Split View Controller-->
         <scene sceneID="ILN-cL-RGE">
             <objects>
-                <splitViewController id="8DV-j7-ymT" sceneMemberID="viewController">
+                <splitViewController id="8DV-j7-ymT" customClass="SplitViewController" customModule="HealthPad" customModuleProvider="target" sceneMemberID="viewController">
                     <connections>
                         <segue destination="Grk-QS-MfE" kind="relationship" relationship="masterViewController" id="1Sd-rR-pTR"/>
                         <segue destination="D6k-TG-KR8" kind="relationship" relationship="detailViewController" id="KJH-9i-muW"/>

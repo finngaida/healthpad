@@ -21,13 +21,33 @@ public class DetailViewController: UIViewController {
     }
     
     @IBAction func syncData(sender: AnyObject) {
-    
+        
         let loader = Loader.showLoader(self)
         loader.label?.text = "Loading..."
         
-        Helper.sharedHelper.fetchData { (data) -> () in
+        Helper.sharedHelper.fetchData(loader) { (data) -> () in
             self.data = data
+            print(data)
             Loader.hideLoader(self)
+            ((self.splitViewController?.viewControllers[0] as! UINavigationController).viewControllers[0] as! MasterViewController).tableView.reloadData()
+        }
+    }
+    
+    public override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        print(segue.destinationViewController)
+        if segue.identifier == Helper.sharedHelper.showLineChartSegue, let dest = segue.destinationViewController as? LineChartViewController {
+            
+            if let type = sender as? String {
+                
+            }
+            
+            dest.data = [HealthObject(value: "12", unit: "steps", endDate: nil),
+                HealthObject(value: "11", unit: "steps", endDate: nil),
+                HealthObject(value: "10", unit: "steps", endDate: nil),
+                HealthObject(value: "15", unit: "steps", endDate: nil),
+                HealthObject(value: "12", unit: "steps", endDate: nil),
+                HealthObject(value: "10", unit: "steps", endDate: nil),
+                HealthObject(value: "16", unit: "steps", endDate: nil)]
         }
     }
 }

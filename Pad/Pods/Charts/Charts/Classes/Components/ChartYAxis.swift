@@ -57,7 +57,7 @@ public class ChartYAxis: ChartAxisBase
     
     /// This property is deprecated - Use `customAxisMin` instead.
     public var startAtZeroEnabled: Bool
-    {
+        {
         get
         {
             return customAxisMin == 0.0
@@ -77,12 +77,12 @@ public class ChartYAxis: ChartAxisBase
     
     /// if true, the set number of y-labels will be forced
     public var forceLabelsEnabled = false
-
+    
     /// flag that indicates if the zero-line should be drawn regardless of other grid lines
     public var drawZeroLineEnabled = true
     
     /// Color of the zero line
-    public var zeroLineColor: NSUIColor? = NSUIColor.grayColor()
+    public var zeroLineColor: NSUIColor? = NSUIColor.clearColor()
     
     /// Width of the zero line
     public var zeroLineWidth: CGFloat = 1.0
@@ -107,15 +107,15 @@ public class ChartYAxis: ChartAxisBase
     /// Do not forget to set startAtZeroEnabled = false if you use this method.
     /// Otherwise, the axis-minimum value will still be forced to 0.
     public var customAxisMin = Double.NaN
-        
+    
     /// Set a custom maximum value for this axis. 
     /// If set, this value will not be calculated automatically depending on the provided data. 
     /// Use `resetCustomAxisMax()` to undo this.
     public var customAxisMax = Double.NaN
-
+    
     /// axis space from the largest value to the top in percent of the total axis range
     public var spaceTop = CGFloat(0.1)
-
+    
     /// axis space from the smallest value to the bottom in percent of the total axis range
     public var spaceBottom = CGFloat(0.1)
     
@@ -167,8 +167,8 @@ public class ChartYAxis: ChartAxisBase
     }
     
     public var axisDependency: AxisDependency
-    {
-        return _axisDependency
+        {
+            return _axisDependency
     }
     
     public func setLabelCount(count: Int, force: Bool)
@@ -183,7 +183,7 @@ public class ChartYAxis: ChartAxisBase
         {
             _labelCount = 2
         }
-    
+        
         forceLabelsEnabled = force
     }
     
@@ -193,7 +193,7 @@ public class ChartYAxis: ChartAxisBase
     /// default = 6,
     /// be aware that this number is not fixed and can only be approximated
     public var labelCount: Int
-    {
+        {
         get
         {
             return _labelCount
@@ -230,7 +230,7 @@ public class ChartYAxis: ChartAxisBase
     {
         return requiredSize().height + yOffset
     }
-
+    
     public override func getLongestLabel() -> String
     {
         var longest = ""
@@ -247,7 +247,7 @@ public class ChartYAxis: ChartAxisBase
         
         return longest
     }
-
+    
     /// - returns: the formatted y-label at the specified index. This will either use the auto-formatter or the custom formatter (if one is set).
     public func getFormattedLabel(index: Int) -> String
     {
@@ -261,15 +261,15 @@ public class ChartYAxis: ChartAxisBase
     
     /// - returns: true if this axis needs horizontal offset, false if no offset is needed.
     public var needsOffset: Bool
-    {
-        if (isEnabled && isDrawLabelsEnabled && labelPosition == .OutsideChart)
         {
-            return true
-        }
-        else
-        {
-            return false
-        }
+            if (isEnabled && isDrawLabelsEnabled && labelPosition == .OutsideChart)
+            {
+                return true
+            }
+            else
+            {
+                return false
+            }
     }
     
     public var isInverted: Bool { return inverted; }
@@ -277,10 +277,10 @@ public class ChartYAxis: ChartAxisBase
     /// This is deprecated now, use `customAxisMin`
     @available(*, deprecated=1.0, message="Use customAxisMin instead.")
     public var isStartAtZeroEnabled: Bool { return startAtZeroEnabled }
-
+    
     /// - returns: true if focing the y-label count is enabled. Default: false
     public var isForceLabelsEnabled: Bool { return forceLabelsEnabled }
-
+    
     public var isShowOnlyMinMaxEnabled: Bool { return showOnlyMinMaxEnabled; }
     
     public var isDrawTopYLabelEntryEnabled: Bool { return drawTopYLabelEntryEnabled; }
