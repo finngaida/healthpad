@@ -32,7 +32,7 @@ public class Helper: NSObject {
     public func save(record: CKRecord, loader: Loader) {
         self.db.saveRecord(record, completionHandler: { (newrecord, error) -> Void in
             if let e = error {
-                Helper.update(loader, s: "there was an error: \(e.localizedDescription)")
+                Helper.update(loader, s: "\(Helper.editErrorMessage(e.localizedDescription))")
                 
                 if let retryAfterValue = e.userInfo[CKErrorRetryAfterKey] as? NSTimeInterval {
                     
@@ -60,6 +60,15 @@ public class Helper: NSObject {
             }
         }
         
+    }
+    
+    public class func editErrorMessage(e:String) -> String {
+        
+        let s = e as NSString
+        let start = s.rangeOfString("<").location
+        let end = s.rangeOfString(">").location
+        
+        return s.stringByReplacingCharactersInRange(NSMakeRange(start, end-start+2), withString: "")
     }
     
     public func dataTypes() -> Set<HKObjectType> {

@@ -134,7 +134,7 @@ public class ViewController: UIViewController {
                 record.setObject(sample.endDate, forKey: "endDate")
                 record.setObject(tipe, forKey: "type")
                 
-                Helper.update(loader, s: "saving record \(record.description) of type \(tipe)")
+                Helper.update(loader, s: Helper.editErrorMessage("saving record \(record.description) of type \(tipe)"))
                 Helper.sharedHelper.save(record, loader: loader)
             }
         }
