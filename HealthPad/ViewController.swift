@@ -130,9 +130,19 @@ public class ViewController: UIViewController {
                 
                 // save that to the cloud
                 let record = CKRecord(recordType: tipe, recordID: CKRecordID(recordName: "\(index)"))
-                record.setObject(sample.quantity.description, forKey: "content")
-                update(loader, s: "saving record \(record.description) of type \(tipe)")
+                let parts = sample.quantity.description.componentsSeparatedByString(" ")
                 
+                if parts.count >= 1 {
+                    record.setObject(parts[0], forKey: "content")
+                    record.setObject(parts[1], forKey: "unit")
+                } else {
+                    record.setObject(sample.quantity.description, forKey: "content")
+                }
+                
+                record.setObject(sample.endDate, forKey: "endDate")
+                record.setObject(tipe, forKey: "type")
+                
+                update(loader, s: "saving record \(record.description) of type \(tipe)")
                 save(record, loader: loader)
             }
         }
@@ -141,7 +151,7 @@ public class ViewController: UIViewController {
     private func save(record: CKRecord, loader: Loader) {
         self.db.saveRecord(record, completionHandler: { (newrecord, error) -> Void in
             if let e = error {
-                self.update(loader, s: "there was an error: \(e.description) for record: \(record.description)")
+                self.update(loader, s: "there was an error: \(e.localizedDescription)")
                 
                 if let retryAfterValue = e.userInfo[CKErrorRetryAfterKey] as? NSTimeInterval {
                     
