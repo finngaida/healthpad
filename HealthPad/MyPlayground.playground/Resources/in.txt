@@ -1,0 +1,194 @@
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierBodyMassIndex: String // Scalar(Count),               Discrete
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierBodyFatPercentage: String // Scalar(Percent, 0.0 - 1.0),  Discrete
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierHeight: String // Length,                      Discrete
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierBodyMass: String // Mass,                        Discrete
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierLeanBodyMass: String // Mass,                        Discrete
+
+// Fitness
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierStepCount: String // Scalar(Count),               Cumulative
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierDistanceWalkingRunning: String // Length,                      Cumulative
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierDistanceCycling: String // Length,                      Cumulative
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierBasalEnergyBurned: String // Energy,                      Cumulative
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierActiveEnergyBurned: String // Energy,                      Cumulative
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierFlightsClimbed: String // Scalar(Count),               Cumulative
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierNikeFuel: String // Scalar(Count),               Cumulative
+
+// Vitals
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierHeartRate: String // Scalar(Count)/Time,          Discrete
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierBodyTemperature: String // Temperature,                 Discrete
+@available(iOS 9.0, *)
+public let HKQuantityTypeIdentifierBasalBodyTemperature: String // Basal Body Temperature,      Discrete
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierBloodPressureSystolic: String // Pressure,                    Discrete
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierBloodPressureDiastolic: String // Pressure,                    Discrete
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierRespiratoryRate: String // Scalar(Count)/Time,          Discrete
+
+// Results
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierOxygenSaturation: String // Scalar (Percent, 0.0 - 1.0,  Discrete
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierPeripheralPerfusionIndex: String // Scalar(Percent, 0.0 - 1.0),  Discrete
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierBloodGlucose: String // Mass/Volume,                 Discrete
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierNumberOfTimesFallen: String // Scalar(Count),               Cumulative
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierElectrodermalActivity: String // Conductance,                 Discrete
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierInhalerUsage: String // Scalar(Count),               Cumulative
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierBloodAlcoholContent: String // Scalar(Percent, 0.0 - 1.0),  Discrete
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierForcedVitalCapacity: String // Volume,                      Discrete
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierForcedExpiratoryVolume1: String // Volume,                      Discrete
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierPeakExpiratoryFlowRate: String // Volume/Time,                 Discrete
+
+// Nutrition
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierDietaryFatTotal: String // Mass,   Cumulative
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierDietaryFatPolyunsaturated: String // Mass,   Cumulative
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierDietaryFatMonounsaturated: String // Mass,   Cumulative
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierDietaryFatSaturated: String // Mass,   Cumulative
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierDietaryCholesterol: String // Mass,   Cumulative
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierDietarySodium: String // Mass,   Cumulative
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierDietaryCarbohydrates: String // Mass,   Cumulative
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierDietaryFiber: String // Mass,   Cumulative
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierDietarySugar: String // Mass,   Cumulative
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierDietaryEnergyConsumed: String // Energy, Cumulative
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierDietaryProtein: String // Mass,   Cumulative
+
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierDietaryVitaminA: String // Mass, Cumulative
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierDietaryVitaminB6: String // Mass, Cumulative
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierDietaryVitaminB12: String // Mass, Cumulative
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierDietaryVitaminC: String // Mass, Cumulative
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierDietaryVitaminD: String // Mass, Cumulative
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierDietaryVitaminE: String // Mass, Cumulative
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierDietaryVitaminK: String // Mass, Cumulative
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierDietaryCalcium: String // Mass, Cumulative
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierDietaryIron: String // Mass, Cumulative
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierDietaryThiamin: String // Mass, Cumulative
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierDietaryRiboflavin: String // Mass, Cumulative
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierDietaryNiacin: String // Mass, Cumulative
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierDietaryFolate: String // Mass, Cumulative
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierDietaryBiotin: String // Mass, Cumulative
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierDietaryPantothenicAcid: String // Mass, Cumulative
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierDietaryPhosphorus: String // Mass, Cumulative
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierDietaryIodine: String // Mass, Cumulative
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierDietaryMagnesium: String // Mass, Cumulative
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierDietaryZinc: String // Mass, Cumulative
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierDietarySelenium: String // Mass, Cumulative
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierDietaryCopper: String // Mass, Cumulative
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierDietaryManganese: String // Mass, Cumulative
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierDietaryChromium: String // Mass, Cumulative
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierDietaryMolybdenum: String // Mass, Cumulative
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierDietaryChloride: String // Mass, Cumulative
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierDietaryPotassium: String // Mass, Cumulative
+@available(iOS 8.0, *)
+public let HKQuantityTypeIdentifierDietaryCaffeine: String // Mass, Cumulative
+@available(iOS 9.0, *)
+public let HKQuantityTypeIdentifierDietaryWater: String // Volume, Cumulative
+
+@available(iOS 9.0, *)
+public let HKQuantityTypeIdentifierUVExposure: String // Scalar (Count), Discrete
+
+/*--------------------------------*/
+/*   HKCategoryType Identifiers   */
+/*--------------------------------*/
+
+@available(iOS 8.0, *)
+public let HKCategoryTypeIdentifierSleepAnalysis: String // HKCategoryValueSleepAnalysis
+@available(iOS 9.0, *)
+public let HKCategoryTypeIdentifierAppleStandHour: String // HKCategoryValueAppleStandHour
+@available(iOS 9.0, *)
+public let HKCategoryTypeIdentifierCervicalMucusQuality: String // HKCategoryValueCervicalMucusQuality
+@available(iOS 9.0, *)
+public let HKCategoryTypeIdentifierOvulationTestResult: String // HKCategoryValueOvulationTestResult
+@available(iOS 9.0, *)
+public let HKCategoryTypeIdentifierMenstrualFlow: String // HKCategoryValueMenstrualFlow
+@available(iOS 9.0, *)
+public let HKCategoryTypeIdentifierIntermenstrualBleeding: String // (Spotting) HKCategoryValue
+@available(iOS 9.0, *)
+public let HKCategoryTypeIdentifierSexualActivity: String // HKCategoryValue
+
+/*--------------------------------------*/
+/*   HKCharacteristicType Identifiers   */
+/*--------------------------------------*/
+
+@available(iOS 8.0, *)
+public let HKCharacteristicTypeIdentifierBiologicalSex: String // NSNumber (HKCharacteristicBiologicalSex)
+@available(iOS 8.0, *)
+public let HKCharacteristicTypeIdentifierBloodType: String // NSNumber (HKCharacteristicBloodType)
+@available(iOS 8.0, *)
+public let HKCharacteristicTypeIdentifierDateOfBirth: String // NSDate
+@available(iOS 9.0, *)
+public let HKCharacteristicTypeIdentifierFitzpatrickSkinType: String // HKFitzpatrickSkinType
+
+/*-----------------------------------*/
+/*   HKCorrelationType Identifiers   */
+/*-----------------------------------*/
+
+@available(iOS 8.0, *)
+public let HKCorrelationTypeIdentifierBloodPressure: String
+@available(iOS 8.0, *)
+public let HKCorrelationTypeIdentifierFood: String
+
+/*------------------------------*/
+/*   HKWorkoutType Identifier   */
+/*------------------------------*/
+
+@available(iOS 8.0, *)
+public let HKWorkoutTypeIdentifier: String
