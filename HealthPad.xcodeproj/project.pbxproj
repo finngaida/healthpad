@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2168C53281AFEE266FEAA3AF /* Pods_HealthPadUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10681C607D1523A5665DE2A8 /* Pods_HealthPadUITests.framework */; };
+		76BD0CC21AD0D15F86C5ED7A /* Pods_HealthPad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7368E6167072F20E406B16A6 /* Pods_HealthPad.framework */; };
 		C5A88E8C1C98587400A890EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A88E8B1C98587400A890EB /* AppDelegate.swift */; };
 		C5A88E8E1C98587400A890EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A88E8D1C98587400A890EB /* ViewController.swift */; };
 		C5A88E911C98587400A890EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5A88E8F1C98587400A890EB /* Main.storyboard */; };
@@ -16,6 +18,17 @@
 		C5A88EAC1C98587400A890EB /* HealthPadUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A88EAB1C98587400A890EB /* HealthPadUITests.swift */; };
 		C5A88EBA1C98593E00A890EB /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A88EB91C98593E00A890EB /* HealthKit.framework */; };
 		C5A88EBD1C985A1000A890EB /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5A88EBC1C985A1000A890EB /* CloudKit.framework */; };
+		C5DFEFF71C9950A1000AA609 /* DotSpinningLikeSkype.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DFEFEE1C9950A1000AA609 /* DotSpinningLikeSkype.swift */; };
+		C5DFEFF81C9950A1000AA609 /* DotTrianglePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DFEFEF1C9950A1000AA609 /* DotTrianglePath.swift */; };
+		C5DFEFF91C9950A1000AA609 /* FunnyDotsA.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DFEFF01C9950A1000AA609 /* FunnyDotsA.swift */; };
+		C5DFEFFA1C9950A1000AA609 /* LineScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DFEFF11C9950A1000AA609 /* LineScale.swift */; };
+		C5DFEFFB1C9950A1000AA609 /* RotatingCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DFEFF21C9950A1000AA609 /* RotatingCircle.swift */; };
+		C5DFEFFC1C9950A1000AA609 /* RPLoadingAnimationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DFEFF31C9950A1000AA609 /* RPLoadingAnimationDelegate.swift */; };
+		C5DFEFFD1C9950A1000AA609 /* RPLoadingAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DFEFF41C9950A1000AA609 /* RPLoadingAnimationView.swift */; };
+		C5DFEFFE1C9950A1000AA609 /* SpininngDot.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DFEFF51C9950A1000AA609 /* SpininngDot.swift */; };
+		C5DFEFFF1C9950A1000AA609 /* TimingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DFEFF61C9950A1000AA609 /* TimingFunction.swift */; };
+		C5DFF0031C995437000AA609 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DFF0021C995437000AA609 /* Loader.swift */; };
+		E799D598E785E01DDE195C6D /* Pods_HealthPadTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE1463A7E277645D602792F /* Pods_HealthPadTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +49,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		10681C607D1523A5665DE2A8 /* Pods_HealthPadUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealthPadUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E84D18027221E7C28D5E0ED /* Pods-HealthPadUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthPadUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HealthPadUITests/Pods-HealthPadUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2138AFFED53D8CBD754C70EA /* Pods-HealthPad.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthPad.release.xcconfig"; path = "Pods/Target Support Files/Pods-HealthPad/Pods-HealthPad.release.xcconfig"; sourceTree = "<group>"; };
+		7368E6167072F20E406B16A6 /* Pods_HealthPad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealthPad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2A5D02130E03CC611F41819 /* Pods-HealthPadUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthPadUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HealthPadUITests/Pods-HealthPadUITests.release.xcconfig"; sourceTree = "<group>"; };
+		AAE1463A7E277645D602792F /* Pods_HealthPadTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealthPadTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5A88E881C98587400A890EB /* HealthPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5A88E8B1C98587400A890EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5A88E8D1C98587400A890EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +72,19 @@
 		C5A88EBB1C9859FD00A890EB /* HealthPad.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HealthPad.entitlements; sourceTree = "<group>"; };
 		C5A88EBC1C985A1000A890EB /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		C5A88EBE1C985D2400A890EB /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		C5DFEFEE1C9950A1000AA609 /* DotSpinningLikeSkype.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotSpinningLikeSkype.swift; sourceTree = "<group>"; };
+		C5DFEFEF1C9950A1000AA609 /* DotTrianglePath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotTrianglePath.swift; sourceTree = "<group>"; };
+		C5DFEFF01C9950A1000AA609 /* FunnyDotsA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunnyDotsA.swift; sourceTree = "<group>"; };
+		C5DFEFF11C9950A1000AA609 /* LineScale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineScale.swift; sourceTree = "<group>"; };
+		C5DFEFF21C9950A1000AA609 /* RotatingCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotatingCircle.swift; sourceTree = "<group>"; };
+		C5DFEFF31C9950A1000AA609 /* RPLoadingAnimationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RPLoadingAnimationDelegate.swift; sourceTree = "<group>"; };
+		C5DFEFF41C9950A1000AA609 /* RPLoadingAnimationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RPLoadingAnimationView.swift; sourceTree = "<group>"; };
+		C5DFEFF51C9950A1000AA609 /* SpininngDot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpininngDot.swift; sourceTree = "<group>"; };
+		C5DFEFF61C9950A1000AA609 /* TimingFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimingFunction.swift; sourceTree = "<group>"; };
+		C5DFF0021C995437000AA609 /* Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
+		EC4D5FEC00491120EBDB1957 /* Pods-HealthPadTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthPadTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HealthPadTests/Pods-HealthPadTests.release.xcconfig"; sourceTree = "<group>"; };
+		F342B884CE9D22A6A976BFBD /* Pods-HealthPad.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthPad.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HealthPad/Pods-HealthPad.debug.xcconfig"; sourceTree = "<group>"; };
+		F81A82B29B9FD9E18D1E91D8 /* Pods-HealthPadTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthPadTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HealthPadTests/Pods-HealthPadTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +94,7 @@
 			files = (
 				C5A88EBA1C98593E00A890EB /* HealthKit.framework in Frameworks */,
 				C5A88EBD1C985A1000A890EB /* CloudKit.framework in Frameworks */,
+				76BD0CC21AD0D15F86C5ED7A /* Pods_HealthPad.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E799D598E785E01DDE195C6D /* Pods_HealthPadTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,12 +110,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2168C53281AFEE266FEAA3AF /* Pods_HealthPadUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BFF35D13D98C48A0D9D40617 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7368E6167072F20E406B16A6 /* Pods_HealthPad.framework */,
+				AAE1463A7E277645D602792F /* Pods_HealthPadTests.framework */,
+				10681C607D1523A5665DE2A8 /* Pods_HealthPadUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C5A88E7F1C98587300A890EB = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +134,8 @@
 				C5A88E9F1C98587400A890EB /* HealthPadTests */,
 				C5A88EAA1C98587400A890EB /* HealthPadUITests */,
 				C5A88E891C98587400A890EB /* Products */,
+				E296AAA05FEA58322FD1BDA8 /* Pods */,
+				BFF35D13D98C48A0D9D40617 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,16 +152,13 @@
 		C5A88E8A1C98587400A890EB /* HealthPad */ = {
 			isa = PBXGroup;
 			children = (
-				C5A88EBB1C9859FD00A890EB /* HealthPad.entitlements */,
+				C5DFEFEC1C995071000AA609 /* Stuff */,
 				C5A88E8B1C98587400A890EB /* AppDelegate.swift */,
 				C5A88E8D1C98587400A890EB /* ViewController.swift */,
+				C5DFF0021C995437000AA609 /* Loader.swift */,
 				C5A88EBE1C985D2400A890EB /* MyPlayground.playground */,
 				C5A88E8F1C98587400A890EB /* Main.storyboard */,
-				C5A88E921C98587400A890EB /* Assets.xcassets */,
 				C5A88E941C98587400A890EB /* LaunchScreen.storyboard */,
-				C5A88E971C98587400A890EB /* Info.plist */,
-				C5A88EBC1C985A1000A890EB /* CloudKit.framework */,
-				C5A88EB91C98593E00A890EB /* HealthKit.framework */,
 			);
 			path = HealthPad;
 			sourceTree = "<group>";
@@ -137,6 +181,48 @@
 			path = HealthPadUITests;
 			sourceTree = "<group>";
 		};
+		C5DFEFEC1C995071000AA609 /* Stuff */ = {
+			isa = PBXGroup;
+			children = (
+				C5DFEFED1C995082000AA609 /* Animations */,
+				C5A88EBB1C9859FD00A890EB /* HealthPad.entitlements */,
+				C5A88E921C98587400A890EB /* Assets.xcassets */,
+				C5A88E971C98587400A890EB /* Info.plist */,
+				C5A88EBC1C985A1000A890EB /* CloudKit.framework */,
+				C5A88EB91C98593E00A890EB /* HealthKit.framework */,
+			);
+			name = Stuff;
+			sourceTree = "<group>";
+		};
+		C5DFEFED1C995082000AA609 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				C5DFEFEE1C9950A1000AA609 /* DotSpinningLikeSkype.swift */,
+				C5DFEFEF1C9950A1000AA609 /* DotTrianglePath.swift */,
+				C5DFEFF01C9950A1000AA609 /* FunnyDotsA.swift */,
+				C5DFEFF11C9950A1000AA609 /* LineScale.swift */,
+				C5DFEFF21C9950A1000AA609 /* RotatingCircle.swift */,
+				C5DFEFF31C9950A1000AA609 /* RPLoadingAnimationDelegate.swift */,
+				C5DFEFF41C9950A1000AA609 /* RPLoadingAnimationView.swift */,
+				C5DFEFF51C9950A1000AA609 /* SpininngDot.swift */,
+				C5DFEFF61C9950A1000AA609 /* TimingFunction.swift */,
+			);
+			name = Animations;
+			sourceTree = "<group>";
+		};
+		E296AAA05FEA58322FD1BDA8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F342B884CE9D22A6A976BFBD /* Pods-HealthPad.debug.xcconfig */,
+				2138AFFED53D8CBD754C70EA /* Pods-HealthPad.release.xcconfig */,
+				F81A82B29B9FD9E18D1E91D8 /* Pods-HealthPadTests.debug.xcconfig */,
+				EC4D5FEC00491120EBDB1957 /* Pods-HealthPadTests.release.xcconfig */,
+				1E84D18027221E7C28D5E0ED /* Pods-HealthPadUITests.debug.xcconfig */,
+				A2A5D02130E03CC611F41819 /* Pods-HealthPadUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,9 +230,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C5A88EB01C98587400A890EB /* Build configuration list for PBXNativeTarget "HealthPad" */;
 			buildPhases = (
+				5DF26FCFAD515CCD6D649794 /* Check Pods Manifest.lock */,
 				C5A88E841C98587300A890EB /* Sources */,
 				C5A88E851C98587300A890EB /* Frameworks */,
 				C5A88E861C98587300A890EB /* Resources */,
+				2C29805366C5ABB3492682BC /* Embed Pods Frameworks */,
+				6787C4E514853CBC576AC4CC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -161,9 +250,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C5A88EB31C98587400A890EB /* Build configuration list for PBXNativeTarget "HealthPadTests" */;
 			buildPhases = (
+				B78B46CB2EB3FD9DEECE6DB0 /* Check Pods Manifest.lock */,
 				C5A88E981C98587400A890EB /* Sources */,
 				C5A88E991C98587400A890EB /* Frameworks */,
 				C5A88E9A1C98587400A890EB /* Resources */,
+				55E85E179258A33872FBCE58 /* Embed Pods Frameworks */,
+				86237C45C61C5677B7055E19 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -179,9 +271,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C5A88EB61C98587400A890EB /* Build configuration list for PBXNativeTarget "HealthPadUITests" */;
 			buildPhases = (
+				A8D2FF2A2F40EE4517B31BC2 /* Check Pods Manifest.lock */,
 				C5A88EA31C98587400A890EB /* Sources */,
 				C5A88EA41C98587400A890EB /* Frameworks */,
 				C5A88EA51C98587400A890EB /* Resources */,
+				6E2832BC09F448695E4B618E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -272,12 +366,145 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2C29805366C5ABB3492682BC /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HealthPad/Pods-HealthPad-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		55E85E179258A33872FBCE58 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HealthPadTests/Pods-HealthPadTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5DF26FCFAD515CCD6D649794 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6787C4E514853CBC576AC4CC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HealthPad/Pods-HealthPad-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6E2832BC09F448695E4B618E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HealthPadUITests/Pods-HealthPadUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		86237C45C61C5677B7055E19 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HealthPadTests/Pods-HealthPadTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A8D2FF2A2F40EE4517B31BC2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B78B46CB2EB3FD9DEECE6DB0 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C5A88E841C98587300A890EB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				C5A88E8E1C98587400A890EB /* ViewController.swift in Sources */,
+				C5DFEFF91C9950A1000AA609 /* FunnyDotsA.swift in Sources */,
+				C5DFF0031C995437000AA609 /* Loader.swift in Sources */,
+				C5DFEFFA1C9950A1000AA609 /* LineScale.swift in Sources */,
+				C5DFEFFE1C9950A1000AA609 /* SpininngDot.swift in Sources */,
+				C5DFEFFD1C9950A1000AA609 /* RPLoadingAnimationView.swift in Sources */,
+				C5DFEFF71C9950A1000AA609 /* DotSpinningLikeSkype.swift in Sources */,
+				C5DFEFFC1C9950A1000AA609 /* RPLoadingAnimationDelegate.swift in Sources */,
+				C5DFEFFF1C9950A1000AA609 /* TimingFunction.swift in Sources */,
+				C5DFEFFB1C9950A1000AA609 /* RotatingCircle.swift in Sources */,
+				C5DFEFF81C9950A1000AA609 /* DotTrianglePath.swift in Sources */,
 				C5A88E8C1C98587400A890EB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,6 +645,7 @@
 		};
 		C5A88EB11C98587400A890EB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F342B884CE9D22A6A976BFBD /* Pods-HealthPad.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HealthPad/HealthPad.entitlements;
@@ -433,6 +661,7 @@
 		};
 		C5A88EB21C98587400A890EB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2138AFFED53D8CBD754C70EA /* Pods-HealthPad.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HealthPad/HealthPad.entitlements;
@@ -448,6 +677,7 @@
 		};
 		C5A88EB41C98587400A890EB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F81A82B29B9FD9E18D1E91D8 /* Pods-HealthPadTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = HealthPadTests/Info.plist;
@@ -460,6 +690,7 @@
 		};
 		C5A88EB51C98587400A890EB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC4D5FEC00491120EBDB1957 /* Pods-HealthPadTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = HealthPadTests/Info.plist;
@@ -472,6 +703,7 @@
 		};
 		C5A88EB71C98587400A890EB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E84D18027221E7C28D5E0ED /* Pods-HealthPadUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = HealthPadUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -484,6 +716,7 @@
 		};
 		C5A88EB81C98587400A890EB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2A5D02130E03CC611F41819 /* Pods-HealthPadUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = HealthPadUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -513,6 +746,7 @@
 				C5A88EB21C98587400A890EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C5A88EB31C98587400A890EB /* Build configuration list for PBXNativeTarget "HealthPadTests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +755,7 @@
 				C5A88EB51C98587400A890EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C5A88EB61C98587400A890EB /* Build configuration list for PBXNativeTarget "HealthPadUITests" */ = {
 			isa = XCConfigurationList;
@@ -529,6 +764,7 @@
 				C5A88EB81C98587400A890EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
