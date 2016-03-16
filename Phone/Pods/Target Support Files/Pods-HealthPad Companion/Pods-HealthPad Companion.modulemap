@@ -1,0 +1,6 @@
+framework module Pods_HealthPad_Companion {
+  umbrella header "Pods-HealthPad Companion-umbrella.h"
+
+  export *
+  module * { export * }
+}

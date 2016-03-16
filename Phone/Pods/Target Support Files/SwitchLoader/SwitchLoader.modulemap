@@ -1,0 +1,6 @@
+framework module SwitchLoader {
+  umbrella header "SwitchLoader-umbrella.h"
+
+  export *
+  module * { export * }
+}
