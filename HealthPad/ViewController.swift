@@ -48,14 +48,16 @@ public class ViewController: UIViewController {
     public func readData() {
         
         // start loader
-        Loader.showLoader(self)
+        let loader = Loader.showLoader(self)
         
         let arrays: Array<[HKSampleType]> = [quantityTypes, categoryTypes, correlationTypes, workoutTypes]
         for (index1, types) in arrays.enumerate() {
             
             for (index2, type) in types.enumerate() {
                 
-                let query = HKSampleQuery(sampleType: type, predicate: nil, limit: 100, sortDescriptors: [NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)], resultsHandler: { (query, samples, error) -> Void in
+                update(loader, s: "Reading \(index2) of \(type.description)")
+                
+                let query = HKSampleQuery(sampleType: type, predicate: nil, limit: 100/*TODO*/, sortDescriptors: [NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)], resultsHandler: { (query, samples, error) -> Void in
                     
                     if let samples = samples as? [HKQuantitySample] {
                         
@@ -66,6 +68,10 @@ public class ViewController: UIViewController {
                             } else {
                                 self.data[type.description] = [sample]
                             }
+                            
+                            self.update(loader, s: "Reading \(index3) of \(type.description)")
+                            
+                            print("1: \(index1), 2: \(index2), 3: \(index3)")
                             
                             if index1 == arrays.count-1 && index2 == types.count-1 && index3 == samples.count-1 {
                                 Async.main(after: 1.0, block: { () -> Void in
@@ -81,19 +87,19 @@ public class ViewController: UIViewController {
         }
     }
     
+    func update(l:Loader, s: String) {
+        print(s)
+        Async.main { () -> Void in
+            l.label!.text = s
+        }
+    }
+    
     @IBAction func saveData(sender: AnyObject) {
         
         CKContainer.defaultContainer().accountStatusWithCompletionHandler({ (status, error) -> Void in
             if error == nil && status.rawValue == 1 {
                 
-                for (type, samples) in self.data {
-                    
-                    for (index, sample) in samples.enumerate() {
-                        
-                        print("going to upload item \(sample) nr. \(index) of type \(type)")
-                        self.uploadData(sample, index: index)
-                    }
-                }
+                self.uploadData()
                 
             } else {
                 
@@ -109,36 +115,46 @@ public class ViewController: UIViewController {
         
     }
     
-    public func uploadData(sample: HKQuantitySample, index: Int) {
+    public func uploadData() {
         
-        let s = sample.quantityType.description as NSString
-        let r = s.rangeOfString("Identifier")
-        let tipe = s.substringFromIndex(r.location + r.length)
+        // start loader
+        let loader = Loader.showLoader(self)
         
-        print("got sample: \(sample.quantity.description) of type: \(tipe)")
-        
-        // save that to the cloud
-        let record = CKRecord(recordType: tipe, recordID: CKRecordID(recordName: "\(index)"))
-        record.setObject(sample.quantity.description, forKey: "content")
-        print("attempting to save record \(record) of type \(tipe)...")
-        
+        for (type, samples) in self.data {
+            
+            for (index, sample) in samples.enumerate() {
+                
+                let s = sample.quantityType.description as NSString
+                let r = s.rangeOfString("Identifier")
+                let tipe = s.substringFromIndex(r.location + r.length)
+                
+                // save that to the cloud
+                let record = CKRecord(recordType: tipe, recordID: CKRecordID(recordName: "\(index)"))
+                record.setObject(sample.quantity.description, forKey: "content")
+                update(loader, s: "saving record \(record.description) of type \(tipe)")
+                
+                save(record, loader: loader)
+            }
+        }
+    }
+    
+    private func save(record: CKRecord, loader: Loader) {
         self.db.saveRecord(record, completionHandler: { (newrecord, error) -> Void in
             if let e = error {
-                print("there was an error: \(e) for record: \(record)\n")
+                self.update(loader, s: "there was an error: \(e.description) for record: \(record.description)")
                 
                 if let retryAfterValue = e.userInfo[CKErrorRetryAfterKey] as? NSTimeInterval {
                     
                     Async.background(after: retryAfterValue, block: { () -> Void in
-                        self.uploadData(sample, index: index)
+                        self.save(record, loader: loader)
                     })
                     
                 }
                 
             } else {
-                print("saved record to cloud: \(newrecord!.description)")
+                self.update(loader, s: "saved record to cloud: \(newrecord!.description)")
             }
         })
-        
     }
     
     public func dataTypes() -> Set<HKObjectType> {
