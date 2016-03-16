@@ -12,6 +12,16 @@ import ActionKit
 import Async
 import Charts
 
-class DetailViewController: UIViewController {
+public class DetailViewController: UIViewController {
+    
+    public override func viewDidLoad() {
+        
+    }
+    
+    @IBAction func syncData(sender: AnyObject) {
+    
+        
+    
+    }
     
 }

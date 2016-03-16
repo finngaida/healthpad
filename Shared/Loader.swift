@@ -12,12 +12,12 @@ import SwitchLoader
 import Async
 import ActionKit
 
-class Loader: UIView {
+public class Loader: UIView {
     
-    let blur = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.Light))
-    var label:UILabel?
+    public let blur = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffectStyle.Light))
+    public var label:UILabel?
     
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = UIColor.whiteColor()
         self.layer.masksToBounds = true
@@ -35,11 +35,11 @@ class Loader: UIView {
         blur.contentView.addSubview(label!)
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    class func showLoader(onVC: UIViewController) -> Loader {
+    public class func showLoader(onVC: UIViewController) -> Loader {
         
         let bg = UIView(frame: onVC.view.frame)
         bg.backgroundColor = UIColor.blackColor()
@@ -77,7 +77,7 @@ class Loader: UIView {
         
     }
     
-    class func hideLoader(onVC: UIViewController) {
+    public class func hideLoader(onVC: UIViewController) {
         
         onVC.view.subviews.forEach { (loader) -> () in
             if loader.tag == 456 {

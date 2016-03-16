@@ -3,12 +3,13 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="Fqh-78-LfD">
             <objects>
-                <viewController id="tKh-E8-jn1" sceneMemberID="viewController">
+                <viewController id="tKh-E8-jn1" customClass="DetailViewController" customModule="HealthPad" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Niq-bb-6ad"/>
                         <viewControllerLayoutGuide type="bottom" id="PfZ-IH-YhZ"/>
@@ -16,7 +17,47 @@
                     <view key="view" contentMode="scaleToFill" id="sFa-i3-Y3P">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JzN-SU-7ax">
+                                <rect key="frame" x="40" y="81" width="520" height="61"/>
+                                <string key="text">HealthPad has to download your health data from iCloud once, before you can use it. Click the button below when you have synced your data from the phone.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZRQ-TG-Nkt">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="t5j-v5-Ji2"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Detail" id="kej-iV-vim"/>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n9y-Gm-MeY">
+                                <rect key="frame" x="214" y="200" width="172" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="172" id="Gsg-hz-inK"/>
+                                    <constraint firstAttribute="height" constant="58" id="z2G-7D-WJM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                <state key="normal" title="Sync Data"/>
+                                <connections>
+                                    <action selector="syncData:" destination="tKh-E8-jn1" eventType="touchUpInside" id="llS-u8-lzc"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="JzN-SU-7ax" secondAttribute="trailing" constant="20" id="7vS-ad-y5z"/>
+                            <constraint firstItem="n9y-Gm-MeY" firstAttribute="top" secondItem="JzN-SU-7ax" secondAttribute="bottom" constant="58" id="C9l-vE-wdK"/>
+                            <constraint firstItem="n9y-Gm-MeY" firstAttribute="centerX" secondItem="sFa-i3-Y3P" secondAttribute="centerX" id="F33-eK-bI2"/>
+                            <constraint firstItem="ZRQ-TG-Nkt" firstAttribute="leading" secondItem="sFa-i3-Y3P" secondAttribute="leadingMargin" constant="-20" id="dwb-aa-7Q4"/>
+                            <constraint firstItem="ZRQ-TG-Nkt" firstAttribute="top" secondItem="sFa-i3-Y3P" secondAttribute="topMargin" id="gMn-pv-8wN"/>
+                            <constraint firstItem="JzN-SU-7ax" firstAttribute="leading" secondItem="sFa-i3-Y3P" secondAttribute="leadingMargin" constant="20" id="ltA-FP-D9L"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZRQ-TG-Nkt" secondAttribute="trailing" constant="-20" id="oJx-uZ-vdr"/>
+                            <constraint firstItem="JzN-SU-7ax" firstAttribute="top" secondItem="ZRQ-TG-Nkt" secondAttribute="bottom" constant="37" id="yqE-p1-WSK"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JUW-Ir-kqt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -26,7 +67,7 @@
         <!--Root View Controller-->
         <scene sceneID="GtC-0b-VbV">
             <objects>
-                <tableViewController clearsSelectionOnViewWillAppear="NO" id="F8E-JQ-vsn" sceneMemberID="viewController">
+                <tableViewController clearsSelectionOnViewWillAppear="NO" id="F8E-JQ-vsn" customClass="MasterViewController" customModule="HealthPad" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="rr0-nd-QkL">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

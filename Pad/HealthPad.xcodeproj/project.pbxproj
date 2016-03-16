@@ -17,6 +17,8 @@
 		C53DB17F1C99913D0054ED49 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C53DB17E1C99913D0054ED49 /* CloudKit.framework */; };
 		C53DB1811C9992350054ED49 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53DB1801C9992350054ED49 /* MasterViewController.swift */; };
 		C53DB1831C9992410054ED49 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53DB1821C9992410054ED49 /* DetailViewController.swift */; };
+		C53DB19F1C9996830054ED49 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53DB19D1C9996830054ED49 /* Helper.swift */; };
+		C53DB1A01C9996830054ED49 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53DB19E1C9996830054ED49 /* Loader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		C53DB17E1C99913D0054ED49 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		C53DB1801C9992350054ED49 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
 		C53DB1821C9992410054ED49 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		C53DB19D1C9996830054ED49 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Helper.swift; path = ../../Shared/Helper.swift; sourceTree = "<group>"; };
+		C53DB19E1C9996830054ED49 /* Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Loader.swift; path = ../../Shared/Loader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +136,8 @@
 				C53DB14D1C998F250054ED49 /* AppDelegate.swift */,
 				C53DB1801C9992350054ED49 /* MasterViewController.swift */,
 				C53DB1821C9992410054ED49 /* DetailViewController.swift */,
+				C53DB19D1C9996830054ED49 /* Helper.swift */,
+				C53DB19E1C9996830054ED49 /* Loader.swift */,
 				C53DB1531C998F250054ED49 /* Main.storyboard */,
 				C53DB1561C998F250054ED49 /* Assets.xcassets */,
 				C53DB1581C998F250054ED49 /* LaunchScreen.storyboard */,
@@ -349,6 +355,8 @@
 				C53DB1831C9992410054ED49 /* DetailViewController.swift in Sources */,
 				C53DB1811C9992350054ED49 /* MasterViewController.swift in Sources */,
 				C53DB14E1C998F250054ED49 /* AppDelegate.swift in Sources */,
+				C53DB19F1C9996830054ED49 /* Helper.swift in Sources */,
+				C53DB1A01C9996830054ED49 /* Loader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
