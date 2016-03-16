@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'C1926A6C029BF5AB0AE4D6B6C7BE0D07'
-               BlueprintName = 'Pods-HealthPad'
+               BlueprintIdentifier = 'D1DC35DB2C695031A72543555FB23729'
+               BlueprintName = 'AsyncSwift'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Pods-HealthPad.framework'>
+               BuildableName = 'AsyncSwift.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

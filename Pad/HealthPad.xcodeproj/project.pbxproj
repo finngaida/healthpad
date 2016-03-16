@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		8E055D63BEC8A3C4913A644B /* Pods_HealthPad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64BDD96B4C0163A30607D050 /* Pods_HealthPad.framework */; };
 		C53DB14E1C998F250054ED49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53DB14D1C998F250054ED49 /* AppDelegate.swift */; };
-		C53DB1501C998F250054ED49 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53DB14F1C998F250054ED49 /* FirstViewController.swift */; };
-		C53DB1521C998F250054ED49 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53DB1511C998F250054ED49 /* SecondViewController.swift */; };
 		C53DB1551C998F250054ED49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C53DB1531C998F250054ED49 /* Main.storyboard */; };
 		C53DB1571C998F250054ED49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C53DB1561C998F250054ED49 /* Assets.xcassets */; };
 		C53DB15A1C998F250054ED49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C53DB1581C998F250054ED49 /* LaunchScreen.storyboard */; };
 		C53DB1651C998F250054ED49 /* HealthPadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53DB1641C998F250054ED49 /* HealthPadTests.swift */; };
 		C53DB1701C998F260054ED49 /* HealthPadUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53DB16F1C998F260054ED49 /* HealthPadUITests.swift */; };
+		C53DB17F1C99913D0054ED49 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C53DB17E1C99913D0054ED49 /* CloudKit.framework */; };
+		C53DB1811C9992350054ED49 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53DB1801C9992350054ED49 /* MasterViewController.swift */; };
+		C53DB1831C9992410054ED49 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53DB1821C9992410054ED49 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,8 +42,6 @@
 		7D22D27ED3FF22BB4E1C1D48 /* Pods-HealthPad.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthPad.release.xcconfig"; path = "Pods/Target Support Files/Pods-HealthPad/Pods-HealthPad.release.xcconfig"; sourceTree = "<group>"; };
 		C53DB14A1C998F250054ED49 /* HealthPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C53DB14D1C998F250054ED49 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C53DB14F1C998F250054ED49 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		C53DB1511C998F250054ED49 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		C53DB1541C998F250054ED49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C53DB1561C998F250054ED49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C53DB1591C998F250054ED49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,6 +52,10 @@
 		C53DB16B1C998F260054ED49 /* HealthPadUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HealthPadUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C53DB16F1C998F260054ED49 /* HealthPadUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthPadUITests.swift; sourceTree = "<group>"; };
 		C53DB1711C998F260054ED49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C53DB17D1C9991390054ED49 /* HealthPad.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HealthPad.entitlements; sourceTree = "<group>"; };
+		C53DB17E1C99913D0054ED49 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		C53DB1801C9992350054ED49 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		C53DB1821C9992410054ED49 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +64,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E055D63BEC8A3C4913A644B /* Pods_HealthPad.framework in Frameworks */,
+				C53DB17F1C99913D0054ED49 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +97,7 @@
 		C520F1FB7A8F115EABDC0AC8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C53DB17E1C99913D0054ED49 /* CloudKit.framework */,
 				64BDD96B4C0163A30607D050 /* Pods_HealthPad.framework */,
 			);
 			name = Frameworks;
@@ -123,9 +128,10 @@
 		C53DB14C1C998F250054ED49 /* HealthPad */ = {
 			isa = PBXGroup;
 			children = (
+				C53DB17D1C9991390054ED49 /* HealthPad.entitlements */,
 				C53DB14D1C998F250054ED49 /* AppDelegate.swift */,
-				C53DB14F1C998F250054ED49 /* FirstViewController.swift */,
-				C53DB1511C998F250054ED49 /* SecondViewController.swift */,
+				C53DB1801C9992350054ED49 /* MasterViewController.swift */,
+				C53DB1821C9992410054ED49 /* DetailViewController.swift */,
 				C53DB1531C998F250054ED49 /* Main.storyboard */,
 				C53DB1561C998F250054ED49 /* Assets.xcassets */,
 				C53DB1581C998F250054ED49 /* LaunchScreen.storyboard */,
@@ -223,6 +229,12 @@
 				TargetAttributes = {
 					C53DB1491C998F250054ED49 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = PTHJ3DNH6P;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					C53DB15F1C998F250054ED49 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -334,9 +346,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C53DB1521C998F250054ED49 /* SecondViewController.swift in Sources */,
+				C53DB1831C9992410054ED49 /* DetailViewController.swift in Sources */,
+				C53DB1811C9992350054ED49 /* MasterViewController.swift in Sources */,
 				C53DB14E1C998F250054ED49 /* AppDelegate.swift in Sources */,
-				C53DB1501C998F250054ED49 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +491,7 @@
 			baseConfigurationReference = 17E9B21814EF772D8C3CCE8D /* Pods-HealthPad.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HealthPad/HealthPad.entitlements;
 				INFOPLIST_FILE = HealthPad/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.finngaida.HealthPad;
@@ -491,6 +504,7 @@
 			baseConfigurationReference = 7D22D27ED3FF22BB4E1C1D48 /* Pods-HealthPad.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HealthPad/HealthPad.entitlements;
 				INFOPLIST_FILE = HealthPad/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.finngaida.HealthPad;

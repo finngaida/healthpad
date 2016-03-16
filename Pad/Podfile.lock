@@ -1,14 +1,20 @@
 PODS:
+  - ActionKit (1.0)
+  - AsyncSwift (1.7.2)
   - Charts (2.2.3):
     - Charts/Core (= 2.2.3)
   - Charts/Core (2.2.3)
 
 DEPENDENCIES:
+  - ActionKit
+  - AsyncSwift
   - Charts
 
 SPEC CHECKSUMS:
+  ActionKit: 6c45e3d92252dd34b18e7c3d8e9f811ee52558b1
+  AsyncSwift: 46a78bceb11f0e5bb52747f740d9692ec78d2d7c
   Charts: f54267bb3f0f0e74520c6f248517cf5074dfd6fc
 
-PODFILE CHECKSUM: 71aa4355a3d34ed7c6f38f6e7934d7c4f5972b05
+PODFILE CHECKSUM: 2fa8d321150cd5191dc219947fa351db3065c539
 
 COCOAPODS: 1.0.0.beta.3

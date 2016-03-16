@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'C1926A6C029BF5AB0AE4D6B6C7BE0D07'
-               BlueprintName = 'Pods-HealthPad'
+               BlueprintIdentifier = '39CA6F8904F79A5A148722019F74C904'
+               BlueprintName = 'ActionKit'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Pods-HealthPad.framework'>
+               BuildableName = 'ActionKit.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

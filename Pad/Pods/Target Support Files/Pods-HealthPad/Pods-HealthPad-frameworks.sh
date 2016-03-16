@@ -84,8 +84,12 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-HealthPad/ActionKit.framework"
+  install_framework "Pods-HealthPad/Async.framework"
   install_framework "Pods-HealthPad/Charts.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-HealthPad/ActionKit.framework"
+  install_framework "Pods-HealthPad/Async.framework"
   install_framework "Pods-HealthPad/Charts.framework"
 fi
