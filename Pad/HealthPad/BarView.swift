@@ -12,7 +12,7 @@ import GradientView
 
 public class BarView: UIView, ChartViewDelegate {
     
-    public var chart: LineChartView?
+    public var chart: BarChartView?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -20,7 +20,7 @@ public class BarView: UIView, ChartViewDelegate {
         self.layer.masksToBounds = true
         self.layer.cornerRadius = 10
         
-        chart = LineChartView(frame: CGRectMake(25, 85, self.frame.width - 40, self.frame.height - 110))
+        chart = BarChartView(frame: CGRectMake(25, 85, self.frame.width - 40, self.frame.height - 110))
         chart?.delegate = self
         chart?.setScaleEnabled(false)
         chart?.dragEnabled = false
@@ -79,24 +79,27 @@ public class BarView: UIView, ChartViewDelegate {
     }
     
     public func setData(data:Array<HealthObject>) {
-        let set = LineChartDataSet(yVals: data.enumerate().map({ChartDataEntry(value: Double($1.value) ?? 0, xIndex: $0)}), label: "")
-        set.lineWidth = 2
-        set.circleRadius = 5
-        set.setCircleColor(UIColor.whiteColor())
-        set.circleHoleColor = UIColor.orangeColor()
-        set.drawCircleHoleEnabled = true
-        set.setColor(UIColor.whiteColor())
+        let set = BarChartDataSet(yVals: data.enumerate().map({BarChartDataEntry(value: Double($1.value) ?? 0, xIndex: $0)}), label: "")
+//        set.lineWidth = 2
+//        set.circleRadius = 5
+//        set.setCircleColor(UIColor.whiteColor())
+//        set.circleHoleColor = UIColor.orangeColor()
+//        set.drawCircleHoleEnabled = true
+//        set.setColor(UIColor.whiteColor())
         set.drawValuesEnabled = false
         set.highlightEnabled = false
-        set.drawCubicEnabled = false
-        set.drawFilledEnabled = true
-        set.drawCirclesEnabled = true
-        set.fillAlpha = 1.0
-        set.fill = ChartFill(linearGradient: CGGradientCreateWithColors(nil, [UIColor(white: 1.0, alpha: 0.0).CGColor, UIColor(white: 1.0, alpha: 0.4).CGColor], nil)!, angle: 90.0)
+        set.colors = [UIColor(white: 1.0, alpha: 1.0)]
+        set.barShadowColor = UIColor(white: 1.0, alpha: 1.0)
+//        set.barSpace = -10.0
+//        set.drawCubicEnabled = false
+//        set.drawFilledEnabled = true
+//        set.drawCirclesEnabled = true
+//        set.fillAlpha = 1.0
+//        set.fill = ChartFill(linearGradient: CGGradientCreateWithColors(nil, [UIColor(white: 1.0, alpha: 0.0).CGColor, UIColor(white: 1.0, alpha: 0.4).CGColor], nil)!, angle: 90.0)
         
         var xVals = (1...data.count).map({"\($0)"})
         xVals[0] = "Mar \(xVals[0])"   // TODO Real month
-        chart?.data = LineChartData(xVals: xVals, dataSet: set)
+        chart?.data = BarChartData(xVals: xVals, dataSet: set)
     }
     
     // MARK: Chart delegate

@@ -69,7 +69,7 @@ public class BarChartRenderer: ChartDataRendererBase
         let barSpaceHalf = barSpace / 2.0
         let containsStacks = dataSet.isStacked
         let isInverted = dataProvider.isInverted(dataSet.axisDependency)
-        let barWidth: CGFloat = 0.5
+        let barWidth: CGFloat = 0.13
         let phaseY = animator.phaseY
         var barRect = CGRect()
         var barShadow = CGRect()
@@ -135,7 +135,22 @@ public class BarChartRenderer: ChartDataRendererBase
                 
                 // Set the color for the currently drawn value. If the index is out of bounds, reuse colors.
                 CGContextSetFillColorWithColor(context, dataSet.colorAt(j).CGColor)
-                CGContextFillRect(context, barRect)
+                
+                
+                // Create a gradient from white to red
+                let colorSpace = CGColorSpaceCreateDeviceRGB()
+                
+                let gradient = CGGradientCreateWithColors(colorSpace, [UIColor(white: 1.0, alpha: 0.8).CGColor, UIColor(white: 1.0, alpha: 0.4).CGColor], [0, 1.0])
+                
+                let startPoint = CGPoint(x: 0, y: 0)
+                let endPoint = CGPoint(x: CGRectGetWidth(barRect), y: CGRectGetHeight(barRect))
+                
+                //                CGContextDrawLinearGradient(context, gradient, startPoint, endPoint, [])
+                
+                let path = UIBezierPath(roundedRect: barRect, cornerRadius: CGRectGetWidth(barRect) / 2)
+                CGContextAddPath(context, path.CGPath)
+                CGContextSetStrokeColorWithColor(context, UIColor.whiteColor().CGColor)
+                CGContextDrawPath(context, CGPathDrawingMode.FillStroke)
             }
             else
             {
@@ -276,7 +291,7 @@ public class BarChartRenderer: ChartDataRendererBase
             var dataSets = barData.dataSets
             
             let drawValueAboveBar = dataProvider.isDrawValueAboveBarEnabled
-
+            
             var posOffset: CGFloat
             var negOffset: CGFloat
             
@@ -340,7 +355,7 @@ public class BarChartRenderer: ChartDataRendererBase
                         }
                         
                         let val = e.value
-
+                        
                         drawValue(context: context,
                             value: formatter.stringFromNumber(val)!,
                             xPos: valuePoint.x,
@@ -505,7 +520,7 @@ public class BarChartRenderer: ChartDataRendererBase
                 
                 let groupspace = barData.groupSpace
                 let isStack = h.stackIndex < 0 ? false : true
-
+                
                 // calculate the correct x-position
                 let x = CGFloat(index * setCount + dataSetIndex) + groupspace / 2.0 + groupspace * CGFloat(index)
                 
@@ -522,7 +537,7 @@ public class BarChartRenderer: ChartDataRendererBase
                     y1 = e.value
                     y2 = 0.0
                 }
-
+                
                 prepareBarHighlight(x: x, y1: y1, y2: y2, barspacehalf: barspaceHalf, trans: trans, rect: &barRect)
                 
                 CGContextFillRect(context, barRect)

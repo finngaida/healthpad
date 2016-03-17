@@ -72,7 +72,7 @@ public class ChartViewBase: NSUIView, ChartDataProvider, ChartAnimatorDelegate
     
     /// font object for drawing the information text when there are no values in the chart
     public var infoFont: NSUIFont! = NSUIFont(name: "HelveticaNeue", size: 12.0)
-    public var infoTextColor: NSUIColor! = NSUIColor(red: 247.0/255.0, green: 189.0/255.0, blue: 51.0/255.0, alpha: 1.0) // orange
+    public var infoTextColor: NSUIColor! = NSUIColor.whiteColor() // orange
     
     /// description text that appears in the bottom right corner of the chart
     public var descriptionText = "Description"

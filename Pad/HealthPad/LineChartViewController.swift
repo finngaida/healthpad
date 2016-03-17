@@ -13,6 +13,7 @@ import GradientView
 public class LineChartViewController: UIViewController, ChartViewDelegate {
     
     public var lineView:LineView?
+    public var barView:BarView?
     public var data:[HealthObject]?
     
     public override func viewDidLoad() {
@@ -20,8 +21,8 @@ public class LineChartViewController: UIViewController, ChartViewDelegate {
         lineView = LineView(frame: CGRectMake(50, 100, 500, 280))
         self.view.addSubview(lineView!)
         
-        let barView = BarView(frame: CGRectMake(50, 400, 500, 280))
-        self.view.addSubview(barView)
+        barView = BarView(frame: CGRectMake(50, 400, 500, 280))
+        self.view.addSubview(barView!)
         
         setupData()
     }
@@ -30,6 +31,7 @@ public class LineChartViewController: UIViewController, ChartViewDelegate {
         
         guard let data = data else {return}
         lineView!.setData(data)
+        barView!.setData(data)
         
     }
     
