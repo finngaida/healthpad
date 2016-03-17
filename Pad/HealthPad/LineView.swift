@@ -13,12 +13,45 @@ import GradientView
 public class LineView: UIView, ChartViewDelegate {
     
     public var chart: LineChartView?
+    public var color: FGColor? {
+        didSet {
+            self.reload()
+        }
+    }
+    
+    public var titleText: String? {
+        didSet {
+            self.reload()
+        }
+    }
+    
+    public var averageText: String? {
+        didSet {
+            self.reload()
+        }
+    }
+    
+    public var todayText: String? {
+        didSet {
+            self.reload()
+        }
+    }
+    
+    public var dateText: String? {
+        didSet {
+            self.reload()
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         self.layer.masksToBounds = true
         self.layer.cornerRadius = 10
+        
+    }
+    
+    public func reload() {
         
         chart = LineChartView(frame: CGRectMake(25, 85, self.frame.width - 40, self.frame.height - 110))
         chart?.delegate = self
@@ -37,7 +70,7 @@ public class LineView: UIView, ChartViewDelegate {
         chart?.backgroundColor = UIColor.clearColor()
         chart?.layer.masksToBounds
         chart?.layer.cornerRadius = 10
-        self.addSubview(Helper.gradientForColor(CGRectMake(0, 0, self.frame.width, self.frame.height), color: .Orange))
+        self.addSubview(Helper.gradientForColor(CGRectMake(0, 0, self.frame.width, self.frame.height), color: self.color!))
         self.addSubview(chart!)
         
         let average = ChartLimitLine(limit: 12.0)
@@ -49,27 +82,27 @@ public class LineView: UIView, ChartViewDelegate {
         let titleLabel = UILabel(frame: CGRectMake(20, 10, self.frame.width / 2 - 30, 30))
         titleLabel.textColor = UIColor.whiteColor()
         titleLabel.font = UIFont(name: "HelveticaNeue", size: 25)
-        titleLabel.text = "Steps"
+        titleLabel.text = self.titleText ?? "Steps"
         self.addSubview(titleLabel)
         
         let averageLabel = UILabel(frame: CGRectMake(20, 40, self.frame.width / 2 - 30, 20))
         averageLabel.textColor = UIColor(white: 1.0, alpha: 0.6)
         averageLabel.font = UIFont(name: "HelveticaNeue", size: 15)
-        averageLabel.text = "Daily average: 4,631"
+        averageLabel.text = self.averageText ?? "Daily average: 4,631"
         self.addSubview(averageLabel)
         
         let todayLabel = UILabel(frame: CGRectMake(self.frame.width / 2 + 10, 10, self.frame.width / 2 - 30, 30))
         todayLabel.textColor = UIColor.whiteColor()
         todayLabel.textAlignment = .Right
         todayLabel.font = UIFont(name: "HelveticaNeue", size: 25)
-        todayLabel.text = "1,261 steps"
+        todayLabel.text = self.todayText ?? "1,261 steps"
         self.addSubview(todayLabel)
         
         let dateLabel = UILabel(frame: CGRectMake(self.frame.width / 2 + 10, 40, self.frame.width / 2 - 30, 20))
         dateLabel.textColor = UIColor(white: 1.0, alpha: 0.6)
         dateLabel.textAlignment = .Right
         dateLabel.font = UIFont(name: "HelveticaNeue", size: 15)
-        dateLabel.text = "Today, 8:18"
+        dateLabel.text = self.dateText ?? "Today, 8:18"
         self.addSubview(dateLabel)
         
         let separator = UIView(frame: CGRectMake(20, 65, self.frame.width - 40, 1))

@@ -4,34 +4,20 @@ PODS:
   - Charts (2.2.3):
     - Charts/Core (= 2.2.3)
   - Charts/Core (2.2.3)
-  - dyci (0.1.5.6):
-    - dyci/Injections (= 0.1.5.6)
-  - dyci/Injections (0.1.5.6)
   - GradientView (2.1.0)
 
 DEPENDENCIES:
   - ActionKit
   - AsyncSwift
   - Charts
-  - dyci (from `https://github.com/DyCI/dyci-main.git`)
   - GradientView
-
-EXTERNAL SOURCES:
-  dyci:
-    :git: https://github.com/DyCI/dyci-main.git
-
-CHECKOUT OPTIONS:
-  dyci:
-    :commit: fa8a47d7913e977c9150962ca0260cc629d0b4bc
-    :git: https://github.com/DyCI/dyci-main.git
 
 SPEC CHECKSUMS:
   ActionKit: 6c45e3d92252dd34b18e7c3d8e9f811ee52558b1
   AsyncSwift: 46a78bceb11f0e5bb52747f740d9692ec78d2d7c
   Charts: f54267bb3f0f0e74520c6f248517cf5074dfd6fc
-  dyci: 099c2e6dc98abb8f21b370cabbf1443ff700608a
   GradientView: 4a961b8e9e1787beaf6880b9fc2dd08c6345533d
 
-PODFILE CHECKSUM: 509745321c80382619219ca55b0a6e51e216b8ef
+PODFILE CHECKSUM: 46c1be1a73e0b1c5d28fc9bb60d52bc68266feb8
 
 COCOAPODS: 1.0.0.beta.3

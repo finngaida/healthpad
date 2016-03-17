@@ -13,12 +13,45 @@ import GradientView
 public class BarView: UIView, ChartViewDelegate {
     
     public var chart: BarChartView?
+    public var color: FGColor? {
+        didSet {
+            self.reload()
+        }
+    }
+    
+    public var titleText: String? {
+        didSet {
+            self.reload()
+        }
+    }
+    
+    public var averageText: String? {
+        didSet {
+            self.reload()
+        }
+    }
+    
+    public var todayText: String? {
+        didSet {
+            self.reload()
+        }
+    }
+    
+    public var dateText: String? {
+        didSet {
+            self.reload()
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         self.layer.masksToBounds = true
         self.layer.cornerRadius = 10
+        
+    }
+    
+    public func reload() {
         
         chart = BarChartView(frame: CGRectMake(25, 85, self.frame.width - 40, self.frame.height - 110))
         chart?.delegate = self
@@ -37,7 +70,7 @@ public class BarView: UIView, ChartViewDelegate {
         chart?.backgroundColor = UIColor.clearColor()
         chart?.layer.masksToBounds
         chart?.layer.cornerRadius = 10
-        self.addSubview(Helper.gradientForColor(CGRectMake(0, 0, self.frame.width, self.frame.height), color: .Purple))
+        self.addSubview(Helper.gradientForColor(CGRectMake(0, 0, self.frame.width, self.frame.height), color: self.color!))
         self.addSubview(chart!)
         
         let average = ChartLimitLine(limit: 12.0)
@@ -49,27 +82,27 @@ public class BarView: UIView, ChartViewDelegate {
         let titleLabel = UILabel(frame: CGRectMake(20, 10, self.frame.width / 2 - 30, 30))
         titleLabel.textColor = UIColor.whiteColor()
         titleLabel.font = UIFont(name: "HelveticaNeue", size: 25)
-        titleLabel.text = "Sleep Analysis"
+        titleLabel.text = self.titleText ?? "Sleep Analysis"
         self.addSubview(titleLabel)
         
         let averageLabel = UILabel(frame: CGRectMake(20, 40, self.frame.width / 2 - 30, 20))
         averageLabel.textColor = UIColor(white: 1.0, alpha: 0.6)
         averageLabel.font = UIFont(name: "HelveticaNeue", size: 15)
-        averageLabel.text = "Daily average: 7h 33m"
+        averageLabel.text = self.averageText ?? "Daily average: 7h 33m"
         self.addSubview(averageLabel)
         
         let todayLabel = UILabel(frame: CGRectMake(self.frame.width / 2 + 10, 10, self.frame.width / 2 - 30, 30))
         todayLabel.textColor = UIColor.whiteColor()
         todayLabel.textAlignment = .Right
         todayLabel.font = UIFont(name: "HelveticaNeue", size: 25)
-        todayLabel.text = "7h 22m"
+        todayLabel.text = self.todayText ?? "7h 22m"
         self.addSubview(todayLabel)
         
         let dateLabel = UILabel(frame: CGRectMake(self.frame.width / 2 + 10, 40, self.frame.width / 2 - 30, 20))
         dateLabel.textColor = UIColor(white: 1.0, alpha: 0.6)
         dateLabel.textAlignment = .Right
         dateLabel.font = UIFont(name: "HelveticaNeue", size: 15)
-        dateLabel.text = "Yesterday, 6:24 AM"
+        dateLabel.text = self.dateText ?? "Yesterday, 6:24 AM"
         self.addSubview(dateLabel)
         
         let separator = UIView(frame: CGRectMake(20, 65, self.frame.width - 40, 1))
@@ -88,8 +121,8 @@ public class BarView: UIView, ChartViewDelegate {
 //        set.setColor(UIColor.whiteColor())
         set.drawValuesEnabled = false
         set.highlightEnabled = false
-        set.colors = [UIColor(white: 1.0, alpha: 1.0)]
-        set.barShadowColor = UIColor(white: 1.0, alpha: 1.0)
+        set.colors = [UIColor(white: 1.0, alpha: 0.5)]
+//        set.barShadowColor = UIColor(white: 1.0, alpha: 1.0)
 //        set.barSpace = -10.0
 //        set.drawCubicEnabled = false
 //        set.drawFilledEnabled = true

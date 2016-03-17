@@ -12,17 +12,21 @@ import GradientView
 
 public class LineChartViewController: UIViewController, ChartViewDelegate {
     
-    public var lineView:LineView?
-    public var barView:BarView?
+    public var stepsView:StepsView?
+    public var sleepView:SleepView?
+    public var weightView:WeightView?
     public var data:[HealthObject]?
     
     public override func viewDidLoad() {
         
-        lineView = LineView(frame: CGRectMake(50, 100, 500, 280))
-        self.view.addSubview(lineView!)
+        stepsView = StepsView(frame: CGRectMake(0, 100, 500, 280))
+        self.view.addSubview(stepsView!)
         
-        barView = BarView(frame: CGRectMake(50, 400, 500, 280))
-        self.view.addSubview(barView!)
+        sleepView = SleepView(frame: CGRectMake(50, 400, 500, 280))
+        self.view.addSubview(sleepView!)
+        
+        weightView = WeightView(frame: CGRectMake(50, 700, 500, 280))
+        self.view.addSubview(weightView!)
         
         setupData()
     }
@@ -30,8 +34,9 @@ public class LineChartViewController: UIViewController, ChartViewDelegate {
     public func setupData() {
         
         guard let data = data else {return}
-        lineView!.setData(data)
-        barView!.setData(data)
+        stepsView!.setData(data)
+        sleepView!.setData(data)
+        weightView!.setData(data)
         
     }
     

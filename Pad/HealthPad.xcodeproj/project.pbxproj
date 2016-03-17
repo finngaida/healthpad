@@ -32,6 +32,9 @@
 		C53DB1BC1C99BD9E0054ED49 /* LineChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53DB1BB1C99BD9E0054ED49 /* LineChartViewController.swift */; };
 		C53DB1BE1C99C5B00054ED49 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53DB1BD1C99C5B00054ED49 /* SplitViewController.swift */; };
 		C5AA843D1C9A1337004CA908 /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AA843C1C9A1337004CA908 /* BarView.swift */; };
+		C5AA84421C9B007A004CA908 /* StepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AA84411C9B007A004CA908 /* StepsView.swift */; };
+		C5AA84441C9B057C004CA908 /* WeightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AA84431C9B057C004CA908 /* WeightView.swift */; };
+		C5AA84461C9B0953004CA908 /* SleepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AA84451C9B0953004CA908 /* SleepView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +89,9 @@
 		C53DB1BB1C99BD9E0054ED49 /* LineChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChartViewController.swift; sourceTree = "<group>"; };
 		C53DB1BD1C99C5B00054ED49 /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		C5AA843C1C9A1337004CA908 /* BarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
+		C5AA84411C9B007A004CA908 /* StepsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepsView.swift; sourceTree = "<group>"; };
+		C5AA84431C9B057C004CA908 /* WeightView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightView.swift; sourceTree = "<group>"; };
+		C5AA84451C9B0953004CA908 /* SleepView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SleepView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +172,9 @@
 				C53DB1821C9992410054ED49 /* DetailViewController.swift */,
 				C53DB1BB1C99BD9E0054ED49 /* LineChartViewController.swift */,
 				C53DB19D1C9996830054ED49 /* Helper.swift */,
+				C5AA84411C9B007A004CA908 /* StepsView.swift */,
+				C5AA84431C9B057C004CA908 /* WeightView.swift */,
+				C5AA84451C9B0953004CA908 /* SleepView.swift */,
 				C511AB0E1C99FD6800A7D3C0 /* LineView.swift */,
 				C5AA843C1C9A1337004CA908 /* BarView.swift */,
 				C53DB19E1C9996830054ED49 /* Loader.swift */,
@@ -404,11 +413,14 @@
 				C53DB1AC1C99A0C70054ED49 /* DotTrianglePath.swift in Sources */,
 				C53DB1AF1C99A0C70054ED49 /* RotatingCircle.swift in Sources */,
 				C53DB1831C9992410054ED49 /* DetailViewController.swift in Sources */,
+				C5AA84421C9B007A004CA908 /* StepsView.swift in Sources */,
 				C53DB1AB1C99A0C70054ED49 /* DotSpinningLikeSkype.swift in Sources */,
 				C53DB1BC1C99BD9E0054ED49 /* LineChartViewController.swift in Sources */,
 				C53DB1811C9992350054ED49 /* MasterViewController.swift in Sources */,
+				C5AA84461C9B0953004CA908 /* SleepView.swift in Sources */,
 				C53DB14E1C998F250054ED49 /* AppDelegate.swift in Sources */,
 				C53DB1B11C99A0C70054ED49 /* RPLoadingAnimationView.swift in Sources */,
+				C5AA84441C9B057C004CA908 /* WeightView.swift in Sources */,
 				C53DB1B31C99A0C70054ED49 /* TimingFunction.swift in Sources */,
 				C511AB0F1C99FD6800A7D3C0 /* LineView.swift in Sources */,
 				C53DB1AE1C99A0C70054ED49 /* LineScale.swift in Sources */,

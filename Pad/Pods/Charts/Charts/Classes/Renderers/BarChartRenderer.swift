@@ -138,18 +138,18 @@ public class BarChartRenderer: ChartDataRendererBase
                 
                 
                 // Create a gradient from white to red
-                let colorSpace = CGColorSpaceCreateDeviceRGB()
-                
-                let gradient = CGGradientCreateWithColors(colorSpace, [UIColor(white: 1.0, alpha: 0.8).CGColor, UIColor(white: 1.0, alpha: 0.4).CGColor], [0, 1.0])
-                
-                let startPoint = CGPoint(x: 0, y: 0)
-                let endPoint = CGPoint(x: CGRectGetWidth(barRect), y: CGRectGetHeight(barRect))
-                
+                //                let colorSpace = CGColorSpaceCreateDeviceRGB()
+                //                
+                //                let gradient = CGGradientCreateWithColors(colorSpace, [UIColor(white: 1.0, alpha: 0.8).CGColor, UIColor(white: 1.0, alpha: 0.4).CGColor], [0, 1.0])
+                //                
+                //                let startPoint = CGPoint(x: 0, y: 0)
+                //                let endPoint = CGPoint(x: CGRectGetWidth(barRect), y: CGRectGetHeight(barRect))
+                //                
                 //                CGContextDrawLinearGradient(context, gradient, startPoint, endPoint, [])
                 
                 let path = UIBezierPath(roundedRect: barRect, cornerRadius: CGRectGetWidth(barRect) / 2)
                 CGContextAddPath(context, path.CGPath)
-                CGContextSetStrokeColorWithColor(context, UIColor.whiteColor().CGColor)
+                CGContextSetStrokeColorWithColor(context, UIColor(white: 1.0, alpha: 0.5).CGColor)
                 CGContextDrawPath(context, CGPathDrawingMode.FillStroke)
             }
             else

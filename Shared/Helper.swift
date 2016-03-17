@@ -107,15 +107,7 @@ public class Helper: NSObject {
         }
     }
     
-    public enum Color {
-        case Orange
-        case Grey
-        case Yellow
-        case Purple
-        case Blue
-    }
-    
-    public class func gradientForColor(frame: CGRect, color: Color) -> UIView {
+    public class func gradientForColor(frame: CGRect, color: FGColor) -> UIView {
         
         let gradient = GradientView(frame: frame)
         
@@ -178,6 +170,14 @@ public class Helper: NSObject {
     
     public let workoutTypes:[HKWorkoutType] = [HKSampleType.workoutType()]
     
+}
+
+public enum FGColor {
+    case Orange
+    case Grey
+    case Yellow
+    case Purple
+    case Blue
 }
 
 public struct HealthObject {

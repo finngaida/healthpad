@@ -29,11 +29,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>dyci.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -42,7 +37,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9D585288B70B39F633AB01790F5123CD</key>
+		<key>4EFA35EFC5064067ED3771A9AED3B5EB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -58,11 +53,6 @@
 			<true/>
 		</dict>
 		<key>D714037593A1D0448AF01C98C0203714</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>DB1DBD6A60484E813659A8855E4423FE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
