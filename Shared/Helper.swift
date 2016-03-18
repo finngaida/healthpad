@@ -115,7 +115,7 @@ public class Helper: NSObject {
         case .Orange:
             gradient.colors = [UIColor(red: 0.992, green: 0.584, blue: 0.345, alpha: 1.00), UIColor(red: 0.988, green: 0.243, blue: 0.224, alpha: 1.00)]
             break
-        case .Grey:
+        case .Gray:
             gradient.colors = [UIColor(red: 0.820, green: 0.820, blue: 0.839, alpha: 1.00), UIColor(red: 0.549, green: 0.549, blue: 0.573, alpha: 1.00)]
             break
         case .Yellow:
@@ -174,7 +174,7 @@ public class Helper: NSObject {
 
 public enum FGColor {
     case Orange
-    case Grey
+    case Gray
     case Yellow
     case Purple
     case Blue
