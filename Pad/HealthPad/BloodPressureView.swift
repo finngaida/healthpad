@@ -1,5 +1,5 @@
 //
-//  HeartRateView.swift
+//  BloodPressureView.swift
 //  HealthPad
 //
 //  Created by Finn Gaida on 18.03.16.
@@ -8,17 +8,17 @@
 
 import UIKit
 
-public class HeartRateView: CandleView {
+public class BloodPressureView: CandleView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.color = .Gray
-        self.titleText = "Heart Rate"
-        self.averageText = "Min: 51 Max: 154"
-        self.todayText = "69 bpm"
+        self.titleText = "Blood Pressure"
+        self.averageText = "v 133-156 / ^ 67-82 mmHg"
+        self.todayText = "133/72"
         self.dateText = "Today, 3:15 PM"
-        self.shadowVisible = true
-        self.scatterShape = .Circle
+        self.shadowVisible = false
+        self.scatterShape = .Custom
     }
     
     required public init?(coder aDecoder: NSCoder) {

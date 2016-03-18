@@ -13,7 +13,7 @@ import GradientView
 public class CandleView: UIView, ChartViewDelegate {
     
     public var chart: CombinedChartView?
-    public var color: FGColor? {
+    public var color: FGColor = .Gray {
         didSet {
             self.reload()
         }
@@ -38,6 +38,18 @@ public class CandleView: UIView, ChartViewDelegate {
     }
     
     public var dateText: String? {
+        didSet {
+            self.reload()
+        }
+    }
+    
+    public var shadowVisible: Bool = true {
+        didSet {
+            self.reload()
+        }
+    }
+    
+    public var scatterShape: ScatterChartDataSet.ScatterShape = .Circle {
         didSet {
             self.reload()
         }
@@ -70,10 +82,10 @@ public class CandleView: UIView, ChartViewDelegate {
         chart?.backgroundColor = UIColor.clearColor()
         chart?.layer.masksToBounds
         chart?.layer.cornerRadius = 10
-        self.addSubview(Helper.gradientForColor(CGRectMake(0, 0, self.frame.width, self.frame.height), color: self.color!))
+        self.addSubview(Helper.gradientForColor(CGRectMake(0, 0, self.frame.width, self.frame.height), color: self.color))
         self.addSubview(chart!)
         
-        let average = ChartLimitLine(limit: 12.0)
+        let average = ChartLimitLine(limit: 17.0)
         average.lineColor = UIColor(white: 1.0, alpha: 0.5)
         average.lineWidth = 1
         average.lineDashLengths = [5.0]
@@ -118,22 +130,17 @@ public class CandleView: UIView, ChartViewDelegate {
         let enddata = CombinedChartData(xVals: xVals)
         
         let yVals = data.enumerate().map({ (index, obj) -> CandleChartDataEntry in
-            return CandleChartDataEntry(xIndex: index, shadowH: (Double(obj.value) ?? 0) + 10, shadowL: Double(obj.value) ?? 0, open: (Double(obj.value) ?? 0) + 10, close: Double(obj.value) ?? 0)
+            return CandleChartDataEntry(xIndex: index, shadowH: (Double(obj.value) ?? 0) + 10, shadowL: Double(obj.value) ?? 0, open: 0, close: 0)
         })
+        
+        let radius:CGFloat = 2.5
         
         let candleset = CandleChartDataSet(yVals: yVals, label: "")
         
         candleset.drawValuesEnabled = false
         candleset.highlightEnabled = false
-        candleset.colors = [UIColor(white: 1.0, alpha: 0.5)]
-        candleset.shadowColor = UIColor(white: 1.0, alpha: 0.7)
-        candleset.shadowWidth = 0.7
-        candleset.decreasingColor = UIColor.clearColor()
-        candleset.decreasingFilled = false
-        candleset.increasingColor = UIColor.clearColor()
-        candleset.increasingFilled = false
-        candleset.neutralColor = UIColor.clearColor()
-        candleset.barSpace = 0.3
+        candleset.setColor(UIColor(white: 1.0, alpha: 0.4))
+        candleset.shadowWidth = radius * 3.5
         
         
         let newyVals:[ChartDataEntry] = data.enumerate().map { (index: Int, element: HealthObject) -> ChartDataEntry in
@@ -141,20 +148,40 @@ public class CandleView: UIView, ChartViewDelegate {
         }
         
         let scattersetupper = ScatterChartDataSet(yVals: newyVals, label: "")
-        scattersetupper.scatterShape = .Circle
-        scattersetupper.scatterShapeHoleColor = UIColor.clearColor()
-        scattersetupper.scatterShapeHoleRadius = 2.5
-        scattersetupper.setColor(UIColor(white: 1.0, alpha: 0.8))
+        scattersetupper.drawValuesEnabled = false
+        scattersetupper.scatterShapeHoleColor = (self.color == .Gray) ? UIColor.lightGrayColor() : UIColor.clearColor()
+        scattersetupper.scatterShapeHoleRadius = radius
+        scattersetupper.setColor(UIColor(white: 1.0, alpha: 0.9))
+        scattersetupper.scatterShape = self.scatterShape
+        
         
         let neweryVals:[ChartDataEntry] = data.enumerate().map { (index: Int, element: HealthObject) -> ChartDataEntry in
             return ChartDataEntry(value: Double(element.value) ?? 0, xIndex: index)
         }
         
         let scattersetlower = ScatterChartDataSet(yVals: neweryVals, label: "")
-        scattersetlower.scatterShape = .Circle
-        scattersetlower.scatterShapeHoleColor = UIColor.clearColor()
-        scattersetlower.scatterShapeHoleRadius = 2.5
-        scattersetlower.setColor(UIColor(white: 1.0, alpha: 0.8))
+        scattersetlower.drawValuesEnabled = false
+        scattersetlower.scatterShapeHoleColor = (self.color == .Gray) ? UIColor.lightGrayColor() : UIColor.clearColor()
+        scattersetlower.scatterShapeHoleRadius = radius
+        scattersetlower.setColor(UIColor(white: 1.0, alpha: 0.9))
+        scattersetlower.scatterShape = self.scatterShape
+        
+        if (self.scatterShape == .Custom) {
+            let delta:CGFloat = 2.0
+            
+            let ctx = UIGraphicsGetCurrentContext()
+            let path = CGPathCreateMutable()
+            CGPathMoveToPoint(path, nil, 0, 0);
+            CGPathAddLineToPoint(path, nil, delta, delta)
+            CGPathAddLineToPoint(path, nil, delta * 2, 0)
+            CGPathCloseSubpath(path)
+            CGContextAddPath(ctx, path)
+            CGContextSetStrokeColorWithColor(ctx,UIColor(white: 1.0, alpha: 0.9).CGColor);
+            CGContextStrokePath(ctx)
+            
+            scattersetupper.customScatterShape = path
+            scattersetlower.customScatterShape = path
+        }
         
         enddata.scatterData = ScatterChartData(xVals: xVals, dataSets: [scattersetupper, scattersetlower])
         enddata.candleData = CandleChartData(xVals: xVals, dataSets: [candleset])

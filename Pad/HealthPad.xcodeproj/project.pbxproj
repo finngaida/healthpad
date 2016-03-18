@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8E055D63BEC8A3C4913A644B /* Pods_HealthPad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64BDD96B4C0163A30607D050 /* Pods_HealthPad.framework */; };
 		C511AB0F1C99FD6800A7D3C0 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C511AB0E1C99FD6800A7D3C0 /* LineView.swift */; };
+		C5367B071C9C42A2001CA695 /* BloodPressureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5367B061C9C42A2001CA695 /* BloodPressureView.swift */; };
 		C53DB14E1C998F250054ED49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53DB14D1C998F250054ED49 /* AppDelegate.swift */; };
 		C53DB1551C998F250054ED49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C53DB1531C998F250054ED49 /* Main.storyboard */; };
 		C53DB1571C998F250054ED49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C53DB1561C998F250054ED49 /* Assets.xcassets */; };
@@ -61,6 +62,7 @@
 		64BDD96B4C0163A30607D050 /* Pods_HealthPad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealthPad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D22D27ED3FF22BB4E1C1D48 /* Pods-HealthPad.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthPad.release.xcconfig"; path = "Pods/Target Support Files/Pods-HealthPad/Pods-HealthPad.release.xcconfig"; sourceTree = "<group>"; };
 		C511AB0E1C99FD6800A7D3C0 /* LineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
+		C5367B061C9C42A2001CA695 /* BloodPressureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloodPressureView.swift; sourceTree = "<group>"; };
 		C53DB14A1C998F250054ED49 /* HealthPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C53DB14D1C998F250054ED49 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C53DB1541C998F250054ED49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				C5AA84431C9B057C004CA908 /* WeightView.swift */,
 				C5AA84451C9B0953004CA908 /* SleepView.swift */,
 				C5D30C061C9C35C000D1EB1E /* HeartRateView.swift */,
+				C5367B061C9C42A2001CA695 /* BloodPressureView.swift */,
 				C511AB0E1C99FD6800A7D3C0 /* LineView.swift */,
 				C5AA843C1C9A1337004CA908 /* BarView.swift */,
 				C5812A211C9BE0030031D826 /* CandleView.swift */,
@@ -437,6 +440,7 @@
 				C53DB1B01C99A0C70054ED49 /* RPLoadingAnimationDelegate.swift in Sources */,
 				C53DB1AD1C99A0C70054ED49 /* FunnyDotsA.swift in Sources */,
 				C53DB1A01C9996830054ED49 /* Loader.swift in Sources */,
+				C5367B071C9C42A2001CA695 /* BloodPressureView.swift in Sources */,
 				C53DB1BE1C99C5B00054ED49 /* SplitViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

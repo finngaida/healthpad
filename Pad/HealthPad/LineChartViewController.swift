@@ -14,7 +14,7 @@ public class LineChartViewController: UIViewController, ChartViewDelegate {
     
     public var stepsView:HeartRateView?
     public var sleepView:SleepView?
-    public var weightView:WeightView?
+    public var weightView:BloodPressureView?
     public var data:[HealthObject]?
     
     public override func viewDidLoad() {
@@ -22,11 +22,11 @@ public class LineChartViewController: UIViewController, ChartViewDelegate {
         stepsView = HeartRateView(frame: CGRectMake(100, 100, 500, 280))
         self.view.addSubview(stepsView!)
         
-        sleepView = SleepView(frame: CGRectMake(100, 400, 500, 280))
-        self.view.addSubview(sleepView!)
-        
-        weightView = WeightView(frame: CGRectMake(100, 700, 500, 280))
+        weightView = BloodPressureView(frame: CGRectMake(100, 400, 500, 280))
         self.view.addSubview(weightView!)
+        
+        sleepView = SleepView(frame: CGRectMake(100, 700, 500, 280))
+        self.view.addSubview(sleepView!)
         
         setupData()
     }
