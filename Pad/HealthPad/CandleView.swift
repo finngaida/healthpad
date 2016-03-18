@@ -136,10 +136,9 @@ public class CandleView: UIView, ChartViewDelegate {
         let radius:CGFloat = 2.5
         
         let candleset = CandleChartDataSet(yVals: yVals, label: "")
-        
         candleset.drawValuesEnabled = false
         candleset.highlightEnabled = false
-        candleset.setColor(UIColor(white: 1.0, alpha: 0.4))
+        candleset.setColor(UIColor(white: 1.0, alpha: self.shadowVisible ? 0.4 : 0.0))
         candleset.shadowWidth = radius * 3.5
         
         
@@ -154,6 +153,24 @@ public class CandleView: UIView, ChartViewDelegate {
         scattersetupper.setColor(UIColor(white: 1.0, alpha: 0.9))
         scattersetupper.scatterShape = self.scatterShape
         
+        if (self.scatterShape == .Custom) {
+            let delta:CGFloat = radius * 2
+            
+            let ctx = UIGraphicsGetCurrentContext()
+            let path = CGPathCreateMutable()
+            CGPathMoveToPoint(path, nil, -delta, 0)
+            CGPathAddLineToPoint(path, nil, 0, delta)
+            CGPathAddLineToPoint(path, nil, delta, 0)
+            CGPathMoveToPoint(path, nil, delta-delta/2, 0)
+            CGPathAddLineToPoint(path, nil, 0, delta-delta/2)
+            CGPathAddLineToPoint(path, nil, delta/2-delta, 0)
+            CGPathCloseSubpath(path)
+            CGContextAddPath(ctx, path)
+            CGContextSetStrokeColorWithColor(ctx,UIColor(white: 1.0, alpha: 0.9).CGColor);
+            CGContextDrawPath(ctx, .Stroke)
+            
+            scattersetupper.customScatterShape = path
+        }
         
         let neweryVals:[ChartDataEntry] = data.enumerate().map { (index: Int, element: HealthObject) -> ChartDataEntry in
             return ChartDataEntry(value: Double(element.value) ?? 0, xIndex: index)
@@ -167,19 +184,21 @@ public class CandleView: UIView, ChartViewDelegate {
         scattersetlower.scatterShape = self.scatterShape
         
         if (self.scatterShape == .Custom) {
-            let delta:CGFloat = 2.0
+            let delta:CGFloat = radius * 2
             
             let ctx = UIGraphicsGetCurrentContext()
             let path = CGPathCreateMutable()
-            CGPathMoveToPoint(path, nil, 0, 0);
-            CGPathAddLineToPoint(path, nil, delta, delta)
-            CGPathAddLineToPoint(path, nil, delta * 2, 0)
+            CGPathMoveToPoint(path, nil, -delta, 0)
+            CGPathAddLineToPoint(path, nil, 0, -delta)
+            CGPathAddLineToPoint(path, nil, delta, 0)
+            CGPathMoveToPoint(path, nil, delta-delta/2, 0)
+            CGPathAddLineToPoint(path, nil, 0, -delta+delta/2)
+            CGPathAddLineToPoint(path, nil, delta/2-delta, 0)
             CGPathCloseSubpath(path)
             CGContextAddPath(ctx, path)
             CGContextSetStrokeColorWithColor(ctx,UIColor(white: 1.0, alpha: 0.9).CGColor);
-            CGContextStrokePath(ctx)
+            CGContextDrawPath(ctx, .EOFillStroke)
             
-            scattersetupper.customScatterShape = path
             scattersetlower.customScatterShape = path
         }
         
