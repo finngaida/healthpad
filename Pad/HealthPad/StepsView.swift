@@ -18,6 +18,12 @@ public class StepsView: LineView {
         self.todayText = "9237 steps"
         self.dateText = "Today, 3:14 PM"
     }
+    
+    public override func majorValueFromHealthObject(obj:HealthObject) -> String {
+        if let o = obj as? Steps {
+            return "\(o.count)"
+        } else {return ""}
+    }
 
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

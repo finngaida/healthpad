@@ -19,6 +19,12 @@ public class SleepView: BarView {
         self.dateText = "Yesterday, 3:14 AM"
     }
     
+    public override func majorValueFromHealthObject(obj:HealthObject) -> String {
+        if let o = obj as? Sleep {
+            return "\(o.hours)"
+        } else {return ""}
+    }
+    
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

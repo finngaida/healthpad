@@ -38,6 +38,7 @@
 		C5AA84441C9B057C004CA908 /* WeightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AA84431C9B057C004CA908 /* WeightView.swift */; };
 		C5AA84461C9B0953004CA908 /* SleepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AA84451C9B0953004CA908 /* SleepView.swift */; };
 		C5D30C071C9C35C000D1EB1E /* HeartRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D30C061C9C35C000D1EB1E /* HeartRateView.swift */; };
+		C5EF56F21C9DAF88001F30AE /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EF56F11C9DAF88001F30AE /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,7 @@
 		C5AA84431C9B057C004CA908 /* WeightView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightView.swift; sourceTree = "<group>"; };
 		C5AA84451C9B0953004CA908 /* SleepView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SleepView.swift; sourceTree = "<group>"; };
 		C5D30C061C9C35C000D1EB1E /* HeartRateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartRateView.swift; sourceTree = "<group>"; };
+		C5EF56F11C9DAF88001F30AE /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = ../../Shared/Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,7 +179,6 @@
 				C53DB1801C9992350054ED49 /* MasterViewController.swift */,
 				C53DB1821C9992410054ED49 /* DetailViewController.swift */,
 				C53DB1BB1C99BD9E0054ED49 /* LineChartViewController.swift */,
-				C53DB19D1C9996830054ED49 /* Helper.swift */,
 				C5AA84411C9B007A004CA908 /* StepsView.swift */,
 				C5AA84431C9B057C004CA908 /* WeightView.swift */,
 				C5AA84451C9B0953004CA908 /* SleepView.swift */,
@@ -187,6 +188,8 @@
 				C5AA843C1C9A1337004CA908 /* BarView.swift */,
 				C5812A211C9BE0030031D826 /* CandleView.swift */,
 				C53DB19E1C9996830054ED49 /* Loader.swift */,
+				C53DB19D1C9996830054ED49 /* Helper.swift */,
+				C5EF56F11C9DAF88001F30AE /* Model.swift */,
 				C53DB1531C998F250054ED49 /* Main.storyboard */,
 				C53DB1561C998F250054ED49 /* Assets.xcassets */,
 				C53DB1581C998F250054ED49 /* LaunchScreen.storyboard */,
@@ -428,6 +431,7 @@
 				C53DB1BC1C99BD9E0054ED49 /* LineChartViewController.swift in Sources */,
 				C5D30C071C9C35C000D1EB1E /* HeartRateView.swift in Sources */,
 				C53DB1811C9992350054ED49 /* MasterViewController.swift in Sources */,
+				C5EF56F21C9DAF88001F30AE /* Model.swift in Sources */,
 				C5AA84461C9B0953004CA908 /* SleepView.swift in Sources */,
 				C53DB14E1C998F250054ED49 /* AppDelegate.swift in Sources */,
 				C53DB1B11C99A0C70054ED49 /* RPLoadingAnimationView.swift in Sources */,

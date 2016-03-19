@@ -112,7 +112,7 @@ public class LineView: UIView, ChartViewDelegate {
     }
     
     public func setData(data:Array<HealthObject>) {
-        let set = LineChartDataSet(yVals: data.enumerate().map({ChartDataEntry(value: Double($1.value) ?? 0, xIndex: $0)}), label: "")
+        let set = LineChartDataSet(yVals: data.enumerate().map({ChartDataEntry(value: Double(self.majorValueFromHealthObject($1)) ?? 0, xIndex: $0)}), label: "")
         set.lineWidth = 2
         set.circleRadius = 5
         set.setCircleColor(UIColor.whiteColor())
@@ -130,6 +130,10 @@ public class LineView: UIView, ChartViewDelegate {
         var xVals = (1...data.count).map({"\($0)"})
         xVals[0] = "Mar \(xVals[0])"   // TODO Real month
         chart?.data = LineChartData(xVals: xVals, dataSet: set)
+    }
+    
+    public func majorValueFromHealthObject(obj:HealthObject) -> String {
+        return ""
     }
     
     // MARK: Chart delegate

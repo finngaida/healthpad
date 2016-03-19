@@ -21,6 +21,12 @@ public class BloodPressureView: CandleView {
         self.scatterShape = .Custom
     }
     
+    public override func majorValueFromHealthObject(obj:HealthObject) -> String {
+        if let o = obj as? BloodPressure {
+            return "\(o.highest)"
+        } else {return ""}
+    }
+    
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

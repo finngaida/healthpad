@@ -79,8 +79,14 @@ public class Helper: NSObject {
                             
                             for (index2, record) in r2.enumerate() {
                                 
-                                let obj = HealthObject(value: record["content"] as! String, unit: record["unit"] as? String, endDate: record["endDate"] as? NSDate)
-                                data[name] = [obj]  // TODO: append to list, if not the first
+                                if let obj = self.healthObjectFromRecord(record) {
+                                    data[name] = [obj]
+                                } else {
+                                    
+                                    let obj = GeneralHealthObject(value:record["content"] ?? "", description: "General Health data", unit:nil, date:record["endDate"] as? NSDate)
+                                    data[name] = [obj]  // TODO: append to list, if not the first
+                                    
+                                }
                                 
                                 if index == r.count - 1 && index2 == r2.count - 1 {
                                     self.latestData = data
@@ -92,6 +98,42 @@ public class Helper: NSObject {
                 }
             }
         }
+    }
+    
+    public func healthObjectFromRecord(record: CKRecord) -> HealthObject? {
+        
+        let content = record["content"]
+        let unit = record["unit"] ?? ""
+        let date:NSDate? = record["endDate"] as? NSDate
+        let type = record["type"] ?? ""
+        
+        print("trying to convert record of type \(type) with value \(content)\(unit) from \(date)")
+        
+        switch record.recordType {
+        case "StepCount":
+            guard let count = content as? Int else {return nil}
+            return Steps(count:count, description: "Number of steps", unit:Unit.steps, date:date)
+            
+        case "HeartRate":
+            guard let values = content as? Array<Int> else {return nil}
+            return HeartRate(highestbpm:values.maxElement() ?? 0, lowestbpm:values.minElement() ?? 0, all:values.map({HeartRateValue(date:nil, bpm: $0)}), description: "Heart rate in beats perminute", unit:Unit.bpm, date:date)
+            
+        case "BloodPressure":
+            guard let values = content as? Array<(Int,Int)> else {return nil}
+            
+            let high = values.map({$0.0}).maxElement()
+            let low = values.map({$0.1}).minElement()
+            
+            return BloodPressure(highest:high ?? 0, lowest: low ?? 0, all:values.map({BloodPressureValue(systolic:$0, diastolic:$1)}), description: "Blood Presure in mm of a Hg scale", unit:Unit.mmHg, date:date)
+            
+        case "Weight":
+            guard let weight = content as? Double else {return nil}
+            return Weight(value:weight, description: "Weight in kg", unit:Unit.kg, date:date)
+            
+        default:
+            return GeneralHealthObject(value:content ?? "", description: "General health object", unit:nil, date:date)
+        }
+        
     }
     
     public class func editErrorMessage(e:String) -> String {
@@ -170,18 +212,4 @@ public class Helper: NSObject {
     
     public let workoutTypes:[HKWorkoutType] = [HKSampleType.workoutType()]
     
-}
-
-public enum FGColor {
-    case Orange
-    case Gray
-    case Yellow
-    case Purple
-    case Blue
-}
-
-public struct HealthObject {
-    let value:String    // Todo: respect the unit and make it a double
-    let unit:String?    // Todo: make that a HKUnit
-    let endDate:NSDate?
 }

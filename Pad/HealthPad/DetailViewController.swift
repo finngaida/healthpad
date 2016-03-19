@@ -41,13 +41,14 @@ public class DetailViewController: UIViewController {
                 
             }
             
-            dest.data = [HealthObject(value: "12", unit: "steps", endDate: nil),
-                HealthObject(value: "11", unit: "steps", endDate: nil),
-                HealthObject(value: "10", unit: "steps", endDate: nil),
-                HealthObject(value: "15", unit: "steps", endDate: nil),
-                HealthObject(value: "12", unit: "steps", endDate: nil),
-                HealthObject(value: "10", unit: "steps", endDate: nil),
-                HealthObject(value: "16", unit: "steps", endDate: nil)]
+            dest.data = [GeneralHealthObject(value: "12", description: "", unit: Unit.steps, date: nil),
+                GeneralHealthObject(value: "10", description: "", unit: Unit.steps, date: nil),
+                GeneralHealthObject(value: "13", description: "", unit: Unit.steps, date: nil),
+                GeneralHealthObject(value: "14", description: "", unit: Unit.steps, date: nil),
+                GeneralHealthObject(value: "9", description: "", unit: Unit.steps, date: nil),
+                GeneralHealthObject(value: "12", description: "", unit: Unit.steps, date: nil),
+                GeneralHealthObject(value: "10", description: "", unit: Unit.steps, date: nil),
+                GeneralHealthObject(value: "13", description: "", unit: Unit.steps, date: nil)]
         }
     }
 }

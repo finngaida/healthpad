@@ -130,7 +130,7 @@ public class CandleView: UIView, ChartViewDelegate {
         let enddata = CombinedChartData(xVals: xVals)
         
         let yVals = data.enumerate().map({ (index, obj) -> CandleChartDataEntry in
-            return CandleChartDataEntry(xIndex: index, shadowH: (Double(obj.value) ?? 0) + 10, shadowL: Double(obj.value) ?? 0, open: 0, close: 0)
+            return CandleChartDataEntry(xIndex: index, shadowH: (Double(self.majorValueFromHealthObject(obj)) ?? 0) + 10, shadowL: Double(self.majorValueFromHealthObject(obj)) ?? 0, open: 0, close: 0)
         })
         
         let radius:CGFloat = 2.5
@@ -143,7 +143,7 @@ public class CandleView: UIView, ChartViewDelegate {
         
         
         let newyVals:[ChartDataEntry] = data.enumerate().map { (index: Int, element: HealthObject) -> ChartDataEntry in
-            return ChartDataEntry(value: (Double(element.value) ?? 0) + 10, xIndex: index)
+            return ChartDataEntry(value: (Double(self.majorValueFromHealthObject(element)) ?? 0) + 10, xIndex: index)
         }
         
         let scattersetupper = ScatterChartDataSet(yVals: newyVals, label: "")
@@ -173,7 +173,7 @@ public class CandleView: UIView, ChartViewDelegate {
         }
         
         let neweryVals:[ChartDataEntry] = data.enumerate().map { (index: Int, element: HealthObject) -> ChartDataEntry in
-            return ChartDataEntry(value: Double(element.value) ?? 0, xIndex: index)
+            return ChartDataEntry(value: Double(self.majorValueFromHealthObject(element)) ?? 0, xIndex: index)
         }
         
         let scattersetlower = ScatterChartDataSet(yVals: neweryVals, label: "")
@@ -206,6 +206,10 @@ public class CandleView: UIView, ChartViewDelegate {
         enddata.candleData = CandleChartData(xVals: xVals, dataSets: [candleset])
         
         chart?.data = enddata
+    }
+    
+    public func majorValueFromHealthObject(obj:HealthObject) -> String {
+        return ""
     }
     
     // MARK: Chart delegate

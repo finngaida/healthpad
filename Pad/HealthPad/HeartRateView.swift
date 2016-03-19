@@ -21,6 +21,12 @@ public class HeartRateView: CandleView {
         self.scatterShape = .Circle
     }
     
+    public override func majorValueFromHealthObject(obj:HealthObject) -> String {
+        if let o = obj as? HeartRate {
+            return "\(o.highestbpm)"
+        } else {return ""}
+    }
+    
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

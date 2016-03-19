@@ -19,6 +19,12 @@ public class WeightView: LineView {
         self.dateText = "Today, 3:14 PM"
     }
     
+    public override func majorValueFromHealthObject(obj:HealthObject) -> String {
+        if let o = obj as? Weight {
+            return "\(o.value)"
+        } else {return ""}
+    }
+    
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
