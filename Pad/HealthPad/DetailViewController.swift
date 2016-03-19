@@ -40,15 +40,6 @@ public class DetailViewController: UIViewController {
             if let type = sender as? String {
                 
             }
-            
-            dest.data = [GeneralHealthObject(value: "12", description: "", unit: Unit.steps, date: nil),
-                GeneralHealthObject(value: "10", description: "", unit: Unit.steps, date: nil),
-                GeneralHealthObject(value: "13", description: "", unit: Unit.steps, date: nil),
-                GeneralHealthObject(value: "14", description: "", unit: Unit.steps, date: nil),
-                GeneralHealthObject(value: "9", description: "", unit: Unit.steps, date: nil),
-                GeneralHealthObject(value: "12", description: "", unit: Unit.steps, date: nil),
-                GeneralHealthObject(value: "10", description: "", unit: Unit.steps, date: nil),
-                GeneralHealthObject(value: "13", description: "", unit: Unit.steps, date: nil)]
         }
     }
 }
