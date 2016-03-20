@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8DV-j7-ymT">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -82,7 +81,7 @@
             </objects>
             <point key="canvasLocation" x="707" y="-495"/>
         </scene>
-        <!--Line Chart View Controller-->
+        <!--Demo Data-->
         <scene sceneID="p1R-Hr-GUV">
             <objects>
                 <viewController storyboardIdentifier="lineChart" id="cxh-XF-w2b" customClass="LineChartViewController" customModule="HealthPad" customModuleProvider="target" sceneMemberID="viewController">
@@ -91,10 +90,13 @@
                         <viewControllerLayoutGuide type="bottom" id="4Tj-3t-Bdl"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="nh2-eN-Hrd">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="1600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Demo Data" id="cU1-Lu-gLY"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="1600"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Joa-cW-vrK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

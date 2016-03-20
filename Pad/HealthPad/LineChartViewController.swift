@@ -12,6 +12,7 @@ import GradientView
 
 public class LineChartViewController: UIViewController, ChartViewDelegate {
     
+    var scrollView:UIScrollView!
     public var stepsView:StepsView?
     public var sleepView:SleepView?
     public var weightView:WeightView?
@@ -21,20 +22,25 @@ public class LineChartViewController: UIViewController, ChartViewDelegate {
     
     public override func viewDidLoad() {
         
+        scrollView = UIScrollView(frame: self.view.frame)
+        self.view.addSubview(scrollView)
+        
         heartRateView = HeartRateView(frame: CGRectMake(100, 100, 500, 280))
-        self.view.addSubview(heartRateView!)
+        scrollView.addSubview(heartRateView!)
         
         bloodPressureView = BloodPressureView(frame: CGRectMake(100, 400, 500, 280))
-        self.view.addSubview(bloodPressureView!)
+        scrollView.addSubview(bloodPressureView!)
         
         sleepView = SleepView(frame: CGRectMake(100, 700, 500, 280))
-        self.view.addSubview(sleepView!)
+        scrollView.addSubview(sleepView!)
         
         stepsView = StepsView(frame: CGRectMake(100, 1000, 500, 280))
-        self.view.addSubview(stepsView!)
+        scrollView.addSubview(stepsView!)
         
         weightView = WeightView(frame: CGRectMake(100, 1300, 500, 280))
-        self.view.addSubview(weightView!)
+        scrollView.addSubview(weightView!)
+        
+        scrollView.contentSize = CGSizeMake(scrollView.frame.width, (weightView?.frame.origin.y)! + (weightView?.frame.height)! + 50)
         
         setupData()
     }

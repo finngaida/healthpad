@@ -29,6 +29,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SwiftString-SwiftString.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SwiftString.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -37,7 +47,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4EFA35EFC5064067ED3771A9AED3B5EB</key>
+		<key>3A39457702472C569177BDF1CB421296</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3DC5DD19E248E1286D1D16DF1DD83D74</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -53,6 +68,11 @@
 			<true/>
 		</dict>
 		<key>D714037593A1D0448AF01C98C0203714</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F240314F08633EB47C64C70EF1C7E000</key>
 		<dict>
 			<key>primary</key>
 			<true/>
