@@ -32,6 +32,7 @@
 		C53DB1B31C99A0C70054ED49 /* TimingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53DB1AA1C99A0C70054ED49 /* TimingFunction.swift */; };
 		C53DB1BC1C99BD9E0054ED49 /* LineChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53DB1BB1C99BD9E0054ED49 /* LineChartViewController.swift */; };
 		C53DB1BE1C99C5B00054ED49 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53DB1BD1C99C5B00054ED49 /* SplitViewController.swift */; };
+		C554D8B51C9EF73600877865 /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C554D8B41C9EF73600877865 /* ChartView.swift */; };
 		C5812A221C9BE0030031D826 /* CandleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5812A211C9BE0030031D826 /* CandleView.swift */; };
 		C5AA843D1C9A1337004CA908 /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AA843C1C9A1337004CA908 /* BarView.swift */; };
 		C5AA84421C9B007A004CA908 /* StepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AA84411C9B007A004CA908 /* StepsView.swift */; };
@@ -93,6 +94,7 @@
 		C53DB1AA1C99A0C70054ED49 /* TimingFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimingFunction.swift; sourceTree = "<group>"; };
 		C53DB1BB1C99BD9E0054ED49 /* LineChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChartViewController.swift; sourceTree = "<group>"; };
 		C53DB1BD1C99C5B00054ED49 /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
+		C554D8B41C9EF73600877865 /* ChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		C5812A211C9BE0030031D826 /* CandleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandleView.swift; sourceTree = "<group>"; };
 		C5AA843C1C9A1337004CA908 /* BarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
 		C5AA84411C9B007A004CA908 /* StepsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepsView.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				C511AB0E1C99FD6800A7D3C0 /* LineView.swift */,
 				C5AA843C1C9A1337004CA908 /* BarView.swift */,
 				C5812A211C9BE0030031D826 /* CandleView.swift */,
+				C554D8B41C9EF73600877865 /* ChartView.swift */,
 				C53DB19E1C9996830054ED49 /* Loader.swift */,
 				C53DB19D1C9996830054ED49 /* Helper.swift */,
 				C5EF56F11C9DAF88001F30AE /* Model.swift */,
@@ -422,6 +425,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5AA843D1C9A1337004CA908 /* BarView.swift in Sources */,
+				C554D8B51C9EF73600877865 /* ChartView.swift in Sources */,
 				C53DB1AC1C99A0C70054ED49 /* DotTrianglePath.swift in Sources */,
 				C53DB1AF1C99A0C70054ED49 /* RotatingCircle.swift in Sources */,
 				C5812A221C9BE0030031D826 /* CandleView.swift in Sources */,

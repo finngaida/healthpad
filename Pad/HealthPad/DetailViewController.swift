@@ -35,9 +35,9 @@ public class DetailViewController: UIViewController {
     
     public override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         print(segue.destinationViewController)
-        if segue.identifier == Helper.sharedHelper.showLineChartSegue, let dest = segue.destinationViewController as? LineChartViewController {
+        if segue.identifier == Helper.sharedHelper.showLineChartSegue, let _ = segue.destinationViewController as? LineChartViewController {
             
-            if let type = sender as? String {
+            if let _ = sender as? String {
                 
             }
         }

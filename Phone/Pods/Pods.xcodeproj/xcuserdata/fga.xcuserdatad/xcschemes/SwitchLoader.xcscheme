@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '10555E65D7742DB15EBD8E751721BFFC'
+               BlueprintIdentifier = '96D2DB11AAE3960D2DB1DB86DF0D1C73'
                BlueprintName = 'SwitchLoader'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'SwitchLoader.framework'>

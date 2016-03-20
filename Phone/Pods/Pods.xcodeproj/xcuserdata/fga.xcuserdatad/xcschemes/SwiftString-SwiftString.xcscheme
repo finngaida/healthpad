@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '356AA5A3DB4A9B3123E7ABAAD61C7BAB'
-               BlueprintName = 'Pods-HealthPad Companion'
+               BlueprintIdentifier = '3A05F3BFC1EE3D7DA310093F897FC287'
+               BlueprintName = 'SwiftString-SwiftString'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Pods-HealthPad Companion.framework'>
+               BuildableName = 'SwiftString.bundle'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

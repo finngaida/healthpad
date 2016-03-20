@@ -7,4 +7,5 @@ target 'HealthPad Companion' do
 pod "SwitchLoader"
 pod "AsyncSwift"
 pod "ActionKit"
+pod "SwiftString"
 end

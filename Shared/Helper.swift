@@ -84,8 +84,12 @@ public class Helper: NSObject {
                                 } else {
                                     
                                     let obj = GeneralHealthObject(value:record["content"] ?? "", description: "General Health data", unit:nil, date:record["endDate"] as? NSDate)
-                                    data[name] = [obj]  // TODO: append to list, if not the first
                                     
+                                    if data[name] == nil {
+                                        data[name] = [obj]
+                                    } else {
+                                        data[name]?.append(obj)
+                                    }
                                 }
                                 
                                 if index == r.count - 1 && index2 == r2.count - 1 {

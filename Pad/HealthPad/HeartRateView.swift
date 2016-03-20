@@ -27,6 +27,12 @@ public class HeartRateView: CandleView {
         } else {return ""}
     }
     
+    public override func minorValueFromHealthObject(obj:HealthObject) -> String {
+        if let o = obj as? HeartRate {
+            return "\(o.lowestbpm)"
+        } else {return ""}
+    }
+    
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
