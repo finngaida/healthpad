@@ -20,10 +20,13 @@ public class SplitViewController: UISplitViewController {
         
         NSNotificationCenter.defaultCenter().addObserverForName(Helper.sharedHelper.typeSelectedNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) -> Void in
             if let d = self.detail {
-                d.performSegueWithIdentifier(Helper.sharedHelper.showLineChartSegue, sender: notification.object)
+                
+                if let type = notification.object as? String {
+                    d.performSegueWithIdentifier(Helper.sharedHelper.showLineChartSegue, sender: type)
+                } else {
+                    d.performSegueWithIdentifier(Helper.sharedHelper.showLineChartSegue, sender: notification.object)
+                }
             }
         }
-        
     }
-    
 }

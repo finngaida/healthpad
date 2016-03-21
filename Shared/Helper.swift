@@ -21,6 +21,11 @@ public class Helper: NSObject {
     
     public let typeSelectedNotification = "typeSelectedNotification"
     public let showLineChartSegue = "showLineChart"
+    public let showStepsSegue = "showSteps"
+    public let showWeightSegue = "showWeight"
+    public let showSleepSegue = "showSleep"
+    public let showHeartRateSegue = "showHeartRate"
+    public let showBloodPressureSegue = "showBloodPressure"
     
     public override init() {
         super.init()

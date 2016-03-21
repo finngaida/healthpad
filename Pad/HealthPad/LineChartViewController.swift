@@ -18,6 +18,7 @@ public class LineChartViewController: UIViewController, ChartViewDelegate {
     public var weightView:WeightView?
     public var bloodPressureView:BloodPressureView?
     public var heartRateView:HeartRateView?
+    public var energyView:ActiveEnergyView?
     public var data:[HealthObject]?
     
     public override func viewDidLoad() {
@@ -37,7 +38,10 @@ public class LineChartViewController: UIViewController, ChartViewDelegate {
         stepsView = StepsView(frame: CGRectMake(100, 1000, 500, 280))
         scrollView.addSubview(stepsView!)
         
-        weightView = WeightView(frame: CGRectMake(100, 1300, 500, 280))
+        energyView = ActiveEnergyView(frame: CGRectMake(100, 1300, 500, 280))
+        scrollView.addSubview(energyView!)
+        
+        weightView = WeightView(frame: CGRectMake(100, 1600, 500, 280))
         scrollView.addSubview(weightView!)
         
         scrollView.contentSize = CGSizeMake(scrollView.frame.width, (weightView?.frame.origin.y)! + (weightView?.frame.height)! + 50)
@@ -47,42 +51,25 @@ public class LineChartViewController: UIViewController, ChartViewDelegate {
     
     public func setupData() {
         
-        heartRateView?.setData([HeartRate(highestbpm:120, lowestbpm:43, all:[HeartRateValue(date:nil, bpm:120), HeartRateValue(date:nil, bpm:43)], description:"", unit:Unit.bpm, date:nil),
-            HeartRate(highestbpm:110, lowestbpm:55, all:[HeartRateValue(date:nil, bpm:110), HeartRateValue(date:nil, bpm:55)], description:"", unit:Unit.bpm, date:nil),
-            HeartRate(highestbpm:125, lowestbpm:50, all:[HeartRateValue(date:nil, bpm:125), HeartRateValue(date:nil, bpm:50)], description:"", unit:Unit.bpm, date:nil),
-            HeartRate(highestbpm:115, lowestbpm:45, all:[HeartRateValue(date:nil, bpm:115), HeartRateValue(date:nil, bpm:45)], description:"", unit:Unit.bpm, date:nil),
-            HeartRate(highestbpm:100, lowestbpm:48, all:[HeartRateValue(date:nil, bpm:100), HeartRateValue(date:nil, bpm:48)], description:"", unit:Unit.bpm, date:nil)])
+        heartRateView?.setData([[120, 43], [130, 50], [125, 55], [120, 55], [125, 45], [130, 40]].map({HeartRate(highestbpm:$0[0], lowestbpm:$0[1], all:[HeartRateValue(date:nil, bpm:$0[0]), HeartRateValue(date:nil, bpm:$0[1])], description:"", unit:Unit.bpm, date:nil)}))
         
-        bloodPressureView?.setData([BloodPressure(highest:120, lowest:43, all:[BloodPressureValue(systolic:133, diastolic:80), BloodPressureValue(systolic:133, diastolic:78)], description:"", unit:Unit.mmHg, date:nil),
-            BloodPressure(highest:110, lowest:55, all:[BloodPressureValue(systolic:143, diastolic:76), BloodPressureValue(systolic:134, diastolic:55)], description:"", unit:Unit.mmHg, date:nil),
-            BloodPressure(highest:125, lowest:50, all:[BloodPressureValue(systolic:122, diastolic:87), BloodPressureValue(systolic:145, diastolic:50)], description:"", unit:Unit.mmHg, date:nil),
-            BloodPressure(highest:115, lowest:45, all:[BloodPressureValue(systolic:136, diastolic:76), BloodPressureValue(systolic:134, diastolic:45)], description:"", unit:Unit.mmHg, date:nil),
-            BloodPressure(highest:100, lowest:48, all:[BloodPressureValue(systolic:125, diastolic:79), BloodPressureValue(systolic:144, diastolic:48)], description:"", unit:Unit.mmHg, date:nil)])
+        bloodPressureView?.setData([[120,80], [130,90], [140,90], [135,85], [125,80], [130,95]].map({BloodPressure(highest:$0[0], lowest:$0[1], all:[BloodPressureValue(systolic:$0[0], diastolic:$0[1])], description:"", unit:Unit.mmHg, date:nil)}))
         
-        sleepView?.setData([Sleep(hours:6, description:"", unit:Unit.hours, date:nil),
-            Sleep(hours:7, description:"", unit:Unit.hours, date:nil),
-            Sleep(hours:8, description:"", unit:Unit.hours, date:nil),
-            Sleep(hours:7, description:"", unit:Unit.hours, date:nil),
-            Sleep(hours:8, description:"", unit:Unit.hours, date:nil),
-            Sleep(hours:6, description:"", unit:Unit.hours, date:nil),
-            Sleep(hours:6, description:"", unit:Unit.hours, date:nil)])
+        sleepView?.setData([6, 7, 8, 7, 8, 8, 6, 6].map({Sleep(hours:$0, description:"", unit:Unit.hours, date:nil)}))
         
-        stepsView?.setData([Steps(count:6123, description:"", unit:Unit.steps, date:nil),
-            Steps(count:8127, description:"", unit:Unit.steps, date:nil),
-            Steps(count:3287, description:"", unit:Unit.steps, date:nil),
-            Steps(count:2983, description:"", unit:Unit.steps, date:nil),
-            Steps(count:9283, description:"", unit:Unit.steps, date:nil),
-            Steps(count:2837, description:"", unit:Unit.steps, date:nil),
-            Steps(count:7239, description:"", unit:Unit.steps, date:nil)])
+        stepsView?.setData([6234, 7234, 8234, 7543, 8724, 8234, 6234, 6734].map({Steps(count:$0, description:"", unit:Unit.steps, date:nil)}))
         
-        weightView?.setData([Weight(value:79.5, description:"", unit:Unit.kg, date:nil),
-            Weight(value:80.0, description:"", unit:Unit.kg, date:nil),
-            Weight(value:79.0, description:"", unit:Unit.kg, date:nil),
-            Weight(value:78.5, description:"", unit:Unit.kg, date:nil),
-            Weight(value:80.5, description:"", unit:Unit.kg, date:nil),
-            Weight(value:80.0, description:"", unit:Unit.kg, date:nil),
-            Weight(value:79.5, description:"", unit:Unit.kg, date:nil),
-            Weight(value:79.0, description:"", unit:Unit.kg, date:nil)])
+        weightView?.setData([79.5, 79.0, 80.0, 79.0, 81.0, 80.5, 79.0, 70.5].map({Weight(value:$0, description:"", unit:Unit.kg, date:nil)}))
+        
+        if let data = Helper.sharedHelper.latestData {
+            
+            if let energies = data["ActiveEnergyBurned"] {
+                print("Energy: \(energies)")
+                energyView?.setData(energies.map({Energy(value:Double("\(($0 as! GeneralHealthObject).value)") ?? 0, description:"\($0)", unit:Unit.kcal, date:nil)}))
+                
+            }
+            
+        }
         
     }
     

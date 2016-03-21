@@ -1,2 +1,0 @@
-/Users/fga/Library/Developer/Xcode/DerivedData/HealthPad-hdqcztmrwoppqsbuhnzcsdosofqw/Build/Products/Debug-iphonesimulator/HealthPad.app
-

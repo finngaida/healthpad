@@ -37,6 +37,13 @@ public struct Steps:HealthObject {
     public var date:NSDate? = nil
 }
 
+public struct Energy:HealthObject {
+    let value:Double
+    public var description:String? = ""
+    public var unit:Unit? = Unit.kcal
+    public var date:NSDate? = nil
+}
+
 public struct HeartRateValue {
     let date:NSDate?
     let bpm:Int
@@ -84,4 +91,5 @@ public enum Unit:String {
     case bpm = " bpm"
     case hours = " h"
     case kg = " kg"
+    case kcal = " kcal"
 }

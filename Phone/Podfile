@@ -4,8 +4,8 @@
 use_frameworks!
 
 target 'HealthPad Companion' do
-pod "SwitchLoader"
 pod "AsyncSwift"
 pod "ActionKit"
 pod "SwiftString"
+pod "Charts"
 end

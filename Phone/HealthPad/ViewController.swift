@@ -9,7 +9,6 @@
 import UIKit
 import HealthKit
 import CloudKit
-import SwitchLoader
 import Async
 
 public class ViewController: UIViewController {

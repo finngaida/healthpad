@@ -27,7 +27,7 @@ public class DetailViewController: UIViewController {
         
         Helper.sharedHelper.fetchData(loader) { (data) -> () in
             self.data = data
-            print(data)
+            print("\n\n\n got data!!! \n\(data)")
             Loader.hideLoader(self)
             ((self.splitViewController?.viewControllers[0] as! UINavigationController).viewControllers[0] as! MasterViewController).tableView.reloadData()
         }

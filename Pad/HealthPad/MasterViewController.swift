@@ -38,6 +38,11 @@ public class MasterViewController: UITableViewController {
     }
     
     override public func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if indexPath.row == 0 && self.tableView(tableView, numberOfRowsInSection: 0) == 1 {
+            NSNotificationCenter.defaultCenter().postNotificationName(Helper.sharedHelper.typeSelectedNotification, object: nil)
+        }
+        
         if let data = Helper.sharedHelper.latestData {
             NSNotificationCenter.defaultCenter().postNotificationName(Helper.sharedHelper.typeSelectedNotification, object: Array(data.keys)[indexPath.row])
         } else {
