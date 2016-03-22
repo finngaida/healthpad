@@ -18,6 +18,8 @@
 		C53B84F31CA04665001A47C9 /* SleepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53B84E91CA04665001A47C9 /* SleepView.swift */; };
 		C53B84F41CA04665001A47C9 /* StepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53B84EA1CA04665001A47C9 /* StepsView.swift */; };
 		C53B84F51CA04665001A47C9 /* WeightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53B84EB1CA04665001A47C9 /* WeightView.swift */; };
+		C53B84F71CA04766001A47C9 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53B84F61CA04766001A47C9 /* DemoViewController.swift */; };
+		C53B84F91CA04980001A47C9 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53B84F81CA04980001A47C9 /* Model.swift */; };
 		C53DB1901C99966A0054ED49 /* DotSpinningLikeSkype.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53DB1871C99966A0054ED49 /* DotSpinningLikeSkype.swift */; };
 		C53DB1911C99966A0054ED49 /* DotTrianglePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53DB1881C99966A0054ED49 /* DotTrianglePath.swift */; };
 		C53DB1921C99966A0054ED49 /* FunnyDotsA.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53DB1891C99966A0054ED49 /* FunnyDotsA.swift */; };
@@ -75,6 +77,8 @@
 		C53B84E91CA04665001A47C9 /* SleepView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SleepView.swift; sourceTree = "<group>"; };
 		C53B84EA1CA04665001A47C9 /* StepsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepsView.swift; sourceTree = "<group>"; };
 		C53B84EB1CA04665001A47C9 /* WeightView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightView.swift; sourceTree = "<group>"; };
+		C53B84F61CA04766001A47C9 /* DemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
+		C53B84F81CA04980001A47C9 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = ../../Shared/Model.swift; sourceTree = "<group>"; };
 		C53DB1871C99966A0054ED49 /* DotSpinningLikeSkype.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotSpinningLikeSkype.swift; sourceTree = "<group>"; };
 		C53DB1881C99966A0054ED49 /* DotTrianglePath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotTrianglePath.swift; sourceTree = "<group>"; };
 		C53DB1891C99966A0054ED49 /* FunnyDotsA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunnyDotsA.swift; sourceTree = "<group>"; };
@@ -210,8 +214,10 @@
 				C53B84E11CA04665001A47C9 /* ChartViews */,
 				C5A88E8B1C98587400A890EB /* AppDelegate.swift */,
 				C5A88E8D1C98587400A890EB /* ViewController.swift */,
+				C53B84F61CA04766001A47C9 /* DemoViewController.swift */,
 				C53DB1991C9996770054ED49 /* Helper.swift */,
 				C53DB19A1C9996770054ED49 /* Loader.swift */,
+				C53B84F81CA04980001A47C9 /* Model.swift */,
 				C5A88EBE1C985D2400A890EB /* MyPlayground.playground */,
 				C5A88E8F1C98587400A890EB /* Main.storyboard */,
 				C5A88E941C98587400A890EB /* LaunchScreen.storyboard */,
@@ -462,11 +468,13 @@
 				C53DB1961C99966A0054ED49 /* RPLoadingAnimationView.swift in Sources */,
 				C53DB1901C99966A0054ED49 /* DotSpinningLikeSkype.swift in Sources */,
 				C53B84F41CA04665001A47C9 /* StepsView.swift in Sources */,
+				C53B84F91CA04980001A47C9 /* Model.swift in Sources */,
 				C53B84F31CA04665001A47C9 /* SleepView.swift in Sources */,
 				C53B84F21CA04665001A47C9 /* LineView.swift in Sources */,
 				C53B84EE1CA04665001A47C9 /* BloodPressureView.swift in Sources */,
 				C53DB1951C99966A0054ED49 /* RPLoadingAnimationDelegate.swift in Sources */,
 				C53DB1981C99966A0054ED49 /* TimingFunction.swift in Sources */,
+				C53B84F71CA04766001A47C9 /* DemoViewController.swift in Sources */,
 				C53DB1941C99966A0054ED49 /* RotatingCircle.swift in Sources */,
 				C53B84ED1CA04665001A47C9 /* BarView.swift in Sources */,
 				C53DB19C1C9996770054ED49 /* Loader.swift in Sources */,

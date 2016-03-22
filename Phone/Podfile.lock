@@ -4,20 +4,23 @@ PODS:
   - Charts (2.2.3):
     - Charts/Core (= 2.2.3)
   - Charts/Core (2.2.3)
+  - GradientView (2.1.0)
   - SwiftString (0.5)
 
 DEPENDENCIES:
   - ActionKit
   - AsyncSwift
   - Charts
+  - GradientView
   - SwiftString
 
 SPEC CHECKSUMS:
   ActionKit: 6c45e3d92252dd34b18e7c3d8e9f811ee52558b1
   AsyncSwift: 46a78bceb11f0e5bb52747f740d9692ec78d2d7c
   Charts: f54267bb3f0f0e74520c6f248517cf5074dfd6fc
+  GradientView: 4a961b8e9e1787beaf6880b9fc2dd08c6345533d
   SwiftString: ec9c31c55b2aa147a1154f5f5f8483dc71e3165f
 
-PODFILE CHECKSUM: 26e6f979d1f8cd7de39c98cbcad89f7f9ffaf537
+PODFILE CHECKSUM: 7ecd67875958e35c76e0b7ee8dda40fbdac1985b
 
 COCOAPODS: 1.0.0.beta.3

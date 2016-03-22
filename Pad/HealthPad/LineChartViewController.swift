@@ -8,9 +8,8 @@
 
 import UIKit
 import Charts
-import GradientView
 
-public class LineChartViewController: UIViewController, ChartViewDelegate {
+public class LineChartViewController: UIViewController {
     
     var scrollView:UIScrollView!
     public var stepsView:StepsView?
@@ -26,22 +25,25 @@ public class LineChartViewController: UIViewController, ChartViewDelegate {
         scrollView = UIScrollView(frame: self.view.frame)
         self.view.addSubview(scrollView)
         
-        heartRateView = HeartRateView(frame: CGRectMake(100, 100, 500, 280))
+        let width = self.view.frame.width * 0.7
+        let height = width * 0.56
+        
+        heartRateView = HeartRateView(frame: CGRectMake(100, 100, width, height))
         scrollView.addSubview(heartRateView!)
         
-        bloodPressureView = BloodPressureView(frame: CGRectMake(100, 400, 500, 280))
+        bloodPressureView = BloodPressureView(frame: CGRectMake(100, 400, width, height))
         scrollView.addSubview(bloodPressureView!)
         
-        sleepView = SleepView(frame: CGRectMake(100, 700, 500, 280))
+        sleepView = SleepView(frame: CGRectMake(100, 700, width, height))
         scrollView.addSubview(sleepView!)
         
-        stepsView = StepsView(frame: CGRectMake(100, 1000, 500, 280))
+        stepsView = StepsView(frame: CGRectMake(100, 1000, width, height))
         scrollView.addSubview(stepsView!)
         
-        energyView = ActiveEnergyView(frame: CGRectMake(100, 1300, 500, 280))
+        energyView = ActiveEnergyView(frame: CGRectMake(100, 1300, width, height))
         scrollView.addSubview(energyView!)
         
-        weightView = WeightView(frame: CGRectMake(100, 1600, 500, 280))
+        weightView = WeightView(frame: CGRectMake(100, 1600, width, height))
         scrollView.addSubview(weightView!)
         
         scrollView.contentSize = CGSizeMake(scrollView.frame.width, (weightView?.frame.origin.y)! + (weightView?.frame.height)! + 50)

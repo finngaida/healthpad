@@ -8,7 +8,6 @@
 
 import UIKit
 import Charts
-import GradientView
 
 public class CandleView: ChartView {
     

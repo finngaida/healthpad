@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="w1B-Zd-sXE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ASQ-u9-gCi">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Sync-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HealthPad" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HealthPad_Companion" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -38,13 +38,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Then press this button to save that to the Cloud" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gyd-tG-oAJ">
-                                <rect key="frame" x="29" y="277" width="543" height="97"/>
+                                <rect key="frame" x="29" y="277" width="543" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLm-PY-mSz">
-                                <rect key="frame" x="196" y="382" width="208" height="92"/>
+                                <rect key="frame" x="196" y="333" width="208" height="92"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="92" id="D2t-vv-xKr"/>
                                 </constraints>
@@ -72,16 +72,17 @@
                             <constraint firstItem="jQD-jx-6Ce" firstAttribute="leading" secondItem="iLm-PY-mSz" secondAttribute="leading" id="zoN-PG-L2B"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="kjj-nr-UJk"/>
+                    <navigationItem key="navigationItem" title="Sync" id="kjj-nr-UJk"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1187" y="349"/>
+            <point key="canvasLocation" x="2007" y="-10"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Item-->
         <scene sceneID="EWU-ub-1KD">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="w1B-Zd-sXE" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="KON-bQ-RkO"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CGh-jK-jSZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -94,7 +95,63 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nPS-R5-CWZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1195" y="-10"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Plb-40-cBk">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="ASQ-u9-gCi" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Kyz-bl-ioG">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="w1B-Zd-sXE" kind="relationship" relationship="viewControllers" id="54z-Ew-m4J"/>
+                        <segue destination="eMb-3F-YAc" kind="relationship" relationship="viewControllers" id="hRY-Vl-DqI"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kK1-O8-fRh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="375" y="349"/>
+        </scene>
+        <!--Demo-->
+        <scene sceneID="Gkr-wL-xRT">
+            <objects>
+                <viewController id="W8L-dV-wWs" customClass="DemoViewController" customModule="HealthPad_Companion" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="g3B-wN-yMK"/>
+                        <viewControllerLayoutGuide type="bottom" id="yTE-3o-KR9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="csG-0j-mcp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Demo" id="4az-fH-xPO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q3Q-L7-JGz" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2007" y="708"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="1ci-Bk-Oag">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eMb-3F-YAc" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Hca-h9-3DW"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FzG-yR-h1e">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="W8L-dV-wWs" kind="relationship" relationship="rootViewController" id="nYh-UX-ZgV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ohh-wF-axW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1195" y="708"/>
         </scene>
     </scenes>
 </document>

@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>GradientView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-HealthPad Companion.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,7 +47,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9327F8F220648EC02DE9865002E185AF</key>
+		<key>4663F9660178719034005984E2B43E18</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9B2C456E145967416E32A6CF95739163</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AD2D164C6F8C55D3BF15A46F4A3CA477</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -52,17 +67,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CD4B7F77391BA8D718D5B51E82A02F51</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>D1DC35DB2C695031A72543555FB23729</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DDA7B231322A9F1544D72C1A4264DB0D</key>
+		<key>D714037593A1D0448AF01C98C0203714</key>
 		<dict>
 			<key>primary</key>
 			<true/>

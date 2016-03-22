@@ -8,4 +8,5 @@ pod "AsyncSwift"
 pod "ActionKit"
 pod "SwiftString"
 pod "Charts"
+pod "GradientView"
 end
