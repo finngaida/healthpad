@@ -39,12 +39,6 @@ public class LineView: ChartView {
         self.addSubview(Helper.gradientForColor(CGRectMake(0, 0, self.frame.width, self.frame.height), color: self.color))
         self.addSubview(chart!)
         
-        let average = ChartLimitLine(limit: 12.0)
-        average.lineColor = UIColor(white: 1.0, alpha: 0.5)
-        average.lineWidth = 1
-        average.lineDashLengths = [5.0]
-        chart?.rightAxis.addLimitLine(average)
-        
         // test chart
         //        self.addSubview(ResearchKitGraphHelper.sharedHelper.lineChart((chart?.frame)!))
     }
@@ -60,7 +54,8 @@ public class LineView: ChartView {
     public override func setData(data:Array<HealthObject>) {
         self.data = data
         
-        let set = LineChartDataSet(yVals: data.enumerate().map({ChartDataEntry(value: Double(self.majorValueFromHealthObject($1)) ?? 0, xIndex: $0)}), label: "")
+        let yVals = data.enumerate().map({ChartDataEntry(value: Double(self.majorValueFromHealthObject($1)) ?? 0, xIndex: $0)})
+        let set = LineChartDataSet(yVals: yVals, label: "")
         set.lineWidth = 2
         set.circleRadius = 5
         set.setCircleColor(UIColor.whiteColor())
@@ -77,6 +72,14 @@ public class LineView: ChartView {
         
         var xVals = (1...data.count).map({"\($0)"})
         xVals[0] = "Mar \(xVals[0])"   // TODO Real month
+        
+        let avg = yVals.map({Int($0.value)}).average
+        let average = ChartLimitLine(limit: avg)
+        average.lineColor = UIColor(white: 1.0, alpha: 0.5)
+        average.lineWidth = 1
+        average.lineDashLengths = [5.0]
+        chart?.rightAxis.addLimitLine(average)
+        
         chart?.data = LineChartData(xVals: xVals, dataSet: set)
         
         // send data to test chart

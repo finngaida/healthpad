@@ -333,3 +333,14 @@ public class ResearchKitGraphHelper:NSObject, ORKGraphChartViewDataSource, ORKGr
     }
 
 }
+
+extension Array where Element: IntegerType {
+    var total: Element {
+        guard !isEmpty else { return 0 }
+        return reduce(0){$0 + $1}
+    }
+    var average: Double {
+        guard let total = total as? Int where !isEmpty else { return 0 }
+        return Double(total)/Double(count)
+    }
+}

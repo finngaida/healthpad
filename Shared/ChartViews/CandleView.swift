@@ -46,6 +46,8 @@ public class CandleView: ChartView {
         chart?.rightAxis.gridColor = UIColor.whiteColor()
         chart?.rightAxis.showOnlyMinMaxEnabled = true
         chart?.xAxis.enabled = true
+        chart?.rightAxis.startAtZeroEnabled = true
+        chart?.leftAxis.startAtZeroEnabled = true
         
         chart?.backgroundColor = UIColor.clearColor()
         chart?.layer.masksToBounds
@@ -53,12 +55,6 @@ public class CandleView: ChartView {
         chart?.alpha = 0
         self.addSubview(Helper.gradientForColor(CGRectMake(0, 0, self.frame.width, self.frame.height), color: self.color))
         self.addSubview(chart!)
-        
-        let average = ChartLimitLine(limit: 17.0)
-        average.lineColor = UIColor(white: 1.0, alpha: 0.5)
-        average.lineWidth = 1
-        average.lineDashLengths = [5.0]
-        chart?.rightAxis.addLimitLine(average)
         
         
         // test chart
@@ -128,11 +124,17 @@ public class CandleView: ChartView {
             testChart?.alpha = 1
         }
         
+        let avg = (upperyVals.map({Int($0.value)}).average + loweryVals.map({Int($0.value)}).average) / 2
+        let average = ChartLimitLine(limit: avg)
+        average.lineColor = UIColor(white: 1.0, alpha: 0.5)
+        average.lineWidth = 1
+        average.lineDashLengths = [5.0]
+        chart?.rightAxis.addLimitLine(average)
+        
         // aand put that into the chart
         enddata.scatterData = ScatterChartData(xVals: xVals, dataSets: [scattersetupper, scattersetlower])
         enddata.candleData = CandleChartData(xVals: xVals, dataSets: [candleset])
         chart?.data = enddata
-        
         
         // send data to test chart
         ResearchKitGraphHelper.sharedHelper.data = data.map({

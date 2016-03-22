@@ -37,11 +37,6 @@ public class BarView: ChartView {
         self.addSubview(Helper.gradientForColor(CGRectMake(0, 0, self.frame.width, self.frame.height), color: self.color))
         self.addSubview(chart!)
         
-        let average = ChartLimitLine(limit: 12.0)
-        average.lineColor = UIColor(white: 1.0, alpha: 0.5)
-        average.lineWidth = 1
-        average.lineDashLengths = [5.0]
-        chart?.rightAxis.addLimitLine(average)
     }
     
     public override func setupLabels() {
@@ -53,13 +48,23 @@ public class BarView: ChartView {
     }
     
     public override func setData(data:Array<HealthObject>) {
-        let set = BarChartDataSet(yVals: data.enumerate().map({BarChartDataEntry(value: Double(self.majorValueFromHealthObject($1)) ?? 0, xIndex: $0)}), label: "")
+        
+        let yVals = data.enumerate().map({BarChartDataEntry(value: Double(self.majorValueFromHealthObject($1)) ?? 0, xIndex: $0)})
+        let set = BarChartDataSet(yVals: yVals, label: "")
         set.drawValuesEnabled = false
         set.highlightEnabled = false
         set.colors = [UIColor(white: 1.0, alpha: 0.5)]
         
         var xVals = (1...data.count).map({"\($0)"})
         xVals[0] = "Mar \(xVals[0])"   // TODO Real month
+        
+        let avg = yVals.map({Int($0.value)}).average
+        let average = ChartLimitLine(limit: avg)
+        average.lineColor = UIColor(white: 1.0, alpha: 0.5)
+        average.lineWidth = 1
+        average.lineDashLengths = [5.0]
+        chart?.rightAxis.addLimitLine(average)
+        
         chart?.data = BarChartData(xVals: xVals, dataSet: set)
     }
     
