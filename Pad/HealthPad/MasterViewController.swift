@@ -30,7 +30,11 @@ public class MasterViewController: UITableViewController {
     override public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "Cell")
         
-        if indexPath.row == 0 && self.tableView(tableView, numberOfRowsInSection: 0) == 1 {cell.textLabel?.text = "Test Line Chart"}
+        if indexPath.row == 0 && self.tableView(tableView, numberOfRowsInSection: 0) == 1 {
+            cell.textLabel?.text = "Test Line Chart"
+        } else {
+            cell.textLabel?.text = ""
+        }
         
         guard let data = Helper.sharedHelper.latestData else {return cell}
         cell.textLabel?.text = Array(data.keys)[indexPath.row]
@@ -39,9 +43,7 @@ public class MasterViewController: UITableViewController {
     
     override public func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        if indexPath.row == 0 && self.tableView(tableView, numberOfRowsInSection: 0) == 1 {
-            NSNotificationCenter.defaultCenter().postNotificationName(Helper.sharedHelper.typeSelectedNotification, object: nil)
-        }
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         if let data = Helper.sharedHelper.latestData {
             NSNotificationCenter.defaultCenter().postNotificationName(Helper.sharedHelper.typeSelectedNotification, object: Array(data.keys)[indexPath.row])

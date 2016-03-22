@@ -229,7 +229,7 @@ public class ResearchKitGraphHelper:NSObject, ORKGraphChartViewDataSource, ORKGr
     public static let sharedHelper = ResearchKitGraphHelper()
     public var lineChart:ORKLineGraphChartView?
     public var candleChart:ORKDiscreteGraphChartView?
-    public var data:[ORKRangedPoint]? {
+    public var data:[ORKRangedPoint]? = [[120, 43], [130, 50], [125, 55], [120, 55], [125, 45], [130, 40]].map({ORKRangedPoint(minimumValue: $0[1], maximumValue: $0[0])}) {
         didSet {
             if let line = lineChart {
                 line.reloadData()
@@ -244,33 +244,36 @@ public class ResearchKitGraphHelper:NSObject, ORKGraphChartViewDataSource, ORKGr
     }
     
     public func lineChart(frame: CGRect) -> ORKLineGraphChartView {
-        lineChart = ORKLineGraphChartView(frame: frame)
-        lineChart?.delegate = self
-        lineChart?.dataSource = self
-        lineChart?.showsVerticalReferenceLines = false
-        lineChart?.showsHorizontalReferenceLines = false
-        lineChart?.axisColor = UIColor(white: 1.0, alpha: 0.9)
-        lineChart?.tintColor = UIColor(white: 1.0, alpha: 0.9)
-        lineChart?.scrubberLineColor = UIColor(white: 1.0, alpha: 0.9)
-        lineChart?.referenceLineColor = UIColor(white: 1.0, alpha: 0.9)
-        lineChart?.scrubberThumbColor = UIColor(white: 1.0, alpha: 0.9)
-        lineChart?.verticalAxisTitleColor = UIColor(white: 1.0, alpha: 0.9)
-        return lineChart!
+        let lineChart = ORKLineGraphChartView(frame: frame)
+        lineChart.delegate = self
+        lineChart.dataSource = self
+        lineChart.showsVerticalReferenceLines = false
+        lineChart.showsHorizontalReferenceLines = false
+        lineChart.axisColor = UIColor(white: 1.0, alpha: 0.9)
+        lineChart.tintColor = UIColor(white: 1.0, alpha: 0.5)
+        lineChart.scrubberLineColor = UIColor(white: 1.0, alpha: 0.9)
+        lineChart.referenceLineColor = UIColor(white: 1.0, alpha: 0.9)
+        lineChart.scrubberThumbColor = UIColor(white: 1.0, alpha: 0.9)
+        lineChart.verticalAxisTitleColor = UIColor(white: 1.0, alpha: 0.9)
+        self.lineChart = lineChart
+        return lineChart
     }
     
     public func candleChart(frame: CGRect) -> ORKDiscreteGraphChartView {
-        candleChart = ORKDiscreteGraphChartView(frame: frame)
-        candleChart?.delegate = self
-        candleChart?.dataSource = self
-        candleChart?.showsVerticalReferenceLines = false
-        candleChart?.showsHorizontalReferenceLines = false
-        candleChart?.axisColor = UIColor(white: 1.0, alpha: 1.0)
-        candleChart?.scrubberLineColor = UIColor(white: 1.0, alpha: 0.5)
-        candleChart?.referenceLineColor = UIColor(white: 1.0, alpha: 0.7)
-        candleChart?.scrubberThumbColor = UIColor(white: 1.0, alpha: 0.8)
-        candleChart?.verticalAxisTitleColor = UIColor(white: 1.0, alpha: 1.0)
-        candleChart?.tintColor = UIColor(white: 1.0, alpha: 0.5)
-        return candleChart!
+        let candleChart = ORKDiscreteGraphChartView(frame: frame)
+        candleChart.delegate = self
+        candleChart.dataSource = self
+        candleChart.showsVerticalReferenceLines = false
+        candleChart.showsHorizontalReferenceLines = false
+        candleChart.axisColor = UIColor(white: 1.0, alpha: 1.0)
+        candleChart.scrubberLineColor = UIColor(white: 1.0, alpha: 0.5)
+        candleChart.referenceLineColor = UIColor(white: 1.0, alpha: 0.7)
+        candleChart.scrubberThumbColor = UIColor(white: 1.0, alpha: 0.8)
+        candleChart.verticalAxisTitleColor = UIColor(white: 1.0, alpha: 1.0)
+        candleChart.tintColor = UIColor(white: 1.0, alpha: 0.4)
+        candleChart.alpha = 0
+        self.candleChart = candleChart
+        return candleChart
     }
     
     public func numberOfPlotsInGraphChartView(graphChartView: ORKGraphChartView) -> Int {
@@ -303,12 +306,14 @@ public class ResearchKitGraphHelper:NSObject, ORKGraphChartViewDataSource, ORKGr
         
     }
     
-//    public func maximumValueForGraphChartView(graphChartView: ORKGraphChartView) -> CGFloat {
-//        
-//    }
+    public func maximumValueForGraphChartView(graphChartView: ORKGraphChartView) -> CGFloat {
+        guard let d = data else {return 0}
+        return (d.map({$0.maximumValue}).maxElement() ?? 0) + 40
+    }
     
     public func minimumValueForGraphChartView(graphChartView: ORKGraphChartView) -> CGFloat {
-        return 0
+        guard let d = data else {return 0}
+        return (d.map({$0.minimumValue}).minElement() ?? 0) - 40
     }
     
     public func scrubbingPlotIndexForGraphChartView(graphChartView: ORKGraphChartView) -> Int {

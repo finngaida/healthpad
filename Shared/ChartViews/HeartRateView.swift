@@ -23,14 +23,12 @@ public class HeartRateView: CandleView {
     
     public override func majorValueFromHealthObject(obj:HealthObject) -> String {
         if let o = obj as? HeartRate {
-            print(o)
             return "\(o.highestbpm)"
         } else {return ""}
     }
     
     public override func minorValueFromHealthObject(obj:HealthObject) -> String {
         if let o = obj as? HeartRate {
-            print(o)
             return "\(o.lowestbpm)"
         } else {return ""}
     }

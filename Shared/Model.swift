@@ -51,7 +51,7 @@ public struct HeartRateValue {
 
 public struct HeartRate:HealthObject {
     let highestbpm:Int
-    let lowestbpm:Int?
+    let lowestbpm:Int
     let all:[HeartRateValue]?
     public var description:String? = ""
     public var unit:Unit? = Unit.bpm
@@ -65,7 +65,7 @@ public struct BloodPressureValue {
 
 public struct BloodPressure:HealthObject {
     let highest:Int
-    let lowest:Int?
+    let lowest:Int
     let all:[BloodPressureValue]?
     public var description:String? = ""
     public var unit:Unit? = Unit.mmHg

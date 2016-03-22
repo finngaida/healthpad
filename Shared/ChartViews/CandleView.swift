@@ -13,6 +13,7 @@ import ResearchKit
 public class CandleView: ChartView {
     
     public var chart: CombinedChartView?
+    public var testChart: ORKDiscreteGraphChartView?
     
     public var shadowVisible: Bool = true {
         didSet {
@@ -61,8 +62,9 @@ public class CandleView: ChartView {
         
         
         // test chart
-        self.addSubview(ResearchKitGraphHelper.sharedHelper.candleChart((chart?.frame)!))
-        ResearchKitGraphHelper.sharedHelper.candleChart?.alpha = 0
+        testChart = ResearchKitGraphHelper.sharedHelper.candleChart((chart?.frame)!)
+        testChart?.alpha = 0
+        self.addSubview(testChart!)
     }
     
     public override func setupLabels() {
@@ -123,7 +125,7 @@ public class CandleView: ChartView {
             scattersetlower.customScatterShape = self.createArrowPath(false, radius: radius)
             chart?.alpha = 1
         } else {
-            ResearchKitGraphHelper.sharedHelper.candleChart?.alpha = 1
+            testChart?.alpha = 1
         }
         
         // aand put that into the chart
@@ -133,7 +135,11 @@ public class CandleView: ChartView {
         
         
         // send data to test chart
-        ResearchKitGraphHelper.sharedHelper.data = data.map({ORKRangedPoint(minimumValue: CGFloat(Float(self.majorValueFromHealthObject($0)) ?? 0) - 10, maximumValue: CGFloat(Float(self.majorValueFromHealthObject($0)) ?? 0))})
+        ResearchKitGraphHelper.sharedHelper.data = data.map({
+            let min = CGFloat(Double(self.minorValueFromHealthObject($0)) ?? 80)
+            let max = CGFloat(Double(self.majorValueFromHealthObject($0)) ?? 120)
+            return ORKRangedPoint(minimumValue: min, maximumValue: max)
+        })
     }
     
     public func createArrowPath(up:Bool, radius:CGFloat) -> CGPathRef {
