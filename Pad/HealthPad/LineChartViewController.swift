@@ -62,13 +62,19 @@ public class LineChartViewController: UIViewController {
         
         stepsView?.setData([6234, 7234, 8234, 7543, 8724, 8234, 6234, 6734].map({Steps(count:$0, description:"", unit:Unit.steps, date:nil)}))
         
-        weightView?.setData([79.5, 79.0, 80.0, 79.0, 81.0, 80.5, 79.0, 70.5].map({Weight(value:$0, description:"", unit:Unit.kg, date:nil)}))
+//        weightView?.setData([79.5, 79.0, 80.0, 79.0, 81.0, 80.5, 79.0, 70.5].map({Weight(value:$0, description:"", unit:Unit.kg, date:nil)}))
         
         if let data = Helper.sharedHelper.latestData {
             
             if let energies = data["ActiveEnergyBurned"] {
                 print("Energy: \(energies)")
                 energyView?.setData(energies.map({Energy(value:Double("\(($0 as! GeneralHealthObject).value)") ?? 0, description:"\($0)", unit:Unit.kcal, date:nil)}))
+                
+            }
+            
+            if let weights = data["Weight"] {
+                print("Weight: \(weights)")
+                weightView?.setData(weights.map({Weight(value:Double("\(($0 as! GeneralHealthObject).value)") ?? 0, description:"\($0)", unit:Unit.kg, date:nil)}))
                 
             }
             

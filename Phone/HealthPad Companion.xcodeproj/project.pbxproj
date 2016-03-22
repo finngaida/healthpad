@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9FC094F2924E371CCD01E68B /* Pods_HealthPad_Companion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CDD8282C78D6EE0EA62B503 /* Pods_HealthPad_Companion.framework */; };
+		C50020221CA15BE0005884A4 /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C500201F1CA15BCF005884A4 /* ResearchKit.framework */; };
+		C50020231CA15BE0005884A4 /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C500201F1CA15BCF005884A4 /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C53B84EC1CA04665001A47C9 /* ActiveEnergyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53B84E21CA04665001A47C9 /* ActiveEnergyView.swift */; };
 		C53B84ED1CA04665001A47C9 /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53B84E31CA04665001A47C9 /* BarView.swift */; };
 		C53B84EE1CA04665001A47C9 /* BloodPressureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53B84E41CA04665001A47C9 /* BloodPressureView.swift */; };
@@ -43,6 +45,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		C500201E1CA15BCF005884A4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C50020181CA15BCE005884A4 /* ResearchKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B183A5951A8535D100C76870;
+			remoteInfo = ResearchKit;
+		};
+		C50020201CA15BCF005884A4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C50020181CA15BCE005884A4 /* ResearchKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 86CC8E9A1AC09332001CCD89;
+			remoteInfo = ResearchKitTests;
+		};
+		C50020241CA15BE0005884A4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C50020181CA15BCE005884A4 /* ResearchKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B183A4731A8535D100C76870;
+			remoteInfo = ResearchKit;
+		};
 		C5A88E9D1C98587400A890EB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C5A88E801C98587300A890EB /* Project object */;
@@ -59,6 +82,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		C50020261CA15BE0005884A4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C50020231CA15BE0005884A4 /* ResearchKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0CDD8282C78D6EE0EA62B503 /* Pods_HealthPad_Companion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealthPad_Companion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		10681C607D1523A5665DE2A8 /* Pods_HealthPadUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealthPadUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +104,8 @@
 		6B0FC362A753D81F0E3C4409 /* Pods-HealthPad Companion.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthPad Companion.release.xcconfig"; path = "Pods/Target Support Files/Pods-HealthPad Companion/Pods-HealthPad Companion.release.xcconfig"; sourceTree = "<group>"; };
 		7368E6167072F20E406B16A6 /* Pods_HealthPad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealthPad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAE1463A7E277645D602792F /* Pods_HealthPadTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealthPadTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C50020091CA15A82005884A4 /* ResearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ResearchKit.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/HealthPad-dcxibvzptxythyeddpwzvhtoulhp/Build/Products/Debug-iphoneos/ResearchKit.framework"; sourceTree = "<group>"; };
+		C50020181CA15BCE005884A4 /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = ../Shared/ResearchKit/ResearchKit.xcodeproj; sourceTree = "<group>"; };
 		C53B84E21CA04665001A47C9 /* ActiveEnergyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveEnergyView.swift; sourceTree = "<group>"; };
 		C53B84E31CA04665001A47C9 /* BarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
 		C53B84E41CA04665001A47C9 /* BloodPressureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloodPressureView.swift; sourceTree = "<group>"; };
@@ -117,6 +156,7 @@
 			files = (
 				C5A88EBA1C98593E00A890EB /* HealthKit.framework in Frameworks */,
 				C5A88EBD1C985A1000A890EB /* CloudKit.framework in Frameworks */,
+				C50020221CA15BE0005884A4 /* ResearchKit.framework in Frameworks */,
 				9FC094F2924E371CCD01E68B /* Pods_HealthPad_Companion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,6 +187,15 @@
 				0CDD8282C78D6EE0EA62B503 /* Pods_HealthPad_Companion.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C50020191CA15BCE005884A4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C500201F1CA15BCF005884A4 /* ResearchKit.framework */,
+				C50020211CA15BCF005884A4 /* ResearchKitTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		C53B84E11CA04665001A47C9 /* ChartViews */ = {
@@ -187,6 +236,7 @@
 		C5A88E7F1C98587300A890EB = {
 			isa = PBXGroup;
 			children = (
+				C50020181CA15BCE005884A4 /* ResearchKit.xcodeproj */,
 				C5A88E8A1C98587400A890EB /* HealthPad Companion */,
 				C5A88E9F1C98587400A890EB /* HealthPadTests */,
 				C5A88EAA1C98587400A890EB /* HealthPadUITests */,
@@ -247,6 +297,7 @@
 		C5DFEFEC1C995071000AA609 /* Stuff */ = {
 			isa = PBXGroup;
 			children = (
+				C50020091CA15A82005884A4 /* ResearchKit.framework */,
 				C5A88EBB1C9859FD00A890EB /* HealthPad.entitlements */,
 				C5A88E921C98587400A890EB /* Assets.xcassets */,
 				C5A88E971C98587400A890EB /* Info.plist */,
@@ -280,10 +331,12 @@
 				C5A88E861C98587300A890EB /* Resources */,
 				2C29805366C5ABB3492682BC /* Embed Pods Frameworks */,
 				6787C4E514853CBC576AC4CC /* Copy Pods Resources */,
+				C50020261CA15BE0005884A4 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C50020251CA15BE0005884A4 /* PBXTargetDependency */,
 			);
 			name = "HealthPad Companion";
 			productName = HealthPad;
@@ -369,6 +422,12 @@
 			mainGroup = C5A88E7F1C98587300A890EB;
 			productRefGroup = C5A88E891C98587400A890EB /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = C50020191CA15BCE005884A4 /* Products */;
+					ProjectRef = C50020181CA15BCE005884A4 /* ResearchKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				C5A88E871C98587300A890EB /* HealthPad Companion */,
@@ -377,6 +436,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		C500201F1CA15BCF005884A4 /* ResearchKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ResearchKit.framework;
+			remoteRef = C500201E1CA15BCF005884A4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C50020211CA15BCF005884A4 /* ResearchKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ResearchKitTests.xctest;
+			remoteRef = C50020201CA15BCF005884A4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		C5A88E861C98587300A890EB /* Resources */ = {
@@ -505,6 +581,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		C50020251CA15BE0005884A4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ResearchKit;
+			targetProxy = C50020241CA15BE0005884A4 /* PBXContainerItemProxy */;
+		};
 		C5A88E9E1C98587400A890EB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C5A88E871C98587300A890EB /* HealthPad Companion */;
@@ -628,6 +709,7 @@
 				CODE_SIGN_ENTITLEMENTS = HealthPad/HealthPad.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = HealthPad/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.finngaida.HealthPad;
@@ -645,6 +727,7 @@
 				CODE_SIGN_ENTITLEMENTS = HealthPad/HealthPad.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = HealthPad/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.finngaida.HealthPad;
