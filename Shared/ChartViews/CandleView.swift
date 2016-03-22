@@ -10,11 +10,9 @@ import UIKit
 import Charts
 import ResearchKit
 
-public class CandleView: ChartView, ORKGraphChartViewDelegate, ORKGraphChartViewDataSource {
+public class CandleView: ChartView {
     
     public var chart: CombinedChartView?
-    public var testChart: ORKDiscreteGraphChartView?
-    private var testChartPoints:[ORKRangedPoint]?
     
     public var shadowVisible: Bool = true {
         didSet {
@@ -63,19 +61,8 @@ public class CandleView: ChartView, ORKGraphChartViewDelegate, ORKGraphChartView
         
         
         // test chart
-        testChart = ORKDiscreteGraphChartView(frame: (chart?.frame)!)
-        testChart?.delegate = self
-        testChart?.dataSource = self
-        testChart?.showsVerticalReferenceLines = false
-        testChart?.showsHorizontalReferenceLines = false
-        testChart?.axisColor = UIColor(white: 1.0, alpha: 1.0)
-        testChart?.scrubberLineColor = UIColor(white: 1.0, alpha: 0.5)
-        testChart?.referenceLineColor = UIColor(white: 1.0, alpha: 0.7)
-        testChart?.scrubberThumbColor = UIColor(white: 1.0, alpha: 0.8)
-        testChart?.verticalAxisTitleColor = UIColor(white: 1.0, alpha: 1.0)
-        testChart?.tintColor = UIColor(white: 1.0, alpha: 0.5)
-        testChart?.alpha = 0
-        self.addSubview(testChart!)
+        self.addSubview(ResearchKitGraphHelper.sharedHelper.candleChart((chart?.frame)!))
+        ResearchKitGraphHelper.sharedHelper.candleChart?.alpha = 0
     }
     
     public override func setupLabels() {
@@ -136,7 +123,7 @@ public class CandleView: ChartView, ORKGraphChartViewDelegate, ORKGraphChartView
             scattersetlower.customScatterShape = self.createArrowPath(false, radius: radius)
             chart?.alpha = 1
         } else {
-            testChart?.alpha = 1
+            ResearchKitGraphHelper.sharedHelper.candleChart?.alpha = 1
         }
         
         // aand put that into the chart
@@ -146,9 +133,7 @@ public class CandleView: ChartView, ORKGraphChartViewDelegate, ORKGraphChartView
         
         
         // send data to test chart
-        testChartPoints = data.map({ORKRangedPoint(minimumValue: CGFloat(Float(self.majorValueFromHealthObject($0)) ?? 0) - 10, maximumValue: CGFloat(Float(self.majorValueFromHealthObject($0)) ?? 0))})
-        testChart?.reloadData()
-        testChart?.animateWithDuration(1.0)
+        ResearchKitGraphHelper.sharedHelper.data = data.map({ORKRangedPoint(minimumValue: CGFloat(Float(self.majorValueFromHealthObject($0)) ?? 0) - 10, maximumValue: CGFloat(Float(self.majorValueFromHealthObject($0)) ?? 0))})
     }
     
     public func createArrowPath(up:Bool, radius:CGFloat) -> CGPathRef {
@@ -179,25 +164,6 @@ public class CandleView: ChartView, ORKGraphChartViewDelegate, ORKGraphChartView
         CGContextDrawPath(ctx, .EOFillStroke)
         
         return path
-    }
-    
-    // Research Kit delegate & data source
-    public func numberOfPlotsInGraphChartView(graphChartView: ORKGraphChartView) -> Int {
-        return 1
-    }
-    
-    public func graphChartView(graphChartView: ORKGraphChartView, pointForPointIndex pointIndex: Int, plotIndex: Int) -> ORKRangedPoint {
-        guard let p = testChartPoints else {return ORKRangedPoint(value: 0)}
-        return p[pointIndex]
-    }
-    
-    public func graphChartView(graphChartView: ORKGraphChartView, numberOfPointsForPlotIndex plotIndex: Int) -> Int {
-        guard let p = testChartPoints else {return 0}
-        return p.count
-    }
-    
-    public func graphChartView(graphChartView: ORKGraphChartView, titleForXAxisAtPointIndex pointIndex: Int) -> String? {
-        return "\(pointIndex + 1)"
     }
     
     required public init?(coder aDecoder: NSCoder) {

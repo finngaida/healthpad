@@ -10,11 +10,9 @@ import UIKit
 import Charts
 import ResearchKit
 
-public class LineView: ChartView, ORKGraphChartViewDelegate, ORKGraphChartViewDataSource {
+public class LineView: ChartView {
     
     public var chart: LineChartView?
-    public var testChart: ORKLineGraphChartView?
-    private var testChartPoints:[ORKRangedPoint]?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -48,18 +46,7 @@ public class LineView: ChartView, ORKGraphChartViewDelegate, ORKGraphChartViewDa
         chart?.rightAxis.addLimitLine(average)
         
         // test chart
-        testChart = ORKLineGraphChartView(frame: (chart?.frame)!)
-        testChart?.delegate = self
-        testChart?.dataSource = self
-        testChart?.showsVerticalReferenceLines = false
-        testChart?.showsHorizontalReferenceLines = false
-        //        testChart?.axisColor = UIColor(white: 1.0, alpha: 0.9)
-        //        testChart?.tintColor = UIColor(white: 1.0, alpha: 0.9)
-        //        testChart?.scrubberLineColor = UIColor(white: 1.0, alpha: 0.9)
-        //        testChart?.referenceLineColor = UIColor(white: 1.0, alpha: 0.9)
-        //        testChart?.scrubberThumbColor = UIColor(white: 1.0, alpha: 0.9)
-        //        testChart?.verticalAxisTitleColor = UIColor(white: 1.0, alpha: 0.9)
-        //        self.addSubview(testChart!)
+        //        self.addSubview(ResearchKitGraphHelper.sharedHelper.lineChart((chart?.frame)!))
     }
     
     public override func setupLabels() {
@@ -93,33 +80,11 @@ public class LineView: ChartView, ORKGraphChartViewDelegate, ORKGraphChartViewDa
         chart?.data = LineChartData(xVals: xVals, dataSet: set)
         
         // send data to test chart
-        testChartPoints = data.map({ORKRangedPoint(value: CGFloat(Float(self.majorValueFromHealthObject($0))!))})
-        testChart?.reloadData()
-        testChart?.animateWithDuration(1.0)
+        ResearchKitGraphHelper.sharedHelper.data = data.map({ORKRangedPoint(value: CGFloat(Float(self.majorValueFromHealthObject($0))!))})
     }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    
-    // Research Kit delegate & data source
-    public func numberOfPlotsInGraphChartView(graphChartView: ORKGraphChartView) -> Int {
-        return 1
-    }
-    
-    public func graphChartView(graphChartView: ORKGraphChartView, pointForPointIndex pointIndex: Int, plotIndex: Int) -> ORKRangedPoint {
-        guard let p = testChartPoints else {return ORKRangedPoint(value: 0)}
-        return p[pointIndex]
-    }
-    
-    public func graphChartView(graphChartView: ORKGraphChartView, numberOfPointsForPlotIndex plotIndex: Int) -> Int {
-        guard let p = testChartPoints else {return 0}
-        return p.count
-    }
-    
-    public func graphChartView(graphChartView: ORKGraphChartView, titleForXAxisAtPointIndex pointIndex: Int) -> String? {
-        return "\(pointIndex + 1)"
-    }
-    
     
 }

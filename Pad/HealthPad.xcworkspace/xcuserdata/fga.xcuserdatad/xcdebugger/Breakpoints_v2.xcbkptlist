@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "HealthPad/LineChartViewController.swift"
-            timestampString = "480183625.492356"
+            timestampString = "480330910.993006"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "setupData()"
             landmarkType = "5">
          </BreakpointContent>

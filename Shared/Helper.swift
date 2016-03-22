@@ -12,6 +12,7 @@ import CloudKit
 import Async
 import HealthKit
 import GradientView
+import ResearchKit
 
 public class Helper: NSObject {
     
@@ -221,4 +222,109 @@ public class Helper: NSObject {
     
     public let workoutTypes:[HKWorkoutType] = [HKSampleType.workoutType()]
     
+}
+
+public class ResearchKitGraphHelper:NSObject, ORKGraphChartViewDataSource, ORKGraphChartViewDelegate {
+    
+    public static let sharedHelper = ResearchKitGraphHelper()
+    public var lineChart:ORKLineGraphChartView?
+    public var candleChart:ORKDiscreteGraphChartView?
+    public var data:[ORKRangedPoint]? {
+        didSet {
+            if let line = lineChart {
+                line.reloadData()
+                line.animateWithDuration(0.5)
+            }
+            
+            if let candle = candleChart {
+                candle.reloadData()
+                candle.animateWithDuration(0.5)
+            }
+        }
+    }
+    
+    public func lineChart(frame: CGRect) -> ORKLineGraphChartView {
+        lineChart = ORKLineGraphChartView(frame: frame)
+        lineChart?.delegate = self
+        lineChart?.dataSource = self
+        lineChart?.showsVerticalReferenceLines = false
+        lineChart?.showsHorizontalReferenceLines = false
+        lineChart?.axisColor = UIColor(white: 1.0, alpha: 0.9)
+        lineChart?.tintColor = UIColor(white: 1.0, alpha: 0.9)
+        lineChart?.scrubberLineColor = UIColor(white: 1.0, alpha: 0.9)
+        lineChart?.referenceLineColor = UIColor(white: 1.0, alpha: 0.9)
+        lineChart?.scrubberThumbColor = UIColor(white: 1.0, alpha: 0.9)
+        lineChart?.verticalAxisTitleColor = UIColor(white: 1.0, alpha: 0.9)
+        return lineChart!
+    }
+    
+    public func candleChart(frame: CGRect) -> ORKDiscreteGraphChartView {
+        candleChart = ORKDiscreteGraphChartView(frame: frame)
+        candleChart?.delegate = self
+        candleChart?.dataSource = self
+        candleChart?.showsVerticalReferenceLines = false
+        candleChart?.showsHorizontalReferenceLines = false
+        candleChart?.axisColor = UIColor(white: 1.0, alpha: 1.0)
+        candleChart?.scrubberLineColor = UIColor(white: 1.0, alpha: 0.5)
+        candleChart?.referenceLineColor = UIColor(white: 1.0, alpha: 0.7)
+        candleChart?.scrubberThumbColor = UIColor(white: 1.0, alpha: 0.8)
+        candleChart?.verticalAxisTitleColor = UIColor(white: 1.0, alpha: 1.0)
+        candleChart?.tintColor = UIColor(white: 1.0, alpha: 0.5)
+        return candleChart!
+    }
+    
+    public func numberOfPlotsInGraphChartView(graphChartView: ORKGraphChartView) -> Int {
+        return 1
+    }
+    
+    public func graphChartView(graphChartView: ORKGraphChartView, pointForPointIndex pointIndex: Int, plotIndex: Int) -> ORKRangedPoint {
+        guard let p = data else {return ORKRangedPoint(value: 0)}
+        return p[pointIndex]
+    }
+    
+    public func graphChartView(graphChartView: ORKGraphChartView, numberOfPointsForPlotIndex plotIndex: Int) -> Int {
+        guard let p = data else {return 0}
+        return p.count
+    }
+    
+    public func graphChartView(graphChartView: ORKGraphChartView, titleForXAxisAtPointIndex pointIndex: Int) -> String? {
+        return "\(pointIndex + 1)"
+    }
+    
+    public func graphChartViewTouchesBegan(graphChartView: ORKGraphChartView) {
+        
+    }
+    
+    public func graphChartView(graphChartView: ORKGraphChartView, touchesMovedToXPosition xPosition: CGFloat) {
+        
+    }
+    
+    public func graphChartViewTouchesEnded(graphChartView: ORKGraphChartView) {
+        
+    }
+    
+//    public func maximumValueForGraphChartView(graphChartView: ORKGraphChartView) -> CGFloat {
+//        
+//    }
+    
+    public func minimumValueForGraphChartView(graphChartView: ORKGraphChartView) -> CGFloat {
+        return 0
+    }
+    
+    public func scrubbingPlotIndexForGraphChartView(graphChartView: ORKGraphChartView) -> Int {
+        return 0
+    }
+    
+//    public func numberOfDivisionsInXAxisForGraphChartView(graphChartView: ORKGraphChartView) -> Int {
+//        
+//    }
+    
+    public func graphChartView(graphChartView: ORKGraphChartView, colorForPlotIndex plotIndex: Int) -> UIColor {
+        return UIColor(white: 1.0, alpha: 0.8)
+    }
+    
+    public func graphChartView(graphChartView: ORKGraphChartView, drawsVerticalReferenceLineAtPointIndex pointIndex: Int) -> Bool {
+        return false
+    }
+
 }
