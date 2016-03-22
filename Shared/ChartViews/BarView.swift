@@ -30,6 +30,7 @@ public class BarView: ChartView {
         chart?.rightAxis.gridColor = UIColor.whiteColor()
         chart?.rightAxis.showOnlyMinMaxEnabled = true
         chart?.xAxis.enabled = true
+        chart?.leftAxis.startAtZeroEnabled = true
         
         chart?.backgroundColor = UIColor.clearColor()
         chart?.layer.masksToBounds

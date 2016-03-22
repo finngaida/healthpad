@@ -265,12 +265,15 @@ public class ResearchKitGraphHelper:NSObject, ORKGraphChartViewDataSource, ORKGr
         candleChart.dataSource = self
         candleChart.showsVerticalReferenceLines = false
         candleChart.showsHorizontalReferenceLines = false
-        candleChart.axisColor = UIColor(white: 1.0, alpha: 1.0)
-        candleChart.scrubberLineColor = UIColor(white: 1.0, alpha: 0.5)
-        candleChart.referenceLineColor = UIColor(white: 1.0, alpha: 0.7)
-        candleChart.scrubberThumbColor = UIColor(white: 1.0, alpha: 0.8)
-        candleChart.verticalAxisTitleColor = UIColor(white: 1.0, alpha: 1.0)
-        candleChart.tintColor = UIColor(white: 1.0, alpha: 0.4)
+        candleChart.axisColor = UIColor(white: 1.0, alpha: 0.7)
+        candleChart.scrubberLineColor = UIColor(white: 1.0, alpha: 0.7)
+        candleChart.referenceLineColor = UIColor(white: 1.0, alpha: 0.4)
+        candleChart.scrubberThumbColor = UIColor(white: 1.0, alpha: 0.2)
+        candleChart.verticalAxisTitleColor = UIColor(white: 1.0, alpha: 0.9)
+        candleChart.referenceLineColor = UIColor(white: 1.0, alpha: 0.3)
+        candleChart.noDataText = "No data available"
+//        candleChart.maximumValueImage
+        candleChart.tintColor = UIColor(white: 1.0, alpha: 0.5)
         candleChart.alpha = 0
         self.candleChart = candleChart
         return candleChart
@@ -312,8 +315,9 @@ public class ResearchKitGraphHelper:NSObject, ORKGraphChartViewDataSource, ORKGr
     }
     
     public func minimumValueForGraphChartView(graphChartView: ORKGraphChartView) -> CGFloat {
-        guard let d = data else {return 0}
-        return (d.map({$0.minimumValue}).minElement() ?? 0) - 40
+        guard let _ = data else {return 0}
+//        return (d.map({$0.minimumValue}).minElement() ?? 0) - 40
+        return 0
     }
     
     public func scrubbingPlotIndexForGraphChartView(graphChartView: ORKGraphChartView) -> Int {
