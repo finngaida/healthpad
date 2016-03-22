@@ -8,10 +8,14 @@
 
 import UIKit
 import Charts
+import ResearchKit
 
-public class CandleView: ChartView {
+public class CandleView: ChartView, ORKGraphChartViewDelegate, ORKGraphChartViewDataSource {
     
     public var chart: CombinedChartView?
+    public var testChart: ORKDiscreteGraphChartView?
+    private var testChartPoints:[ORKRangedPoint]?
+    
     public var shadowVisible: Bool = true {
         didSet {
             self.reload()
@@ -47,6 +51,7 @@ public class CandleView: ChartView {
         chart?.backgroundColor = UIColor.clearColor()
         chart?.layer.masksToBounds
         chart?.layer.cornerRadius = 10
+        chart?.alpha = 0
         self.addSubview(Helper.gradientForColor(CGRectMake(0, 0, self.frame.width, self.frame.height), color: self.color))
         self.addSubview(chart!)
         
@@ -55,6 +60,22 @@ public class CandleView: ChartView {
         average.lineWidth = 1
         average.lineDashLengths = [5.0]
         chart?.rightAxis.addLimitLine(average)
+        
+        
+        // test chart
+        testChart = ORKDiscreteGraphChartView(frame: (chart?.frame)!)
+        testChart?.delegate = self
+        testChart?.dataSource = self
+        testChart?.showsVerticalReferenceLines = false
+        testChart?.showsHorizontalReferenceLines = false
+        testChart?.axisColor = UIColor(white: 1.0, alpha: 1.0)
+        testChart?.scrubberLineColor = UIColor(white: 1.0, alpha: 0.5)
+        testChart?.referenceLineColor = UIColor(white: 1.0, alpha: 0.7)
+        testChart?.scrubberThumbColor = UIColor(white: 1.0, alpha: 0.8)
+        testChart?.verticalAxisTitleColor = UIColor(white: 1.0, alpha: 1.0)
+        testChart?.tintColor = UIColor(white: 1.0, alpha: 0.5)
+        testChart?.alpha = 0
+        self.addSubview(testChart!)
     }
     
     public override func setupLabels() {
@@ -81,11 +102,11 @@ public class CandleView: ChartView {
         
         // y-Values for the upper+lower entries
         let upperyVals:[ChartDataEntry] = data.enumerate().map { (index: Int, element: HealthObject) -> ChartDataEntry in
-            return ChartDataEntry(value: (Double(self.majorValueFromHealthObject(element)) ?? 0) + 10, xIndex: index)
+            return ChartDataEntry(value: (Double(self.majorValueFromHealthObject(element)) ?? 0), xIndex: index)
         }
         
         let loweryVals:[ChartDataEntry] = data.enumerate().map { (index: Int, element: HealthObject) -> ChartDataEntry in
-            return ChartDataEntry(value: Double(self.minorValueFromHealthObject(element)) ?? 0, xIndex: index)
+            return ChartDataEntry(value: Double(self.minorValueFromHealthObject(element)) ?? ((Double(self.majorValueFromHealthObject(element)) ?? 80) - 30), xIndex: index)
         }
         
         // creating the sets
@@ -113,12 +134,21 @@ public class CandleView: ChartView {
         if (self.scatterShape == .Custom) {
             scattersetupper.customScatterShape = self.createArrowPath(true, radius: radius)
             scattersetlower.customScatterShape = self.createArrowPath(false, radius: radius)
+            chart?.alpha = 1
+        } else {
+            testChart?.alpha = 1
         }
         
         // aand put that into the chart
         enddata.scatterData = ScatterChartData(xVals: xVals, dataSets: [scattersetupper, scattersetlower])
         enddata.candleData = CandleChartData(xVals: xVals, dataSets: [candleset])
         chart?.data = enddata
+        
+        
+        // send data to test chart
+        testChartPoints = data.map({ORKRangedPoint(minimumValue: CGFloat(Float(self.majorValueFromHealthObject($0)) ?? 0) - 10, maximumValue: CGFloat(Float(self.majorValueFromHealthObject($0)) ?? 0))})
+        testChart?.reloadData()
+        testChart?.animateWithDuration(1.0)
     }
     
     public func createArrowPath(up:Bool, radius:CGFloat) -> CGPathRef {
@@ -149,6 +179,25 @@ public class CandleView: ChartView {
         CGContextDrawPath(ctx, .EOFillStroke)
         
         return path
+    }
+    
+    // Research Kit delegate & data source
+    public func numberOfPlotsInGraphChartView(graphChartView: ORKGraphChartView) -> Int {
+        return 1
+    }
+    
+    public func graphChartView(graphChartView: ORKGraphChartView, pointForPointIndex pointIndex: Int, plotIndex: Int) -> ORKRangedPoint {
+        guard let p = testChartPoints else {return ORKRangedPoint(value: 0)}
+        return p[pointIndex]
+    }
+    
+    public func graphChartView(graphChartView: ORKGraphChartView, numberOfPointsForPlotIndex plotIndex: Int) -> Int {
+        guard let p = testChartPoints else {return 0}
+        return p.count
+    }
+    
+    public func graphChartView(graphChartView: ORKGraphChartView, titleForXAxisAtPointIndex pointIndex: Int) -> String? {
+        return "\(pointIndex + 1)"
     }
     
     required public init?(coder aDecoder: NSCoder) {

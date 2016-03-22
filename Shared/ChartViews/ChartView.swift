@@ -11,6 +11,12 @@ import Charts
 
 public class ChartView: UIView, ChartViewDelegate {
     
+    public var data:Array<HealthObject>? {
+        didSet {
+            self.reload()
+        }
+    }
+    
     public var color: FGColor = .Gray {
         didSet {
             self.reload()

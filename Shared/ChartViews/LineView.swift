@@ -13,7 +13,8 @@ import ResearchKit
 public class LineView: ChartView, ORKGraphChartViewDelegate, ORKGraphChartViewDataSource {
     
     public var chart: LineChartView?
-    public var testChart: ORKGraphChartView?
+    public var testChart: ORKLineGraphChartView?
+    private var testChartPoints:[ORKRangedPoint]?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -38,7 +39,7 @@ public class LineView: ChartView, ORKGraphChartViewDelegate, ORKGraphChartViewDa
         chart?.layer.masksToBounds
         chart?.layer.cornerRadius = 10
         self.addSubview(Helper.gradientForColor(CGRectMake(0, 0, self.frame.width, self.frame.height), color: self.color))
-//        self.addSubview(chart!)
+        self.addSubview(chart!)
         
         let average = ChartLimitLine(limit: 12.0)
         average.lineColor = UIColor(white: 1.0, alpha: 0.5)
@@ -47,12 +48,18 @@ public class LineView: ChartView, ORKGraphChartViewDelegate, ORKGraphChartViewDa
         chart?.rightAxis.addLimitLine(average)
         
         // test chart
-        testChart = ORKGraphChartView(frame: (chart?.frame)!)
+        testChart = ORKLineGraphChartView(frame: (chart?.frame)!)
         testChart?.delegate = self
         testChart?.dataSource = self
-        testChart?.showsVerticalReferenceLines = true
-        testChart?.showsHorizontalReferenceLines = true
-        self.addSubview(testChart!)
+        testChart?.showsVerticalReferenceLines = false
+        testChart?.showsHorizontalReferenceLines = false
+        //        testChart?.axisColor = UIColor(white: 1.0, alpha: 0.9)
+        //        testChart?.tintColor = UIColor(white: 1.0, alpha: 0.9)
+        //        testChart?.scrubberLineColor = UIColor(white: 1.0, alpha: 0.9)
+        //        testChart?.referenceLineColor = UIColor(white: 1.0, alpha: 0.9)
+        //        testChart?.scrubberThumbColor = UIColor(white: 1.0, alpha: 0.9)
+        //        testChart?.verticalAxisTitleColor = UIColor(white: 1.0, alpha: 0.9)
+        //        self.addSubview(testChart!)
     }
     
     public override func setupLabels() {
@@ -64,6 +71,8 @@ public class LineView: ChartView, ORKGraphChartViewDelegate, ORKGraphChartViewDa
     }
     
     public override func setData(data:Array<HealthObject>) {
+        self.data = data
+        
         let set = LineChartDataSet(yVals: data.enumerate().map({ChartDataEntry(value: Double(self.majorValueFromHealthObject($1)) ?? 0, xIndex: $0)}), label: "")
         set.lineWidth = 2
         set.circleRadius = 5
@@ -82,43 +91,30 @@ public class LineView: ChartView, ORKGraphChartViewDelegate, ORKGraphChartViewDa
         var xVals = (1...data.count).map({"\($0)"})
         xVals[0] = "Mar \(xVals[0])"   // TODO Real month
         chart?.data = LineChartData(xVals: xVals, dataSet: set)
+        
+        // send data to test chart
+        testChartPoints = data.map({ORKRangedPoint(value: CGFloat(Float(self.majorValueFromHealthObject($0))!))})
+        testChart?.reloadData()
+        testChart?.animateWithDuration(1.0)
     }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
-    // test stuff
-    var plotPoints =
-    [
-        [
-            ORKRangedPoint(minimumValue: 0, maximumValue: 2),
-            ORKRangedPoint(minimumValue: 1, maximumValue: 4),
-            ORKRangedPoint(minimumValue: 2, maximumValue: 6),
-            ORKRangedPoint(minimumValue: 3, maximumValue: 8),
-            ORKRangedPoint(minimumValue: 5, maximumValue: 10),
-            ORKRangedPoint(minimumValue: 8, maximumValue: 13),
-        ],
-        [
-            ORKRangedPoint(value: 1),
-            ORKRangedPoint(minimumValue: 2, maximumValue: 6),
-            ORKRangedPoint(minimumValue: 3, maximumValue: 10),
-            ORKRangedPoint(minimumValue: 5, maximumValue: 11),
-            ORKRangedPoint(minimumValue: 7, maximumValue: 13),
-            ORKRangedPoint(minimumValue: 10, maximumValue: 13),
-        ]
-    ]
-    
+    // Research Kit delegate & data source
     public func numberOfPlotsInGraphChartView(graphChartView: ORKGraphChartView) -> Int {
-        return plotPoints.count
+        return 1
     }
     
     public func graphChartView(graphChartView: ORKGraphChartView, pointForPointIndex pointIndex: Int, plotIndex: Int) -> ORKRangedPoint {
-        return plotPoints[plotIndex][pointIndex]
+        guard let p = testChartPoints else {return ORKRangedPoint(value: 0)}
+        return p[pointIndex]
     }
-  
+    
     public func graphChartView(graphChartView: ORKGraphChartView, numberOfPointsForPlotIndex plotIndex: Int) -> Int {
-        return plotPoints[plotIndex].count
+        guard let p = testChartPoints else {return 0}
+        return p.count
     }
     
     public func graphChartView(graphChartView: ORKGraphChartView, titleForXAxisAtPointIndex pointIndex: Int) -> String? {
