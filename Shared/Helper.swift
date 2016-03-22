@@ -86,15 +86,20 @@ public class Helper: NSObject {
                             for (index2, record) in r2.enumerate() {
                                 
                                 if let obj = self.healthObjectFromRecord(record) {
-                                    data[name] = [obj]
+                                    if var section = data[name] {
+                                        section.append(obj)
+                                        data[name] = section
+                                    } else {
+                                        data[name] = [obj]
+                                    }
                                 } else {
-                                    
                                     let obj = GeneralHealthObject(value:record["content"] ?? "", description: "General Health data", unit:nil, date:record["endDate"] as? NSDate)
                                     
-                                    if data[name] == nil {
-                                        data[name] = [obj]
+                                    if var section = data[name] {
+                                        section.append(obj)
+                                        data[name] = section
                                     } else {
-                                        data[name]?.append(obj)
+                                        data[name] = [obj]
                                     }
                                 }
                                 
