@@ -18,7 +18,7 @@ public class Helper: NSObject {
     
     public static let sharedHelper = Helper()
     public let db = CKContainer.defaultContainer().publicCloudDatabase
-    public var latestData:Dictionary<String,Array<HealthObject>>?
+    public var latestData:Dictionary<String,Array<Day>> = Dictionary()
     
     public let typeSelectedNotification = "typeSelectedNotification"
     public let showLineChartSegue = "showLineChart"
@@ -59,9 +59,7 @@ public class Helper: NSObject {
         })
     }
     
-    public func fetchData(loader: Loader, completion: (Dictionary<String,Array<HealthObject>> -> ())) {
-        
-        var data = Dictionary<String,Array<HealthObject>>()
+    public func fetchData(loader: Loader, completion: (Dictionary<String,Array<Day>> -> ())) {
         
         let predicate = NSPredicate(value: true)
         db.performQuery(CKQuery(recordType: "Index", predicate: predicate), inZoneWithID: nil) { (records, error) -> Void in
@@ -83,31 +81,11 @@ public class Helper: NSObject {
                         } else if let r2 = records {
                             Helper.update(loader, s: Helper.editErrorMessage("got record: \(r)"))
                             
-                            for (index2, record) in r2.enumerate() {
-                                
-                                if let obj = self.healthObjectFromRecord(record) {
-                                    if var section = data[name] {
-                                        section.append(obj)
-                                        data[name] = section
-                                    } else {
-                                        data[name] = [obj]
-                                    }
-                                } else {
-                                    let obj = GeneralHealthObject(value:record["content"] ?? "", description: "General Health data", unit:nil, date:record["endDate"] as? NSDate)
-                                    
-                                    if var section = data[name] {
-                                        section.append(obj)
-                                        data[name] = section
-                                    } else {
-                                        data[name] = [obj]
-                                    }
-                                }
-                                
-                                if index == r.count - 1 && index2 == r2.count - 1 {
-                                    self.latestData = data
-                                    completion(data)
-                                }
+                            if index == r.count - 1 {
+                                self.latestData[name] = self.daysFromRecords(r2, recordType: name)
+                                completion(self.latestData)
                             }
+                            
                         }
                     })
                 }
@@ -115,38 +93,83 @@ public class Helper: NSObject {
         }
     }
     
+    public func daysFromRecords(records: [CKRecord], recordType:String) -> [Day]? {
+        
+        guard let lastDate = records[0]["endDate"] as? NSDate else {return nil}
+        var lastDay = lastDate.day
+        var returnArray = Array<Day>()
+        var currentDay = Day(type:DataType(rawValue: recordType) ?? DataType.Generic, maximumValue:0.0, minimumValue:0.0, all:[])
+        
+        for record in records {
+            
+            var obj:HealthObject?
+            if let object = self.healthObjectFromRecord(record) {
+                obj = object
+                
+            } else {
+                obj = GeneralHealthObject(value:Double((record["content"] ?? "") as! String) ?? 0.0, description: "General Health data", unit:nil, date:record["endDate"] as? NSDate)
+            }
+            
+            if let obj = obj {
+                if var all = currentDay.all {
+                    all.append(obj)
+                    currentDay.all = all
+                }
+                
+                
+                
+                if obj.date?.day != lastDay {
+                    returnArray.append(currentDay)
+                    lastDay = (obj.date?.day)!
+                }
+            }
+        }
+        
+        return returnArray
+    }
+    
     public func healthObjectFromRecord(record: CKRecord) -> HealthObject? {
         
         let content = record["content"]
         let unit = record["unit"] ?? ""
         let date:NSDate? = record["endDate"] as? NSDate
-        let type = record["type"] ?? ""
+        let _ = record["type"] ?? ""
         
-        print("trying to convert record of type \(type) with value \(content)\(unit) from \(date)")
+        print("trying to convert record of type \(record.recordType) with value \(content)\(unit) from \(date)")
         
         switch record.recordType {
         case "StepCount":
-            guard let count = content as? Int else {return nil}
-            return Steps(count:count, description: "Number of steps", unit:Unit.steps, date:date)
+            guard let count = content as? Double else {return nil}
+            return Steps(value:count, description: "Number of steps", unit:Unit.steps, date:date)
             
         case "HeartRate":
             guard let values = content as? Array<Int> else {return nil}
-            return HeartRate(highestbpm:values.maxElement() ?? 0, lowestbpm:values.minElement() ?? 0, all:values.map({HeartRateValue(date:nil, bpm: $0)}), description: "Heart rate in beats perminute", unit:Unit.bpm, date:date)
+            let high = values.maxElement() ?? 0
+            let low = values.minElement() ?? 0
+            return HeartRate(highestbpm:high, lowestbpm:low, all:values.map({HeartRateValue(date:nil, bpm: $0)}), value:Double((high + low)/2), description: "Heart rate in beats perminute", unit:Unit.bpm, date:date)
             
         case "BloodPressure":
             guard let values = content as? Array<(Int,Int)> else {return nil}
             
-            let high = values.map({$0.0}).maxElement()
-            let low = values.map({$0.1}).minElement()
+            let high = values.map({$0.0}).maxElement() ?? 0
+            let low = values.map({$0.1}).minElement() ?? 0
             
-            return BloodPressure(highest:high ?? 0, lowest: low ?? 0, all:values.map({BloodPressureValue(systolic:$0, diastolic:$1)}), description: "Blood Presure in mm of a Hg scale", unit:Unit.mmHg, date:date)
+            return BloodPressure(highest:high, lowest: low, all:values.map({BloodPressureValue(systolic:$0, diastolic:$1)}), value:Double((high + low)/2), description: "Blood Presure in mm of a Hg scale", unit:Unit.mmHg, date:date)
             
         case "Weight":
             guard let weight = content as? Double else {return nil}
             return Weight(value:weight, description: "Weight in kg", unit:Unit.kg, date:date)
             
+        case "BasalEnergyBurned":
+            guard let energy = content as? Double else {return nil}
+            return Energy(value:energy, description: "Energy in kcal", unit:Unit.kcal, date:date)
+            
+        case "ActiveEnergyBurned":
+            guard let energy = content as? Double else {return nil}
+            return Energy(value:energy, description: "Energy in kcal", unit:Unit.kcal, date:date)
+            
         default:
-            return GeneralHealthObject(value:content ?? "", description: "General health object", unit:nil, date:date)
+            return GeneralHealthObject(value:Double((content ?? "") as! String), description: "General health object", unit:nil, date:date)
         }
         
     }
@@ -277,7 +300,7 @@ public class ResearchKitGraphHelper:NSObject, ORKGraphChartViewDataSource, ORKGr
         candleChart.verticalAxisTitleColor = UIColor(white: 1.0, alpha: 0.9)
         candleChart.referenceLineColor = UIColor(white: 1.0, alpha: 0.3)
         candleChart.noDataText = "No data available"
-//        candleChart.maximumValueImage
+        //        candleChart.maximumValueImage
         candleChart.tintColor = UIColor(white: 1.0, alpha: 0.5)
         candleChart.alpha = 0
         self.candleChart = candleChart
@@ -321,7 +344,7 @@ public class ResearchKitGraphHelper:NSObject, ORKGraphChartViewDataSource, ORKGr
     
     public func minimumValueForGraphChartView(graphChartView: ORKGraphChartView) -> CGFloat {
         guard let _ = data else {return 0}
-//        return (d.map({$0.minimumValue}).minElement() ?? 0) - 40
+        //        return (d.map({$0.minimumValue}).minElement() ?? 0) - 40
         return 0
     }
     
@@ -329,9 +352,9 @@ public class ResearchKitGraphHelper:NSObject, ORKGraphChartViewDataSource, ORKGr
         return 0
     }
     
-//    public func numberOfDivisionsInXAxisForGraphChartView(graphChartView: ORKGraphChartView) -> Int {
-//        
-//    }
+    //    public func numberOfDivisionsInXAxisForGraphChartView(graphChartView: ORKGraphChartView) -> Int {
+    //        
+    //    }
     
     public func graphChartView(graphChartView: ORKGraphChartView, colorForPlotIndex plotIndex: Int) -> UIColor {
         return UIColor(white: 1.0, alpha: 0.8)
@@ -340,7 +363,7 @@ public class ResearchKitGraphHelper:NSObject, ORKGraphChartViewDataSource, ORKGr
     public func graphChartView(graphChartView: ORKGraphChartView, drawsVerticalReferenceLineAtPointIndex pointIndex: Int) -> Bool {
         return false
     }
-
+    
 }
 
 extension Array where Element: IntegerType {
@@ -351,5 +374,11 @@ extension Array where Element: IntegerType {
     var average: Double {
         guard let total = total as? Int where !isEmpty else { return 0 }
         return Double(total)/Double(count)
+    }
+}
+
+extension NSDate {
+    var day: Int {
+        return NSCalendar.currentCalendar().components([NSCalendarUnit.Day], fromDate: self).day
     }
 }

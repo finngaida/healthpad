@@ -21,7 +21,7 @@ public class SleepView: BarView {
     
     public override func majorValueFromHealthObject(obj:HealthObject) -> String {
         if let o = obj as? Sleep {
-            return "\(o.hours)"
+            return "\(o.value)"
         } else {return ""}
     }
     

@@ -23,8 +23,7 @@ public class MasterViewController: UITableViewController {
     }
     
     override public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let data = Helper.sharedHelper.latestData else {return 1}
-        return data.count
+        return Helper.sharedHelper.latestData.count
     }
     
     override public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -36,8 +35,7 @@ public class MasterViewController: UITableViewController {
             cell.textLabel?.text = ""
         }
         
-        guard let data = Helper.sharedHelper.latestData else {return cell}
-        cell.textLabel?.text = Array(data.keys)[indexPath.row]
+        cell.textLabel?.text = Array(Helper.sharedHelper.latestData.keys)[indexPath.row]
         return cell
     }
     
@@ -45,11 +43,8 @@ public class MasterViewController: UITableViewController {
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        if let data = Helper.sharedHelper.latestData {
-            NSNotificationCenter.defaultCenter().postNotificationName(Helper.sharedHelper.typeSelectedNotification, object: Array(data.keys)[indexPath.row])
-        } else {
-            NSNotificationCenter.defaultCenter().postNotificationName(Helper.sharedHelper.typeSelectedNotification, object: nil)
-        }
+        NSNotificationCenter.defaultCenter().postNotificationName(Helper.sharedHelper.typeSelectedNotification, object: Array(Helper.sharedHelper.latestData.keys)[indexPath.row])
+        
     }
     
 }

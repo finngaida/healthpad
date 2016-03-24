@@ -21,7 +21,7 @@ public class StepsView: LineView {
     
     public override func majorValueFromHealthObject(obj:HealthObject) -> String {
         if let o = obj as? Steps {
-            return "\(o.count)"
+            return "\(o.value)"
         } else {return ""}
     }
     
