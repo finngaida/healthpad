@@ -32,6 +32,11 @@ public class LineView: ChartView {
         chart?.rightAxis.gridColor = UIColor.whiteColor()
         chart?.rightAxis.showOnlyMinMaxEnabled = true
         chart?.xAxis.enabled = true
+        chart?.xAxis.labelTextColor = UIColor(white: 1.0, alpha: 0.8)
+        chart?.rightAxis.labelTextColor = UIColor(white: 1.0, alpha: 0.8)
+        chart?.xAxis.gridColor = UIColor(white: 1.0, alpha: 0.3)
+        chart?.rightAxis.axisLineColor = UIColor(white: 1.0, alpha: 0.5)
+        chart?.rightAxis.zeroLineColor = UIColor(white: 1.0, alpha: 0.5)
         
         chart?.backgroundColor = UIColor.clearColor()
         chart?.layer.masksToBounds
@@ -83,7 +88,7 @@ public class LineView: ChartView {
         chart?.data = LineChartData(xVals: xVals, dataSet: set)
         
         // send data to test chart
-        ResearchKitGraphHelper.sharedHelper.data = data.map({ORKRangedPoint(value: CGFloat(Float(self.majorValueFromHealthObject($0))!))})
+        ResearchKitGraphHelper.sharedHelper.data = data.map({ORKRangedPoint(value: CGFloat(Float(self.majorValueFromHealthObject($0)) ?? 0))})
     }
     
     required public init?(coder aDecoder: NSCoder) {

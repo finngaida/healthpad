@@ -48,6 +48,11 @@ public class CandleView: ChartView {
         chart?.xAxis.enabled = true
         chart?.rightAxis.startAtZeroEnabled = true
         chart?.leftAxis.startAtZeroEnabled = true
+        chart?.xAxis.labelTextColor = UIColor(white: 1.0, alpha: 0.8)
+        chart?.rightAxis.labelTextColor = UIColor(white: 1.0, alpha: 0.8)
+        chart?.xAxis.gridColor = UIColor(white: 1.0, alpha: 0.3)
+        chart?.rightAxis.axisLineColor = UIColor(white: 1.0, alpha: 0.5)
+        chart?.rightAxis.zeroLineColor = UIColor(white: 1.0, alpha: 0.5)
         
         chart?.backgroundColor = UIColor.clearColor()
         chart?.layer.masksToBounds

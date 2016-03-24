@@ -201,13 +201,13 @@
 		C53B84E11CA04665001A47C9 /* ChartViews */ = {
 			isa = PBXGroup;
 			children = (
-				C53B84E21CA04665001A47C9 /* ActiveEnergyView.swift */,
-				C53B84E31CA04665001A47C9 /* BarView.swift */,
-				C53B84E41CA04665001A47C9 /* BloodPressureView.swift */,
-				C53B84E51CA04665001A47C9 /* CandleView.swift */,
 				C53B84E61CA04665001A47C9 /* ChartView.swift */,
-				C53B84E71CA04665001A47C9 /* HeartRateView.swift */,
+				C53B84E31CA04665001A47C9 /* BarView.swift */,
 				C53B84E81CA04665001A47C9 /* LineView.swift */,
+				C53B84E51CA04665001A47C9 /* CandleView.swift */,
+				C53B84E21CA04665001A47C9 /* ActiveEnergyView.swift */,
+				C53B84E41CA04665001A47C9 /* BloodPressureView.swift */,
+				C53B84E71CA04665001A47C9 /* HeartRateView.swift */,
 				C53B84E91CA04665001A47C9 /* SleepView.swift */,
 				C53B84EA1CA04665001A47C9 /* StepsView.swift */,
 				C53B84EB1CA04665001A47C9 /* WeightView.swift */,

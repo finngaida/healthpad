@@ -116,7 +116,13 @@ public class Helper: NSObject {
                     currentDay.all = all
                 }
                 
+                if let v = obj.value where v > currentDay.maximumValue {
+                    currentDay.maximumValue = v
+                }
                 
+                if let v = obj.value where v < currentDay.minimumValue {
+                    currentDay.minimumValue = v
+                }
                 
                 if obj.date?.day != lastDay {
                     returnArray.append(currentDay)
