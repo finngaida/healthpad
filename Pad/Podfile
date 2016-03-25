@@ -3,10 +3,23 @@
 # Uncomment this line if you're using Swift
 use_frameworks!
 
+def testing_pods
+    pod 'Quick', '~> 0.9.0'
+    pod 'Nimble', '~> 3.2.0'
+end
+
 target 'HealthPad' do
 pod "Charts"
 pod "AsyncSwift"
 pod "ActionKit"
 pod "GradientView"
 pod "SwiftString"
+end
+
+target 'HealthPadTests' do
+testing_pods
+end
+
+target 'HealthPadUITests' do 
+testing_pods
 end

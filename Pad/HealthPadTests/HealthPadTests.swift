@@ -7,6 +7,8 @@
 //
 
 import XCTest
+import Quick
+import Nimble
 import CloudKit
 @testable import HealthPad
 

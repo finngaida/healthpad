@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01AC439D97795B636E5A4DAA /* Pods_HealthPadTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BAFAAD7E8BDC78E93C765C /* Pods_HealthPadTests.framework */; };
+		4300CF065A95F5F8D0EFA74D /* Pods_HealthPadUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62829C0A1FA64FC686387F06 /* Pods_HealthPadUITests.framework */; };
 		8E055D63BEC8A3C4913A644B /* Pods_HealthPad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64BDD96B4C0163A30607D050 /* Pods_HealthPad.framework */; };
 		C5001FF11CA1369E005884A4 /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5001FEE1CA13699005884A4 /* ResearchKit.framework */; };
 		C5001FF21CA1369E005884A4 /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C5001FEE1CA13699005884A4 /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -99,8 +101,13 @@
 
 /* Begin PBXFileReference section */
 		17E9B21814EF772D8C3CCE8D /* Pods-HealthPad.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthPad.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HealthPad/Pods-HealthPad.debug.xcconfig"; sourceTree = "<group>"; };
+		4CF17560B372485307139C27 /* Pods-HealthPadTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthPadTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HealthPadTests/Pods-HealthPadTests.debug.xcconfig"; sourceTree = "<group>"; };
+		62829C0A1FA64FC686387F06 /* Pods_HealthPadUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealthPadUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		64BDD96B4C0163A30607D050 /* Pods_HealthPad.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealthPad.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B1C39380B72B681DCF15EE7 /* Pods-HealthPadTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthPadTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HealthPadTests/Pods-HealthPadTests.release.xcconfig"; sourceTree = "<group>"; };
 		7D22D27ED3FF22BB4E1C1D48 /* Pods-HealthPad.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthPad.release.xcconfig"; path = "Pods/Target Support Files/Pods-HealthPad/Pods-HealthPad.release.xcconfig"; sourceTree = "<group>"; };
+		81BAFAAD7E8BDC78E93C765C /* Pods_HealthPadTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HealthPadTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D10F1CB629B7AFC98DE9EF1 /* Pods-HealthPadUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthPadUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HealthPadUITests/Pods-HealthPadUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C5001FE71CA13699005884A4 /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = ../Shared/ResearchKit/ResearchKit.xcodeproj; sourceTree = "<group>"; };
 		C53B84CD1CA045F8001A47C9 /* ActiveEnergyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActiveEnergyView.swift; sourceTree = "<group>"; };
 		C53B84CE1CA045F8001A47C9 /* BarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
@@ -142,6 +149,7 @@
 		C53DB1BB1C99BD9E0054ED49 /* LineChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChartViewController.swift; sourceTree = "<group>"; };
 		C53DB1BD1C99C5B00054ED49 /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		C5EF56F11C9DAF88001F30AE /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Model.swift; path = ../../Shared/Model.swift; sourceTree = "<group>"; };
+		C9D4AE99C7621B0FA9A5CA6C /* Pods-HealthPadUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthPadUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HealthPadUITests/Pods-HealthPadUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +167,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01AC439D97795B636E5A4DAA /* Pods_HealthPadTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +175,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4300CF065A95F5F8D0EFA74D /* Pods_HealthPadUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +187,10 @@
 			children = (
 				17E9B21814EF772D8C3CCE8D /* Pods-HealthPad.debug.xcconfig */,
 				7D22D27ED3FF22BB4E1C1D48 /* Pods-HealthPad.release.xcconfig */,
+				4CF17560B372485307139C27 /* Pods-HealthPadTests.debug.xcconfig */,
+				6B1C39380B72B681DCF15EE7 /* Pods-HealthPadTests.release.xcconfig */,
+				9D10F1CB629B7AFC98DE9EF1 /* Pods-HealthPadUITests.debug.xcconfig */,
+				C9D4AE99C7621B0FA9A5CA6C /* Pods-HealthPadUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -195,6 +209,8 @@
 			children = (
 				C53DB17E1C99913D0054ED49 /* CloudKit.framework */,
 				64BDD96B4C0163A30607D050 /* Pods_HealthPad.framework */,
+				81BAFAAD7E8BDC78E93C765C /* Pods_HealthPadTests.framework */,
+				62829C0A1FA64FC686387F06 /* Pods_HealthPadUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -326,9 +342,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C53DB1771C998F260054ED49 /* Build configuration list for PBXNativeTarget "HealthPadTests" */;
 			buildPhases = (
+				FAA51EF15EBC844506E96CAD /* Check Pods Manifest.lock */,
 				C53DB15C1C998F250054ED49 /* Sources */,
 				C53DB15D1C998F250054ED49 /* Frameworks */,
 				C53DB15E1C998F250054ED49 /* Resources */,
+				C42D955C10DCAE5F02126B5D /* Embed Pods Frameworks */,
+				D982076BA906582E239DE9A1 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -344,9 +363,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C53DB17A1C998F260054ED49 /* Build configuration list for PBXNativeTarget "HealthPadUITests" */;
 			buildPhases = (
+				F122ACFADDCA130C619D7EE9 /* Check Pods Manifest.lock */,
 				C53DB1671C998F250054ED49 /* Sources */,
 				C53DB1681C998F250054ED49 /* Frameworks */,
 				C53DB1691C998F250054ED49 /* Resources */,
+				C63D7A111FF6F886F7646C0C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -501,6 +522,81 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HealthPad/Pods-HealthPad-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C42D955C10DCAE5F02126B5D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HealthPadTests/Pods-HealthPadTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C63D7A111FF6F886F7646C0C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HealthPadUITests/Pods-HealthPadUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D982076BA906582E239DE9A1 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HealthPadTests/Pods-HealthPadTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F122ACFADDCA130C619D7EE9 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FAA51EF15EBC844506E96CAD /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -721,6 +817,7 @@
 		};
 		C53DB1781C998F260054ED49 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4CF17560B372485307139C27 /* Pods-HealthPadTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = HealthPadTests/Info.plist;
@@ -733,6 +830,7 @@
 		};
 		C53DB1791C998F260054ED49 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B1C39380B72B681DCF15EE7 /* Pods-HealthPadTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = HealthPadTests/Info.plist;
@@ -745,6 +843,7 @@
 		};
 		C53DB17B1C998F260054ED49 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D10F1CB629B7AFC98DE9EF1 /* Pods-HealthPadUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = HealthPadUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -757,6 +856,7 @@
 		};
 		C53DB17C1C998F260054ED49 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9D4AE99C7621B0FA9A5CA6C /* Pods-HealthPadUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = HealthPadUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
