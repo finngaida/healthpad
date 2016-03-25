@@ -102,15 +102,7 @@ public class Helper: NSObject {
         
         for record in records {
             
-            var obj:HealthObject?
-            if let object = self.healthObjectFromRecord(record) {
-                obj = object
-                
-            } else {
-                obj = GeneralHealthObject(value:Double((record["content"] ?? "") as! String) ?? 0.0, description: "General Health data", unit:nil, date:record["endDate"] as? NSDate)
-            }
-            
-            if let obj = obj {
+            func proceed(obj:HealthObject) {
                 if var all = currentDay.all {
                     all.append(obj)
                     currentDay.all = all
@@ -129,6 +121,14 @@ public class Helper: NSObject {
                     lastDay = (obj.date?.day)!
                 }
             }
+            
+            if let object = self.healthObjectFromRecord(record) {
+                proceed(object)
+                
+            } else {
+                proceed(GeneralHealthObject(value:Double((record["content"] ?? "") as! String) ?? 0.0, description: "General Health data", unit:nil, date:record["endDate"] as? NSDate))
+            }
+            
         }
         
         return returnArray
@@ -136,46 +136,46 @@ public class Helper: NSObject {
     
     public func healthObjectFromRecord(record: CKRecord) -> HealthObject? {
         
-        let content = record["content"]
-        let unit = record["unit"] ?? ""
+        let content = record["content"] as? String ?? ""
+        let unit = record["unit"] as? String ?? ""
         let date:NSDate? = record["endDate"] as? NSDate
-        let _ = record["type"] ?? ""
+        let _ = record["type"] as? String ?? ""
         
         print("trying to convert record of type \(record.recordType) with value \(content)\(unit) from \(date)")
         
         switch record.recordType {
         case "StepCount":
-            guard let count = content as? Double else {return nil}
+            guard let count = Double(content) else {return nil}
             return Steps(value:count, description: "Number of steps", unit:Unit.steps, date:date)
             
-        case "HeartRate":
-            guard let values = content as? Array<Int> else {return nil}
-            let high = values.maxElement() ?? 0
-            let low = values.minElement() ?? 0
-            return HeartRate(highestbpm:high, lowestbpm:low, all:values.map({HeartRateValue(date:nil, bpm: $0)}), value:Double((high + low)/2), description: "Heart rate in beats perminute", unit:Unit.bpm, date:date)
-            
-        case "BloodPressure":
-            guard let values = content as? Array<(Int,Int)> else {return nil}
-            
-            let high = values.map({$0.0}).maxElement() ?? 0
-            let low = values.map({$0.1}).minElement() ?? 0
-            
-            return BloodPressure(highest:high, lowest: low, all:values.map({BloodPressureValue(systolic:$0, diastolic:$1)}), value:Double((high + low)/2), description: "Blood Presure in mm of a Hg scale", unit:Unit.mmHg, date:date)
+            //        case "HeartRate":
+            //            guard let values = content as? Array<Int> else {return nil}
+            //            let high = values.maxElement() ?? 0
+            //            let low = values.minElement() ?? 0
+            //            return HeartRate(highestbpm:high, lowestbpm:low, all:values.map({HeartRateValue(date:nil, bpm: $0)}), value:Double((high + low)/2), description: "Heart rate in beats perminute", unit:Unit.bpm, date:date)
+            //            
+            //        case "BloodPressure":
+            //            guard let values = content as? Array<(Int,Int)> else {return nil}
+            //            
+            //            let high = values.map({$0.0}).maxElement() ?? 0
+            //            let low = values.map({$0.1}).minElement() ?? 0
+            //            
+            //            return BloodPressure(highest:high, lowest: low, all:values.map({BloodPressureValue(systolic:$0, diastolic:$1)}), value:Double((high + low)/2), description: "Blood Presure in mm of a Hg scale", unit:Unit.mmHg, date:date)
             
         case "Weight":
-            guard let weight = content as? Double else {return nil}
+            guard let weight = Double(content) else {return nil}
             return Weight(value:weight, description: "Weight in kg", unit:Unit.kg, date:date)
             
         case "BasalEnergyBurned":
-            guard let energy = content as? Double else {return nil}
+            guard let energy = Double(content) else {return nil}
             return Energy(value:energy, description: "Energy in kcal", unit:Unit.kcal, date:date)
             
         case "ActiveEnergyBurned":
-            guard let energy = content as? Double else {return nil}
+            guard let energy = Double(content) else {return nil}
             return Energy(value:energy, description: "Energy in kcal", unit:Unit.kcal, date:date)
             
         default:
-            return GeneralHealthObject(value:Double((content ?? "") as! String), description: "General health object", unit:nil, date:date)
+            return nil
         }
         
     }
@@ -187,7 +187,11 @@ public class Helper: NSObject {
         let end = s.rangeOfString(">").location
         
         if s.length - 2 > end {
-            return s.stringByReplacingCharactersInRange(NSMakeRange(start, end-start+2), withString: "")
+            
+            let end = s.stringByReplacingCharactersInRange(NSMakeRange(start, end-start+2), withString: "")
+            
+            print("converting error: \n \(e) \n to \n \(end)")
+            return end
         } else {
             return e
         }
@@ -211,8 +215,15 @@ public class Helper: NSObject {
             gradient.colors = [UIColor(red: 0.859, green: 0.651, blue: 0.988, alpha: 1.00), UIColor(red: 0.545, green: 0.263, blue: 0.980, alpha: 1.00)]
             break
         case .Blue:
-            gradient.colors = []
+            gradient.colors = [UIColor(red: 0.349, green: 0.780, blue: 0.980, alpha: 1.00), UIColor(red: 0.000, green: 0.392, blue: 0.992, alpha: 1.00)]
             break
+        case .Green:
+            gradient.colors = [UIColor(red: 0.263, green: 0.941, blue: 0.333, alpha: 1.00), UIColor(red: 0.000, green: 0.710, blue: 0.000, alpha: 1.00)]
+            break
+        case .Turquoise:
+            gradient.colors = [UIColor(red: 0.298, green: 0.914, blue: 0.800, alpha: 1.00), UIColor(red: 0.204, green: 0.675, blue: 0.863, alpha: 1.00)]
+            break
+            
         }
         
         return gradient

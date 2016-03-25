@@ -14,6 +14,8 @@ public enum FGColor {
     case Yellow
     case Purple
     case Blue
+    case Green
+    case Turquoise
 }
 
 public enum DataType:String {
