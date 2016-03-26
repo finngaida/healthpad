@@ -36,7 +36,7 @@ class HealthPadTests: XCTestCase {
         
         // Assert
         dispatch_async(dispatch_get_main_queue()) { () -> Void in
-            XCTAssertEqual(loader.label?.text, "This is a test!")
+            expect(loader.label?.text).to(equal("This is a test!"))
         }
         
     }
@@ -80,13 +80,15 @@ class HealthPadTests: XCTestCase {
         // Act
         if let days = helper.daysFromRecords(records, recordType: "Test") {
             
+            print("days: \(days)")
+            
             // Assert
-            XCTAssertEqual(days.count, 2, "The number of days should depend on the given dates")
+            expect(days.count).to(equal(2))
             
             days.forEach({ (day) -> () in
-                XCTAssertEqual(day.minimumValue, 10.0, "The minimum value should be inherited from the given records")
-                XCTAssertEqual(day.maximumValue, 20.0, "The maximum value should be inherited from the given records")
-                XCTAssertEqual(day.all?.count, 2, "The number of encapsuled values should equal the number of records given for that day")
+                expect(day.minimumValue).to(equal(10.0))
+                expect(day.maximumValue).to(equal(20.0))
+                expect(day.all?.count).to(equal(2))
             })
             
             
@@ -110,8 +112,8 @@ class HealthPadTests: XCTestCase {
         guard let obj = Helper.sharedHelper.healthObjectFromRecord(record) else {XCTFail("The method should only return nil, when the record type is unknown"); return}
         
         // Assert
-        XCTAssertEqual(obj.value, 123.0, "The value of the object should be correctly transmissed")
-        XCTAssertEqual(obj.date, date, "The date of the object should be correctly transmissed")
+        expect(obj.value).to(equal(123.0))
+        expect(obj.date).to(equal(date))
         
     }
     
@@ -124,7 +126,7 @@ class HealthPadTests: XCTestCase {
         let msg = Helper.editErrorMessage(error)
         
         // Assert
-        XCTAssertEqual(msg, "")  // TODO
+        expect(msg).to(equal(""))  // TODO
         
     }
     
@@ -146,8 +148,8 @@ class HealthPadTests: XCTestCase {
         let average = array.average
         
         // Assert
-        XCTAssertEqual(total, (a + b + c + d), "The total sum of the array should be correct")
-        XCTAssertEqual(average, 2.5, "The average value should be the total divided by the count")
+        expect(total).to(equal((a + b + c + d)))
+        expect(average).to(equal(2.5))
         
     }
     
@@ -162,7 +164,7 @@ class HealthPadTests: XCTestCase {
         let day = date?.day
         
         // Assert
-        XCTAssertEqual(day, 31, "The day of the date should be correctly extracted.")
+        expect(day).to(equal(31))
         
     }
     

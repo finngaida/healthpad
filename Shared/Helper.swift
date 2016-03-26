@@ -98,39 +98,52 @@ public class Helper: NSObject {
         guard let lastDate = records[0]["endDate"] as? NSDate else {return nil}
         var lastDay = lastDate.day
         var returnArray = Array<Day>()
-        var currentDay = Day(type:DataType(rawValue: recordType) ?? DataType.Generic, maximumValue:0.0, minimumValue:0.0, all:[])
+        
+        func newDay() -> Day {
+            return Day(type:DataType(rawValue: recordType) ?? DataType.Generic, maximumValue:M_PI, minimumValue:M_PI, all:[])
+        }
+        
+        var currentDay = newDay()
         
         for record in records {
             
             func proceed(obj:HealthObject) {
+                if obj.date?.day != lastDay {
+                    returnArray.append(currentDay)
+                    lastDay = (obj.date?.day)!
+                    currentDay = newDay()
+                }
+                
                 if var all = currentDay.all {
                     all.append(obj)
                     currentDay.all = all
                 }
                 
-                if let v = obj.value where v > currentDay.maximumValue {
+                if let v = obj.value where v > currentDay.maximumValue || currentDay.maximumValue == M_PI {
                     currentDay.maximumValue = v
                 }
                 
-                if let v = obj.value where v < currentDay.minimumValue {
+                if let v = obj.value where v < currentDay.minimumValue || currentDay.minimumValue == M_PI {
                     currentDay.minimumValue = v
                 }
                 
-                if obj.date?.day != lastDay {
-                    returnArray.append(currentDay)
-                    lastDay = (obj.date?.day)!
-                }
             }
             
             if let object = self.healthObjectFromRecord(record) {
                 proceed(object)
                 
             } else {
-                proceed(GeneralHealthObject(value:Double((record["content"] ?? "") as! String) ?? 0.0, description: "General Health data", unit:nil, date:record["endDate"] as? NSDate))
+                let content = (record["content"] ?? "") as! String
+                let value = Double(content) ?? 0.0
+                
+                print("Content: \(content), value: \(value)")
+                
+                proceed(GeneralHealthObject(value: value, description: "General Health data", unit:nil, date:record["endDate"] as? NSDate))
             }
             
         }
         
+        returnArray.append(currentDay)
         return returnArray
     }
     
