@@ -26,7 +26,7 @@
 		C53DB1551C998F250054ED49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C53DB1531C998F250054ED49 /* Main.storyboard */; };
 		C53DB1571C998F250054ED49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C53DB1561C998F250054ED49 /* Assets.xcassets */; };
 		C53DB15A1C998F250054ED49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C53DB1581C998F250054ED49 /* LaunchScreen.storyboard */; };
-		C53DB1651C998F250054ED49 /* HealthPadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53DB1641C998F250054ED49 /* HealthPadTests.swift */; };
+		C53DB1651C998F250054ED49 /* HelperSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53DB1641C998F250054ED49 /* HelperSpec.swift */; };
 		C53DB1701C998F260054ED49 /* HealthPadUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53DB16F1C998F260054ED49 /* HealthPadUITests.swift */; };
 		C53DB17F1C99913D0054ED49 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C53DB17E1C99913D0054ED49 /* CloudKit.framework */; };
 		C53DB1811C9992350054ED49 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53DB1801C9992350054ED49 /* MasterViewController.swift */; };
@@ -126,7 +126,7 @@
 		C53DB1591C998F250054ED49 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C53DB15B1C998F250054ED49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C53DB1601C998F250054ED49 /* HealthPadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HealthPadTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C53DB1641C998F250054ED49 /* HealthPadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthPadTests.swift; sourceTree = "<group>"; };
+		C53DB1641C998F250054ED49 /* HelperSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperSpec.swift; sourceTree = "<group>"; };
 		C53DB1661C998F250054ED49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C53DB16B1C998F260054ED49 /* HealthPadUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HealthPadUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C53DB16F1C998F260054ED49 /* HealthPadUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthPadUITests.swift; sourceTree = "<group>"; };
@@ -281,7 +281,7 @@
 		C53DB1631C998F250054ED49 /* HealthPadTests */ = {
 			isa = PBXGroup;
 			children = (
-				C53DB1641C998F250054ED49 /* HealthPadTests.swift */,
+				C53DB1641C998F250054ED49 /* HelperSpec.swift */,
 				C53DB1661C998F250054ED49 /* Info.plist */,
 			);
 			path = HealthPadTests;
@@ -640,7 +640,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C53DB1651C998F250054ED49 /* HealthPadTests.swift in Sources */,
+				C53DB1651C998F250054ED49 /* HelperSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
