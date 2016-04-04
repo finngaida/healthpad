@@ -20,9 +20,8 @@ class HelperSpec: QuickSpec {
             describe("updating the status label on the loader") {
                 
                 // Arrange
-                let app = UIApplication.sharedApplication()
-                let vc = app.keyWindow?.rootViewController
-                let loader = Loader.showLoader(vc!)
+                let vc = UIViewController()
+                let loader = Loader.showLoader(vc)
                 
                 // Act
                 Helper.update(loader, s: "This is a test!")
