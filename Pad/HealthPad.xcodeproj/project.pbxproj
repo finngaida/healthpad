@@ -787,7 +787,7 @@
 				CODE_SIGN_ENTITLEMENTS = HealthPad/HealthPad.entitlements;
 				DEFINES_MODULE = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				FRAMEWORK_SEARCH_PATHS = "./**";
+				FRAMEWORK_SEARCH_PATHS = "build/**";
 				INFOPLIST_FILE = HealthPad/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.finngaida.HealthPad;
@@ -804,7 +804,7 @@
 				CODE_SIGN_ENTITLEMENTS = HealthPad/HealthPad.entitlements;
 				DEFINES_MODULE = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				FRAMEWORK_SEARCH_PATHS = "./**";
+				FRAMEWORK_SEARCH_PATHS = "build/**";
 				INFOPLIST_FILE = HealthPad/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.finngaida.HealthPad;
