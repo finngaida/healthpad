@@ -1,6 +1,7 @@
 language: objective-c
-xcode_workspace: Pad/HealthPad.xcworkspace
-xcode_scheme: HealthPad
-xcode_sdk: iphonesimulator9.1
+#xcode_workspace: Pad/HealthPad.xcworkspace
+#xcode_scheme: HealthPad
+#xcode_sdk: iphonesimulator9.1
 osx_image: xcode7.3
 podfile: Pad/Podfile
+script: xcodebuild -workspace Pad/HealthPad.xcworkspace.xcworkspace -scheme HealthPad -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
