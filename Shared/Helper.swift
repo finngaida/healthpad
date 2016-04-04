@@ -13,6 +13,7 @@ import Async
 import HealthKit
 import GradientView
 import ResearchKit
+import SwiftString
 
 public class Helper: NSObject {
     
@@ -195,19 +196,12 @@ public class Helper: NSObject {
     
     public class func editErrorMessage(e:String) -> String {
         
-        let s = e as NSString
-        let start = s.rangeOfString("<").location
-        let end = s.rangeOfString(">").location
+        guard let s = e.between("<", ">") else {return e}
+        guard var r = e.rangeOfString(s) else {return e}
+        r.startIndex = r.startIndex.advancedBy(-2)
+        r.endIndex = r.endIndex.successor()
+        return e.stringByReplacingCharactersInRange(r, withString: "")
         
-        if s.length - 2 > end {
-            
-            let end = s.stringByReplacingCharactersInRange(NSMakeRange(start, end-start+2), withString: "")
-            
-            print("converting error: \n \(e) \n to \n \(end)")
-            return end
-        } else {
-            return e
-        }
     }
     
     public class func gradientForColor(frame: CGRect, color: FGColor) -> UIView {

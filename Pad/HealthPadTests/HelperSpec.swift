@@ -123,14 +123,14 @@ class HelperSpec: QuickSpec {
             describe("editing the error message") {
                 
                 // Arrange
-                let error = "" // TODO
+                let error = "This is some <rather unneccessary> interesting information"
                 
                 // Act
                 let msg = Helper.editErrorMessage(error)
                 
                 // Assert
                 it("should only return the relevant information") {
-                    expect(msg).to(equal(""))  // TODO
+                    expect(msg).to(equal("This is some interesting information"))
                 }
                 
             }
