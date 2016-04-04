@@ -42,7 +42,8 @@
 		C53DB1B31C99A0C70054ED49 /* TimingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53DB1AA1C99A0C70054ED49 /* TimingFunction.swift */; };
 		C53DB1BC1C99BD9E0054ED49 /* LineChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53DB1BB1C99BD9E0054ED49 /* LineChartViewController.swift */; };
 		C53DB1BE1C99C5B00054ED49 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53DB1BD1C99C5B00054ED49 /* SplitViewController.swift */; };
-		C548EE931CB2EA5D0031F543 /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C548EE921CB2EA5D0031F543 /* ResearchKit.framework */; };
+		C548EE941CB2EE020031F543 /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5001FEE1CA13699005884A4 /* ResearchKit.framework */; };
+		C548EE951CB2EE020031F543 /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C5001FEE1CA13699005884A4 /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C5EF56F21C9DAF88001F30AE /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EF56F11C9DAF88001F30AE /* Model.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,7 +76,28 @@
 			remoteGlobalIDString = C53DB1491C998F250054ED49;
 			remoteInfo = HealthPad;
 		};
+		C548EE961CB2EE020031F543 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C5001FE71CA13699005884A4 /* ResearchKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B183A4731A8535D100C76870;
+			remoteInfo = ResearchKit;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C548EE981CB2EE020031F543 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C548EE951CB2EE020031F543 /* ResearchKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		17E9B21814EF772D8C3CCE8D /* Pods-HealthPad.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HealthPad.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HealthPad/Pods-HealthPad.debug.xcconfig"; sourceTree = "<group>"; };
@@ -139,7 +161,7 @@
 			files = (
 				8E055D63BEC8A3C4913A644B /* Pods_HealthPad.framework in Frameworks */,
 				C53DB17F1C99913D0054ED49 /* CloudKit.framework in Frameworks */,
-				C548EE931CB2EA5D0031F543 /* ResearchKit.framework in Frameworks */,
+				C548EE941CB2EE020031F543 /* ResearchKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,10 +330,12 @@
 				C53DB1481C998F250054ED49 /* Resources */,
 				3604AFD4657308D4A11441BF /* Embed Pods Frameworks */,
 				A04522715C41E61E0010737E /* Copy Pods Resources */,
+				C548EE981CB2EE020031F543 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C548EE971CB2EE020031F543 /* PBXTargetDependency */,
 			);
 			name = HealthPad;
 			productName = HealthPad;
@@ -645,6 +669,11 @@
 			target = C53DB1491C998F250054ED49 /* HealthPad */;
 			targetProxy = C53DB16C1C998F260054ED49 /* PBXContainerItemProxy */;
 		};
+		C548EE971CB2EE020031F543 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ResearchKit;
+			targetProxy = C548EE961CB2EE020031F543 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -757,9 +786,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HealthPad/HealthPad.entitlements;
 				DEFINES_MODULE = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(SRCROOT)/**",
 				);
 				INFOPLIST_FILE = HealthPad/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -776,9 +807,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HealthPad/HealthPad.entitlements;
 				DEFINES_MODULE = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(SRCROOT)/**",
 				);
 				INFOPLIST_FILE = HealthPad/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

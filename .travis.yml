@@ -7,5 +7,3 @@ podfile: Pad/Podfile
 script:
  - xcodebuild clean -workspace Pad/HealthPad.xcworkspace -scheme HealthPad
  - xcodebuild -workspace Pad/HealthPad.xcworkspace -scheme HealthPad -destination "platform=iOS Simulator,name=iPad Air 2,OS=9.3" test
-# - sleep 10
-# - xcodebuild -verbose -workspace Pad/HealthPad.xcworkspace -scheme HealthPad -destination "platform=iOS Simulator,name=iPad Air,OS=9.2" test
