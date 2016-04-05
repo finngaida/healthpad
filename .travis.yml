@@ -5,4 +5,5 @@ before_install:
   - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
 script:
  - set -o pipefail
+ - xcodebuild clean -workspace Pad/HealthPad.xcworkspace -scheme HealthPadTests | xcpretty -c
  - xcodebuild test -workspace Pad/HealthPad.xcworkspace -scheme HealthPadTests -destination "platform=iOS Simulator,name=iPad Air 2,OS=9.3" | xcpretty -c
