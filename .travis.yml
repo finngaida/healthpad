@@ -6,4 +6,4 @@ before_install:
 script:
  - set -o pipefail
  - du
- - xcodebuild -workspace Pad/HealthPad.xcworkspace -scheme HealthPad -destination "platform=iOS Simulator,name=iPad Air 2,OS=9.3" test | xcpretty -c > /dev/null
+ - xcodebuild -workspace Pad/HealthPad.xcworkspace -scheme HealthPad -destination "platform=iOS Simulator,name=iPad Air 2,OS=9.3" test | xcpretty -c
