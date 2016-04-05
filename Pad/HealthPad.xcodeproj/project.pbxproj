@@ -44,6 +44,7 @@
 		C53DB1BE1C99C5B00054ED49 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53DB1BD1C99C5B00054ED49 /* SplitViewController.swift */; };
 		C548EE941CB2EE020031F543 /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5001FEE1CA13699005884A4 /* ResearchKit.framework */; };
 		C548EE951CB2EE020031F543 /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C5001FEE1CA13699005884A4 /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C548EEA01CB3AF500031F543 /* ResearchKit.framework in Sources */ = {isa = PBXBuildFile; fileRef = C548EE921CB2EA5D0031F543 /* ResearchKit.framework */; };
 		C5EF56F21C9DAF88001F30AE /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EF56F11C9DAF88001F30AE /* Model.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = C53DB1491C998F250054ED49;
 			remoteInfo = HealthPad;
+		};
+		C548EE9E1CB3AF470031F543 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C5001FE71CA13699005884A4 /* ResearchKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B183A4731A8535D100C76870;
+			remoteInfo = ResearchKit;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -328,6 +336,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				C548EE9F1CB3AF470031F543 /* PBXTargetDependency */,
 			);
 			name = HealthPad;
 			productName = HealthPad;
@@ -602,6 +611,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C548EEA01CB3AF500031F543 /* ResearchKit.framework in Sources */,
 				C53DB1AC1C99A0C70054ED49 /* DotTrianglePath.swift in Sources */,
 				C53B84DA1CA045F8001A47C9 /* CandleView.swift in Sources */,
 				C53B84DF1CA045F8001A47C9 /* StepsView.swift in Sources */,
@@ -660,6 +670,11 @@
 			isa = PBXTargetDependency;
 			target = C53DB1491C998F250054ED49 /* HealthPad */;
 			targetProxy = C53DB16C1C998F260054ED49 /* PBXContainerItemProxy */;
+		};
+		C548EE9F1CB3AF470031F543 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ResearchKit;
+			targetProxy = C548EE9E1CB3AF470031F543 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
