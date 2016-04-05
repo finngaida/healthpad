@@ -17,12 +17,8 @@ DEPENDENCIES:
   - GradientView
   - Nimble
   - Quick
-  - ResearchKit (from `../Shared/ResearchKit`)
+  - ResearchKit
   - SwiftString
-
-EXTERNAL SOURCES:
-  ResearchKit:
-    :path: ../Shared/ResearchKit
 
 SPEC CHECKSUMS:
   ActionKit: 6c45e3d92252dd34b18e7c3d8e9f811ee52558b1
@@ -31,9 +27,9 @@ SPEC CHECKSUMS:
   GradientView: 4a961b8e9e1787beaf6880b9fc2dd08c6345533d
   Nimble: 703854335d181df169bbca9c97117b5cf8c47c1d
   Quick: a5221fc21788b6aeda934805e68b061839bc3165
-  ResearchKit: 83474ca5d619dd336be661b84839f339adcf680f
+  ResearchKit: 934a1efefed1a3a9150002a1e4b123d0c86c3f2e
   SwiftString: ec9c31c55b2aa147a1154f5f5f8483dc71e3165f
 
-PODFILE CHECKSUM: 66258f28e4c8277e9d37cc2d7f2bc82796f2f27c
+PODFILE CHECKSUM: 9e88343e19ec0a7f987b9c5a4cfc1d38f90b2531
 
 COCOAPODS: 1.0.0.beta.3
