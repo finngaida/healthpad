@@ -76,13 +76,6 @@
 			remoteGlobalIDString = C53DB1491C998F250054ED49;
 			remoteInfo = HealthPad;
 		};
-		C548EE961CB2EE020031F543 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C5001FE71CA13699005884A4 /* ResearchKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = B183A4731A8535D100C76870;
-			remoteInfo = ResearchKit;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -159,9 +152,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C548EE941CB2EE020031F543 /* ResearchKit.framework in Frameworks */,
 				8E055D63BEC8A3C4913A644B /* Pods_HealthPad.framework in Frameworks */,
 				C53DB17F1C99913D0054ED49 /* CloudKit.framework in Frameworks */,
-				C548EE941CB2EE020031F543 /* ResearchKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,17 +318,16 @@
 			buildConfigurationList = C53DB1741C998F260054ED49 /* Build configuration list for PBXNativeTarget "HealthPad" */;
 			buildPhases = (
 				77D83C8C059BE7A02EEF4734 /* Check Pods Manifest.lock */,
+				C548EE981CB2EE020031F543 /* Embed Frameworks */,
 				C53DB1461C998F250054ED49 /* Sources */,
 				C53DB1471C998F250054ED49 /* Frameworks */,
 				C53DB1481C998F250054ED49 /* Resources */,
 				3604AFD4657308D4A11441BF /* Embed Pods Frameworks */,
 				A04522715C41E61E0010737E /* Copy Pods Resources */,
-				C548EE981CB2EE020031F543 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C548EE971CB2EE020031F543 /* PBXTargetDependency */,
 			);
 			name = HealthPad;
 			productName = HealthPad;
@@ -668,11 +660,6 @@
 			isa = PBXTargetDependency;
 			target = C53DB1491C998F250054ED49 /* HealthPad */;
 			targetProxy = C53DB16C1C998F260054ED49 /* PBXContainerItemProxy */;
-		};
-		C548EE971CB2EE020031F543 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = ResearchKit;
-			targetProxy = C548EE961CB2EE020031F543 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
