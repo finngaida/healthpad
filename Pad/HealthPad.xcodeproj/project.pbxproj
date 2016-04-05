@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		01AC439D97795B636E5A4DAA /* Pods_HealthPadTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81BAFAAD7E8BDC78E93C765C /* Pods_HealthPadTests.framework */; };
 		4300CF065A95F5F8D0EFA74D /* Pods_HealthPadUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62829C0A1FA64FC686387F06 /* Pods_HealthPadUITests.framework */; };
-		8E055D63BEC8A3C4913A644B /* Pods_HealthPad.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64BDD96B4C0163A30607D050 /* Pods_HealthPad.framework */; };
 		C53B84D71CA045F8001A47C9 /* ActiveEnergyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53B84CD1CA045F8001A47C9 /* ActiveEnergyView.swift */; };
 		C53B84D81CA045F8001A47C9 /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53B84CE1CA045F8001A47C9 /* BarView.swift */; };
 		C53B84D91CA045F8001A47C9 /* BloodPressureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53B84CF1CA045F8001A47C9 /* BloodPressureView.swift */; };
@@ -42,10 +41,8 @@
 		C53DB1B31C99A0C70054ED49 /* TimingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53DB1AA1C99A0C70054ED49 /* TimingFunction.swift */; };
 		C53DB1BC1C99BD9E0054ED49 /* LineChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53DB1BB1C99BD9E0054ED49 /* LineChartViewController.swift */; };
 		C53DB1BE1C99C5B00054ED49 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53DB1BD1C99C5B00054ED49 /* SplitViewController.swift */; };
-		C548EE941CB2EE020031F543 /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5001FEE1CA13699005884A4 /* ResearchKit.framework */; };
 		C548EE951CB2EE020031F543 /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C5001FEE1CA13699005884A4 /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C548EEA01CB3AF500031F543 /* ResearchKit.framework in Sources */ = {isa = PBXBuildFile; fileRef = C548EE921CB2EA5D0031F543 /* ResearchKit.framework */; };
-		C548EEA51CB3B8260031F543 /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5001FEE1CA13699005884A4 /* ResearchKit.framework */; };
 		C5EF56F21C9DAF88001F30AE /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EF56F11C9DAF88001F30AE /* Model.swift */; };
 /* End PBXBuildFile section */
 
@@ -161,8 +158,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C548EE941CB2EE020031F543 /* ResearchKit.framework in Frameworks */,
-				8E055D63BEC8A3C4913A644B /* Pods_HealthPad.framework in Frameworks */,
 				C53DB17F1C99913D0054ED49 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -171,7 +166,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C548EEA51CB3B8260031F543 /* ResearchKit.framework in Frameworks */,
 				01AC439D97795B636E5A4DAA /* Pods_HealthPadTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

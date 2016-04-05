@@ -88,6 +88,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-HealthPad/Async.framework"
   install_framework "Pods-HealthPad/Charts.framework"
   install_framework "Pods-HealthPad/GradientView.framework"
+  install_framework "Pods-HealthPad/ResearchKit.framework"
   install_framework "Pods-HealthPad/SwiftString.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -95,5 +96,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-HealthPad/Async.framework"
   install_framework "Pods-HealthPad/Charts.framework"
   install_framework "Pods-HealthPad/GradientView.framework"
+  install_framework "Pods-HealthPad/ResearchKit.framework"
   install_framework "Pods-HealthPad/SwiftString.framework"
 fi
