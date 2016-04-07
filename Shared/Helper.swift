@@ -284,12 +284,12 @@ public class ResearchKitGraphHelper:NSObject, ORKGraphChartViewDataSource, ORKGr
     public var data:[ORKRangedPoint]? = [[120, 43], [130, 50], [125, 55], [120, 55], [125, 45], [130, 40]].map({ORKRangedPoint(minimumValue: $0[1], maximumValue: $0[0])}) {
         didSet {
             if let line = lineChart {
-                line.reloadData()
+                line.dataSource = self
                 line.animateWithDuration(0.5)
             }
             
             if let candle = candleChart {
-                candle.reloadData()
+                candle.dataSource = self
                 candle.animateWithDuration(0.5)
             }
         }
